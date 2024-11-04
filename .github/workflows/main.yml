@@ -1,0 +1,41 @@
+name: Deploy Django
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: Deploy  # Utilise l'environnement Deploy pour accéder aux secrets
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.RSA_PRIVATE }}
+
+      - name: Add SSH known hosts
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Deploy with Docker Compose
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+        run: |
+          ssh -o StrictHostKeyChecking=no nico@${{ secrets.SSH_HOST }} "
+            if [ -d /Projet-Python-TSP ]; then
+              echo 'Project exists. Removing...'
+              rm -rf /Projet-Python-TSP
+            fi
+            echo 'Cloning project...'
+            git clone https://$GIT_TOKEN@github.com/andinox/Projet-Python-TSP.git
+            cd Projet-Python-TSP/
+            docker compose up -d
+          "
