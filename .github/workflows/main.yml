@@ -22,14 +22,14 @@ jobs:
       - name: Add SSH known hosts
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_HOSTNAME }}" >> ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
       - name: Deploy with Docker Compose
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}
           GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
-          ssh -o StrictHostKeyChecking=no $SSH_HOST "
+          ssh -o StrictHostKeyChecking=no nico@${{ secrets.SSH_HOST }} "
             if [ -d /path/to/your/project ]; then
               echo 'Project exists. Removing...'
               rm -rf /path/to/your/project
