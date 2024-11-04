@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: Deploy  # Ajoutez cette ligne
+    environment: Deploy  # Utilise l'environnement Deploy pour accéder aux secrets
 
     steps:
       - name: Checkout code
@@ -27,5 +27,15 @@ jobs:
       - name: Deploy with Docker Compose
         env:
           SSH_HOST: ${{ secrets.SSH_HOST }}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
-          ssh -o StrictHostKeyChecking=no $SSH_HOST "cd /path/to/your/project && docker compose pull && docker compose up -d"
+          ssh -o StrictHostKeyChecking=no $SSH_HOST "
+            if [ -d /path/to/your/project ]; then
+              echo 'Project exists. Removing...'
+              rm -rf /path/to/your/project
+            fi
+            echo 'Cloning project...'
+            git clone https://$GIT_TOKEN@github.com/your-username/your-repo.git /path/to/your/project
+            cd /path/to/your/project
+            docker compose up -d
+          "
