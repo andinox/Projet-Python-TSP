@@ -36,6 +36,6 @@ jobs:
             fi
             echo 'Cloning project...'
             git clone https://$GIT_TOKEN@github.com/andinox/Projet-Python-TSP.git
-            cd /Projet-Python-TSP
+            cd Projet-Python-TSP/
             docker compose up -d
           "
