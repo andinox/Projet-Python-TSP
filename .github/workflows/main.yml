@@ -30,12 +30,13 @@ jobs:
           GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
         run: |
           ssh -o StrictHostKeyChecking=no nico@${{ secrets.SSH_HOST }} "
-            if [ -d /Projet-Python-TSP ]; then
+            if [ -d Projet-Python-TSP ]; then
               echo 'Project exists. Removing...'
-              rm -rf /Projet-Python-TSP
+              rm -rf Projet-Python-TSP
             fi
             echo 'Cloning project...'
             git clone https://$GIT_TOKEN@github.com/andinox/Projet-Python-TSP.git
             cd Projet-Python-TSP/
+            docker compose down
             docker compose up -d
           "
