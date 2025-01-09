@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiagnosticTools</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+</head>
+
+<body class="bg-light">
+    <header class="bg-primary text-white text-center py-4">
+        <div class="container">
+            <h1 class="display-4 fw-bold">DiagnosticTools</h1>
+            <p class="lead">Outil de diagnostic de problèmes réseaux</p>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row g-4">
+            <section class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Bienvenue </h2>
+                        <h5 class="card-subtitle mb-3">Quels symptômes observez-vous ?</h5>
+                        <form>
+                           <!-- LISTE DES SCENARIOS DEFINIS PAR DEFAUT -->
+                            <button type="submit" class="btn btn-primary w-100">Lancer le diagnostic</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Historique</h5>
+                        <ul class="list-group list-group-flush">
+                            <!-- LISTE HISTORIQUR DES DIAGNOS -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

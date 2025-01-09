@@ -1,9 +1,11 @@
+from DiagnosticTool.settings import ROUTEUR_PWD, ROUTEUR_USERNAME
+
 hosts = [
     {
         "ip_address": "IP",
         "nos": "Cisco-xr",
         "port": 57400,
-        "username": "admin",
-        "password": "dkSDwa80f13faXcwxzj"
+        "username": ROUTEUR_USERNAME,
+        "password": ROUTEUR_PWD
     }
 ]
