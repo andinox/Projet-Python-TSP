@@ -20,12 +20,16 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
     git clone https://github.com/andinox/Projet-Python-TSP.git
     cd DiagnosticTools
     ```
-
-2. Build et start les containers Docker:
+2. Migration des données si besoin (lors de la création des modèles dans models.py ou des modèles se trouvant dans le folder models)
+     Commandes : python manage.py makemigrations nomApp 
+                 python manage.py migrate nomApp   
+4. Accéder à l'application:
+     Lancer dans terminal : `python manage.py runserver`
+      et se rendre sur `http://localhost:8000`.    
+/!\ A FAIRE QUAND ON PENSE AVOIR FINI NOTRE PREMIER RENDU POUR TESTER /!\
+Build et start les containers Docker:
     ```sh
     docker-compose up --build
     ```
 
-3. Accéder à l'application:
-     `http://localhost:8000`.
 
