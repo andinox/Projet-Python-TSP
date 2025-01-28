@@ -11,7 +11,7 @@ def read_metrics(file_path):
             affichage_json = json.dumps(data, indent=2)
             print(affichage_json)
 
-#Avec filtre des champs qui nous intressenté
+#Avec filtre des champs qui nous intéressent
 def filtre_status(file_path):
     with open(file_path, "r") as f:
         for line in f:
