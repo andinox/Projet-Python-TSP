@@ -1,8 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
+from DiagnosticTool_Main.models import Scenario
+
+
 def home(request):
-    return render(request, 'DiagnosticTool_Main/home.html')
+    scenarios = Scenario.objects.all()
+    print(scenarios)
+    return render(request, 'DiagnosticTool_Main/home.html', {'scenarios': scenarios})
 
 
 def scenario(request):

@@ -1,51 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiagnosticTools</title>
+{% extends 'DiagnosticTool/base.html' %}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-</head>
+{% block title %}Accueil{% endblock %}
 
-<body class="bg-light">
-    <header class="bg-primary text-white text-center py-4">
-        <div class="container">
-            <h1 class="display-4 fw-bold">DiagnosticTools</h1>
-            <p class="lead">Outil de diagnostic de problèmes réseaux</p>
+{% block header_title %}Bienvenue sur DiagnosticTools{% endblock %}
+{% block header_subtitle %}Explorez nos diagnostics en toute simplicité{% endblock %}
+
+{% block header %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand mx-auto d-flex align-items-center" href="{% url 'home' %}">
+            <img src="/static/img/logo.png" alt="logo" class="d-inline-block align-middle" width="30" height="30">
+            <span class="ms-2">DiagnosticTools</span>
+        </a>
+        <!-- button toggler utile quand on rétrécit la page on peut voir le menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="#">Accueil</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/static/img/logo.png" alt="pp" class="rounded-circle" width="45" height="45">
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarUser">
+                        <li><a class="dropdown-item" href="#">Infos</a></li>
+                        <!-- ajouter un lien spécial pour les admin après -->
+                        <li><a class="dropdown-item" href="{% url 'logout_page' %}">Déconnexion</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </header>
+    </div>
+</nav>
+{% endblock %}
 
-    <main class="container my-5">
-        <div class="row g-4">
-            <section class="col-lg-6">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h2 class="card-title text-primary">Bienvenue </h2>
-                        <h5 class="card-subtitle mb-3">Quels symptômes observez-vous ?</h5>
-                        <form>
-                           <!-- LISTE DES SCENARIOS DEFINIS PAR DEFAUT -->
-                            <button type="submit" class="btn btn-primary w-100">Lancer le diagnostic</button>
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <section class="col-lg-8">
+            <div class="text-center">
+                <h1 class="display-4 text-primary mb-3">Prenez soin de la santé de votre réseau facilement</h1>
+                <p class="lead text-muted mb-4">Accédez à des diagnostics fiables et rapides, où que vous soyez ;)</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="row g-4">
+        <section class="col-lg-6">
+            <div class="card shadow-sm border-light">
+                <div class="card-body">
+                    <h4 class="card-title text-primary fw-bold mb-3">Quels symptômes observez-vous ?</h4>
+                    {% if scenarios %}
+                        <form method="post">
+                            {% csrf_token %}
+                            {% for scenario in scenarios %}
+                                <div class="form-check mb-3">
+                                    <!--on c dit on va plutôt créer des liens qui vont mener aux pages associés aux scenarios (ces pages auront un récap niveau utilité + feront ensuite diagno)-->
+                                    <input class="form-check-input" type="checkbox" name="scenarios" value="{{scenario.pk}}">
+                                    <label class="form-check-label" >
+                                        {{ scenario }}
+                                    </label>
+                                </div>
+                            {% endfor %}
+                            <button type="submit" class="btn btn-primary w-100 mt-3">Lancer le diagnostic</button>
                         </form>
-                    </div>
+                    {% else %}
+                        <p class="text-muted">Pas de scénarios disponibles pour l'instant oupssss</p>
+                    {% endif %}
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="col-lg-6">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title text-primary">Historique</h5>
-                        <ul class="list-group list-group-flush">
-                            <!-- LISTE HISTORIQUR DES DIAGNOS -->
-                        </ul>
-                    </div>
+        <section class="col-lg-6">
+            <div class="card shadow-sm border-light">
+                <div class="card-body">
+                    <h5 class="card-title text-primary fw-bold mb-3">Historique</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>xx</span>
+                            <a href="#" class="btn btn-outline-primary btn-sm" download>
+                                <i class="bi bi-cloud-download"></i>
+                            </a>
+                        </li>
+                        <li class="list-group-item">Aïe ... Aucun diagnostic encore réalisé</li>
+                    </ul>
                 </div>
-            </section>
-        </div>
-    </main>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+{% block css %}
+<!-- style choisi ressemblant à doctolib -->
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
 
-</html>
+    .navbar {
+        background-color: #ffffff;
+    }
+
+    .navbar .navbar-brand {
+        font-size: 30px;
+        color: #007bff;
+    }
+
+    .navbar .nav-link {
+        color: #495057;
+        font-size:30px;
+    }
+
+    .navbar .nav-link:hover {
+        color: #007bff;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #004085;
+    }
+
+    .container {
+        padding-top: 50px;
+    }
+
+    .card {
+        border-radius: 10px;
+    }
+
+    .card-title {
+        color: #007bff;
+    }
+
+    .list-group-item {
+        background-color: #ffffff;
+        border: none;
+    }
+
+    .list-group-item:hover {
+        background-color: #f1f1f1;
+    }
+
+    .text-muted {
+        color: #6c757d !important;
+    }
+</style>
+{% endblock %}
