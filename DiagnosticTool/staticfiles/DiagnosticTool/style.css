@@ -1,0 +1,69 @@
+/* Couleurs et arrière-plan général */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(145deg, #6a5acd, #7b68ee, #8a2be2);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container principal */
+.container-fluid {
+    background: rgba(0, 0, 0, 0.05); /* Léger transparent au-dessus du dégradé */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+/* Bouton de connexion */
+.btn-primary {
+    background-color: #4a47a3; /* Bleu-violet sombre */
+    border: none;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #322e7b; /* Bleu-violet encore plus sombre */
+}
+
+/* Lien : Mot de passe oublié */
+.text-primary {
+    color: #4a47a3 !important;
+}
+
+.text-primary:hover {
+    color: #322e7b !important;
+    text-decoration: underline;
+}
+
+/* Input fields */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

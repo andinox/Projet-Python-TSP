@@ -1,1 +1,1 @@
-from .page_accueil import index
+from .page_accueil import home
