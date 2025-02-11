@@ -10,6 +10,7 @@ class DiagnosticAdmin(admin.ModelAdmin):
 
 class ScenarioAdmin(admin.ModelAdmin):
     list_display=("nom","description",)
+
 admin.site.register(Routeur,RouteurAdmin,)
 admin.site.register(Diagnostic,DiagnosticAdmin,)
 admin.site.register(Scenario,ScenarioAdmin,)
