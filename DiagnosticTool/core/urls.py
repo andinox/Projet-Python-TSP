@@ -5,8 +5,8 @@ urlpatterns = [
 
 #jpense utiliser les pk pour les redirections des liens pour les pages des scenarios
     path('home', views.home, name='home'),
-    path('perteCoInternet', views.perteConnexionInternet, name='perteCoInternet'),
-    path('perteCoEntreprise', views.perteConnexionEntreprise, name='perteCoEntreprise'),
-    path('tempsLatElevee', views.tempsLatenceElevee, name='tempsLatElevee'),
+    path('scenario/<slug:slug>/', views.scenario_details, name='scenario'),
 
+    #path('perteCoEntreprise', views.perteConnexionEntreprise, name='perteCoEntreprise'),
+    #path('tempsLatElevee', views.tempsLatenceElevee, name='tempsLatElevee'),
 ]

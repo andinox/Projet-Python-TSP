@@ -1,6 +1,6 @@
 {% extends 'DiagnosticTool/base.html' %}
 
-{% block title %}Perte de connexion{% endblock %}
+{% block title %}{{scenario.name}}{% endblock %}
 
 {% block content %}
 <div class="header">
@@ -10,9 +10,9 @@
 <div class="container">
     <div class="scenario">
         <h2>Scénario</h2>
-        <p class="description">Perte de connexion vers Internet</p>
+        <p class="description">{{scenario.name}}</p>
        <div class="placeholder-text">
-                <p>blablabla</p>
+                <p>{{scenario.description}}</p>
        </div>
         <button class="export-button">Exporter le rapport</button>
     </div>
