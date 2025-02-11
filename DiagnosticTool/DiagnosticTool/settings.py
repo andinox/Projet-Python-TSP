@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'GestionnaireUsers',
-    'DiagnosticTool_Main',
+    'gestionnaire_users',
+    'core',
+    'routeur'
 ]
 
 MIDDLEWARE = [
@@ -56,8 +57,8 @@ ROOT_URLCONF = 'DiagnosticTool.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates",BASE_DIR / 'DiagnosticTool/templates',
-            BASE_DIR / 'DiagnosticTool_Main/templates',],
+        'DIRS': [BASE_DIR / "templates", BASE_DIR / 'DiagnosticTool/templates',
+                 BASE_DIR / 'core/templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
