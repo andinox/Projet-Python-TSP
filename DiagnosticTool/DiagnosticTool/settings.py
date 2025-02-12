@@ -128,7 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIRS = [
-    BASE_DIR / "DiagnosticTool/static",
+    BASE_DIR / "static",
 ]
 
 # à revoir après pour éviter qu'on puisse accéder aux infos de la page home
