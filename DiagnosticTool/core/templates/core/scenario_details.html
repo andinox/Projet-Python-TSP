@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="header">
-    <button class="back-button">Retourner </button>
+    <a href="{%url 'home'%}" target="_blank">Retourner</a>
 </div>
 
 <div class="container">
@@ -14,7 +14,8 @@
        <div class="placeholder-text">
                 <p>{{scenario.description}}</p>
        </div>
-        <button class="export-button">Exporter le rapport</button>
+        <button type="submit" class="btn btn-danger w-100 mt-3">Lancer le diagnostic</button>
+
     </div>
 
     <div class="analysis">
@@ -24,9 +25,12 @@
             <div class="placeholder-text">
                 <p>blablabla</p>
             </div>
+            <button class="export-button">Exporter le rapport en format PDF</button>
 
         </div>
     </div>
+
+    
 </div>
 {% endblock %}
 
@@ -73,6 +77,10 @@
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         flex: 1;
+    }
+    
+    a{
+        color: #ffffff;
     }
 
     .analysis {

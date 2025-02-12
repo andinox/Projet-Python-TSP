@@ -21,7 +21,7 @@ def home(request):
 
 def scenario_details(request,slug):
     """
-    fonction qui va affichcier les détails d'un scénario donné
+    fonction qui va afficher les détails d'un scénario donné
     """
     scenario = Scenario.objects.get(slug=slug)
     return render(request, 'core/scenario_details.html', {'scenario': scenario})
