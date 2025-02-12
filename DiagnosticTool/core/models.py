@@ -24,7 +24,7 @@ class Diagnostic(models.Model):
 class Scenario(models.Model):
     nom = models.CharField(max_length=100)
     description = models.TextField()
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(default="", null=False)    
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.nom)

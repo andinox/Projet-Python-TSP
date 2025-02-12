@@ -9,7 +9,7 @@ class DiagnosticAdmin(admin.ModelAdmin):
     list_display=("routeur","type_diagno","resultat","date",)
 
 class ScenarioAdmin(admin.ModelAdmin):
-    list_display=("nom","description",)
+    list_display=("nom","description","slug",)
 
 admin.site.register(Routeur,RouteurAdmin,)
 admin.site.register(Diagnostic,DiagnosticAdmin,)
