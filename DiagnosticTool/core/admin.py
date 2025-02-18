@@ -1,6 +1,9 @@
 from django.contrib import admin
 
-from core.models import *
+from core.models.routeur import Routeur
+from core.models.diagnostic import Diagnostic
+from core.models.scenario import Scenario
+
 
 class RouteurAdmin(admin.ModelAdmin):
     list_display=("name","ip","status",)

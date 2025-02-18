@@ -128,7 +128,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 STATICFILES_DIRS = [
-    BASE_DIR / "DiagnosticTool/static",
+    BASE_DIR / "static",
 ]
 
 # à revoir après pour éviter qu'on puisse accéder aux infos de la page home
@@ -139,3 +139,13 @@ LOGIN_REDIRECT_URL = 'home'
 #config routeur compte
 ROUTEUR_USERNAME ='admin'
 ROUTEUR_PWD = 'dkSDwa80f13faXcwxzj'
+
+#email connexion paramètres
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.yahoo.com"  #serveur SMTP de notre fournisseur
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+

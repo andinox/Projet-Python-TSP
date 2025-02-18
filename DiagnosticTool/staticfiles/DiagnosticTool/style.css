@@ -55,15 +55,3 @@ body {
     outline: none;
 }
 
-/* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.2);
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 20px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
