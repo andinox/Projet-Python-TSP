@@ -1,12 +1,12 @@
 from django.urls import path
-from . import views
+from core.views.home import *
+from core.views.scenarios import *
+
 urlpatterns = [
 
 
 #jpense utiliser les pk pour les redirections des liens pour les pages des scenarios
-    path('home', views.home, name='home'),
-    path('scenario/<slug:slug>/', views.scenario_details, name='scenario'),
+    path('home', home, name='home'),
+    path('scenario/<slug:slug>/', scenario_details, name='scenario'),
 
-    #path('perteCoEntreprise', views.perteConnexionEntreprise, name='perteCoEntreprise'),
-    #path('tempsLatElevee', views.tempsLatenceElevee, name='tempsLatElevee'),
 ]
