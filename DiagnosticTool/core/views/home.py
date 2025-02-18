@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from core.models import Scenario
+from core.models.scenario import Scenario
 
 
 def home(request):
@@ -25,23 +25,5 @@ def scenario_details(request,slug):
     """
     scenario = Scenario.objects.get(slug=slug)
     return render(request, 'core/scenario_details.html', {'scenario': scenario})
-
-
-
-
-
-"""
-def perteConnexionEntreprise(request):
-    return render(request, 'core/perte_co_sites_entreprise.html')
-
-
-def tempsLatenceElevee(request):
-    return render(request, 'core/temps_latence_elevee.html')
-
-
-def verificationSecuriteReseau(request):
-    return render(request, 'core/verif_secu_reseau.html')
-
-"""
 
 
