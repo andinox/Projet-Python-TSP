@@ -1,0 +1,33 @@
+{% extends 'DiagnosticTool/base.html' %}
+
+{% block title %}{{scenario.name}}{% endblock %}
+{% block header %}
+        <a href="{%url 'home'%}" >Retourner</a>
+
+{% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <div class="scenario">
+        <h2>Scénario</h2>
+        <p class="description">{{scenario}}</p>
+                <p>{{scenario.description}}</p>
+        <button type="submit" class="diagno-button">Lancer le diagnostic</button>
+
+    </div>
+
+    <div class="analysis">
+        <h2>Analyse</h2>
+        <div class="analysis-content">
+            <!-- ici il faudra faire en sorte que ça se génère quand on -->
+            <p><strong class="alert">Alerte :</strong></p>
+                <p>ici il y aura le résultat du diagnostic après avoir cliquer sur "Lancer diagno..."</p>
+            <button class="export-button">Exporter le rapport en format PDF</button>
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
