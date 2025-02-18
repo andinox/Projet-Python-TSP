@@ -54,14 +54,6 @@ h2 {
     font-weight: bold;
 }
 
-.placeholder-text {
-    height: 20px;
-    background-color: #dce7ff;
-    margin: 10px 0;
-    border-radius: 5px;
-    width: 80%;
-}
-
 .diagno-button {
     background-color: #3862b7;
     color: white;
