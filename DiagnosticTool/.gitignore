@@ -1,0 +1,6 @@
+.ide*.pyc
+.venv/
+venv/
+*migrations/
+db.sqlite3/
+__pycache__/
