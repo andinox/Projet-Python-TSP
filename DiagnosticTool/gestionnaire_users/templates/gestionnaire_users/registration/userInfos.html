@@ -1,0 +1,24 @@
+{% extends 'DiagnosticTool/base.html' %}
+
+{% block title %}Informations utilisateur{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card" style="width: 50rem;">
+        <div class="card-header bg-primary text-white">
+            <h5 class="card-title">Détails du compte</h5>
+        </div>
+        <div class="card-body">
+            <!--TODO: ici il faudra ajouter le logo du user-->
+
+            <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
+            <p class="card-text"><strong>Prénom:</strong> {{ user.first_name }}</p>
+            <p class="card-text"><strong>Nom:</strong> {{ user.last_name }}</p>
+            <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+        </div>
+        <div class="card-footer text-muted">
+            Dernière connexion  {{ user.last_login }} <!--TODO convertir avec heure UTC-->
+        </div>
+    </div>
+</div>
+{% endblock %}
