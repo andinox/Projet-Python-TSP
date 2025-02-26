@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/gestionnaire_users/templates/gestionnaire_users/registration/userInfos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/all_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/all_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/migrations/0002_alter_scenario_slug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/migrations/0003_routeur_as_bgp_routeur_next_hop.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/migrations/0004_routeur_utilisateur_id.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/templates/core/scenario_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/templates/core/scenario_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/gestionnaire_users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/gestionnaire_users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/gestionnaire_users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/gestionnaire_users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/templates/DiagnosticTool/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/templates/DiagnosticTool/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -220,7 +209,7 @@
       <workItem from="1740510331817" duration="1063000" />
       <workItem from="1740596754843" duration="803000" />
       <workItem from="1740597586424" duration="2000" />
-      <workItem from="1740597595112" duration="4974000" />
+      <workItem from="1740597595112" duration="5303000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 .ide*.pyc
 .venv/
 venv/
+*migrations/
 db.sqlite3a/
 __pycache__/
