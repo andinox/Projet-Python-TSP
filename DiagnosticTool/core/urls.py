@@ -1,7 +1,6 @@
 from django.urls import path
-from core.views import *
 from core.views import scenarios
-from core.views.home import home
+from core.views.home import *
 
 urlpatterns = [
     path('home/', home, name='home'),
