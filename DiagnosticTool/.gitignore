@@ -1,4 +1,5 @@
 .ide*.pyc
 .venv/
+venv/
 db.sqlite3a/
 __pycache__/
