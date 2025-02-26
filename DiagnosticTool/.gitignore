@@ -2,5 +2,5 @@
 .venv/
 venv/
 *migrations/
-db.sqlite3a/
+db.sqlite3/
 __pycache__/
