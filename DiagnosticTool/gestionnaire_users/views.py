@@ -10,3 +10,8 @@ def logout_user(request):
     logout(request)
     return redirect('login_page')
 
+def user_info(request):
+    """
+    function that returns user info
+    """
+    return render(request, 'gestionnaire_users/registration/userInfos.html', {'user':  request.user})
