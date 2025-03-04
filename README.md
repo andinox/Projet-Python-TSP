@@ -16,10 +16,10 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
 ## Installation
 
 1. Clone le repo:
-    ```sh
+```sh
     git clone https://github.com/andinox/Projet-Python-TSP.git
     cd DiagnosticTools
-    ```
+```
 2. Après avoir activé un environnement virtuel python, installer Django si non installé
 ```sh
     python3 -m venv project-python
@@ -30,14 +30,18 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
    Commandes :```python manage.py makemigrations nomApp``` & ```python manage.py migrate nomApp```
                  
 5. Accéder à l'application:
-     Lancer dans terminal : ```python manage.py runserver```
-      et se rendre sur `http://localhost:8000`.    
-6.
-   `/!\ A FAIRE QUAND ON PENSE AVOIR FINI NOTRE PREMIER RENDU POUR TESTER /!\`
+   Lancer dans terminal :
+```python manage.py runserver```
+ et se rendre sur :
+`http://localhost:8000`.
+  
+7.
+`/!\ A FAIRE QUAND ON PENSE AVOIR FINI NOTRE PREMIER RENDU POUR TESTER /!\`
 
-    Build et start les containers Docker:
-    ```sh
+Build et start les containers Docker:
+```sh
     docker-compose up --build
-    ```
+```
+
 <img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
 
