@@ -25,7 +25,7 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
     source project-python/bin/activate
     pip install django
    ```
-3. Se déplacer dans le répository
+3. Se déplacer dans le dossier du projet
    ```sh
     cd Projet-Python-TSP/DiagnosticTool
    ```
