@@ -54,6 +54,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'DiagnosticTool.urls'
 
+CSRF_TRUSTED_ORIGINS = ["http://172.16.10.50"]
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
