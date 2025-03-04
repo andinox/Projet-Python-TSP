@@ -39,5 +39,5 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
     ```sh
     docker-compose up --build
     ```
-<img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="100" />
+<img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
 
