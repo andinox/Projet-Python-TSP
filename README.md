@@ -41,8 +41,6 @@ Build et start les containers Docker:
    ```sh
     docker-compose up --build
    ```
-
-<div style="align: center;">
-    <img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
-</div>
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
+</p>
