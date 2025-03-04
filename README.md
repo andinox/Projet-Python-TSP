@@ -18,7 +18,7 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
 1. Clone le repo:
    ```sh
     git clone https://github.com/andinox/Projet-Python-TSP.git
-    cd DiagnosticTools
+    cd DiagnosticTool
    ```
 2. Après avoir activé un environnement virtuel python, installer Django si non installé
    ```sh
