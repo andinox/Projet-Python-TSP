@@ -19,7 +19,7 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
    ```sh
     git clone https://github.com/andinox/Projet-Python-TSP.git
    ```
-2. Après avoir activé un environnement virtuel python, installer Django si non installé
+2. Après avoir activé un environnement virtuel Python, installer Django si non installé
    ```sh
     python3 -m venv project-python
     source project-python/bin/activate
