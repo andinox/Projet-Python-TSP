@@ -1,4 +1,4 @@
-# DiagnosticTools
+# DiagnosticTool
 
 ![Python](https://img.shields.io/badge/Python-3.12.7-blue?style=flat-square&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-5.1.2-green?style=flat-square&logo=django&logoColor=white)
