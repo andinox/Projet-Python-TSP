@@ -26,13 +26,13 @@ def telegraf_receiver():
     try:
         # Lire les données envoyées par Telegraf
         input_data = sys.stdin.read().strip()
-
+"""
         if not input_data:
             logging.warning("Aucune donnée reçue de Telegraf.")
             return
 
         logging.debug(f"JSON brut reçu : {input_data}")
-
+"""
         # Décoder le JSON
         donnees = json.loads(input_data)
 
@@ -75,15 +75,15 @@ def telegraf_receiver():
                 },
             )
 
-            if created:
+            """if created:
                 logging.info(f"Nouvelle interface ajoutée : {obj.interface_name} ({routeur.name})")
             else:
                 logging.info(f"Interface mise à jour : {obj.interface_name} ({routeur.name})")
-
+          
     except json.JSONDecodeError:
         logging.error("Erreur : Impossible de décoder le JSON reçu")
     except Exception as e:
         logging.error(f"Erreur lors du traitement des données : {e}")
-
+"""
 if __name__ == "__main__":
     telegraf_receiver()
