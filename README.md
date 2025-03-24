@@ -41,6 +41,11 @@ Build et start les containers Docker:
    ```sh
     docker-compose up --build
    ```
+arbre de décision pour le moment.
+<p align="center">
+<img src="https://github.com/user-attachments/assets/ad9a46e7-281e-492b-9dcd-3956426dd1ee" alt="DiagnosticTool_logo" width="200" />
+</p>
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
 </p>
