@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'GestionnaireUsers'
+    'gestionnaire_users',
+    'core',
+    'routeur'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +57,8 @@ ROOT_URLCONF = 'DiagnosticTool.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "template"],
+        'DIRS': [BASE_DIR / "templates", BASE_DIR / 'DiagnosticTool/templates',
+                 BASE_DIR / 'core/templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,8 +120,32 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+STATIC_ROOT = BASE_DIR / "staticfiles"
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+# à revoir après pour éviter qu'on puisse accéder aux infos de la page home
+# même si on est en mode déconnecté.
+LOGIN_URL ='login_page'
+LOGIN_REDIRECT_URL = 'home'
+
+#config routeur compte
+ROUTEUR_USERNAME ='admin'
+ROUTEUR_PWD = 'dkSDwa80f13faXcwxzj'
+
+#email connexion paramètres
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.yahoo.com"  #serveur SMTP de notre fournisseur
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
