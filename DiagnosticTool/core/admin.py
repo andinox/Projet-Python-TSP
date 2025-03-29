@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from core.models.routeur import Routeur
+from core.models.router import Routeur
 from core.models.diagnostic import Diagnostic
 from core.models.scenario import Scenario
 from core.models.interface import Interface

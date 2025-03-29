@@ -1,20 +1,22 @@
-from django.shortcuts import render, redirect
+from django.views.generic import ListView
+from django.shortcuts import redirect
+from django.urls import reverse
 from core.models.scenario import Scenario
 
+class HomeView(ListView):
+    """
+    This class-based view displays the available scenarios.
+    When a scenario is clicked, it redirects the user to the selected scenario's details page
+    """
+    model = Scenario
+    template_name = "core/home.html"
+    context_object_name = "scenarios"
 
-def home(request):
-    """
-    fonction qui va afficher les scenarios dans la page d'accueil
-    par la suite elle permettra également de rediriger vers la bonne page du scenario séléctionné
-    """
-    if request.method == 'POST':
-        # Récupérer le slug du scénario sélectionné
-        selected_slug = request.POST.get('scenario')
+    def get(self, request, *args, **kwargs):
+        # Checks if a slug is passed in the URL to redirect
+        selected_slug = request.GET.get('scenario')
         if selected_slug:
-            # Récupérer le scénario correspondant au slug
             scenario = Scenario.objects.get(slug=selected_slug)
-            # Rediriger vers la page de détails du scénario
-            return redirect('scenario', slug=scenario.slug)
-    
-    scenarios = Scenario.objects.all()
-    return render(request, 'core/home.html', {'scenarios': scenarios})
+            return redirect(reverse('scenario', kwargs={'slug': scenario.slug}))
+
+        return super().get(request, *args, **kwargs)
