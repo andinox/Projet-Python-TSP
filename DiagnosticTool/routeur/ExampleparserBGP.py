@@ -1,7 +1,7 @@
 def parse_bgp_from_json(json_data):
     parsed_entries = []
 
-    neighbors = json_data.get("bgp", {}).get("neighbors", {})
+    neighbors = json_data.get("bgp", {}).get("neighbors", {}) #à revoir en fonction de comment on reçoit les données
     for ip, data in neighbors.items():
         entry = {
             "ASN": data.get("asn"),
