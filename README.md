@@ -1,4 +1,4 @@
-# DiagnosticTools
+# DiagnosticTool
 
 ![Python](https://img.shields.io/badge/Python-3.12.7-blue?style=flat-square&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-5.1.2-green?style=flat-square&logo=django&logoColor=white)
@@ -16,22 +16,36 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
 ## Installation
 
 1. Clone le repo:
-    ```sh
+   ```sh
     git clone https://github.com/andinox/Projet-Python-TSP.git
-    cd DiagnosticTools
-    ```
-2. Migration des données si besoin (lors de la création des modèles dans models.py ou des modèles se trouvant dans le folder models)
+   ```
+2. Après avoir activé un environnement virtuel Python, installer Django si non installé
+   ```sh
+    python3 -m venv project-python
+    source project-python/bin/activate
+    pip install django
+   ```
+3. Se déplacer dans le dossier du projet
+   ```sh
+    cd Projet-Python-TSP/DiagnosticTool
+   ```
+5. Migration des données si besoin (lors de la création des modèles dans models.py ou des modèles se trouvant dans le folder models)
    Commandes :```python manage.py makemigrations nomApp``` & ```python manage.py migrate nomApp```
                  
-3. Accéder à l'application:
-     Lancer dans terminal : ```python manage.py runserver```
-      et se rendre sur `http://localhost:8000`.    
-4.
-   `/!\ A FAIRE QUAND ON PENSE AVOIR FINI NOTRE PREMIER RENDU POUR TESTER /!\`
-
-    Build et start les containers Docker:
-    ```sh
+6. Accéder à l'application:
+   Lancer dans terminal :
+   ```python manage.py runserver``` et se rendre sur : `http://localhost:8000`.
+  
+7. `/!\ A FAIRE QUAND ON PENSE AVOIR FINI NOTRE PREMIER RENDU POUR TESTER /!\`
+Build et start les containers Docker:
+   ```sh
     docker-compose up --build
-    ```
+   ```
+arbre de décision pour le moment.
+<p align="center">
+<img src="https://github.com/user-attachments/assets/ad9a46e7-281e-492b-9dcd-3956426dd1ee" alt="DiagnosticTool_logo" width="500" />
+</p>
 
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
+</p>
