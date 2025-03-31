@@ -19,7 +19,7 @@ with gNMIclient(target=target, username=host["username"], password=host["passwor
             {
                 'path': path,
                 'mode': 'on_change',
-                'sample_interval': 10000000000 #nécessaire sur les Cisco-xr même si c'est on change
+                'sample_interval': 0 #nécessaire sur les Cisco-xr même si c'est on change
             } for path in bgp_paths
         ],
         'mode': 'stream',
