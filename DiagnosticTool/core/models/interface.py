@@ -1,5 +1,5 @@
 from django.db import models
-from router import Router
+from .router import Router
 class Interface(models.Model):
     """
     This model records the status of interfaces for a router

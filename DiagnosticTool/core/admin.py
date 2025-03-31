@@ -1,12 +1,12 @@
 from django.contrib import admin
 
-from core.models.router import Routeur
+from core.models.router import Router
 from core.models.diagnostic import Diagnostic
 from core.models.scenario import Scenario
 from core.models.interface import Interface
 
 
-class RouteurAdmin(admin.ModelAdmin):
+class RouterAdmin(admin.ModelAdmin):
     list_display=("name","ip","status",)
 
 class DiagnosticAdmin(admin.ModelAdmin):
@@ -20,7 +20,7 @@ class InterfaceAdmin(admin.ModelAdmin):
     search_fields = ("interface_name", "ip_address")
     list_filter = ("admin_status", "oper_status")
 
-admin.site.register(Routeur,RouteurAdmin,)
+admin.site.register(Router,RouterAdmin,)
 admin.site.register(Diagnostic,DiagnosticAdmin,)
 admin.site.register(Scenario,ScenarioAdmin,)
 admin.site.register(Interface,InterfaceAdmin)
