@@ -2,3 +2,4 @@
 .venv/
 db.sqlite3a/
 __pycache__/
+/home/user/Projet-Python-TSP/DiagnosticTool/logs/telegraf_receiver.log
