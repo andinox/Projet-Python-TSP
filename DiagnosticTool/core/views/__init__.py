@@ -1,5 +1,5 @@
-from .home import Diagnostic
-from .scenarios import Routeur
+from .home import HomeView
+from .scenarios import ScenarioDetailView
 
 
-__all__ = ["Diagnostic","Routeur","Scenario",]
+__all__ = ["HomeView","ScenarioDetailView",]

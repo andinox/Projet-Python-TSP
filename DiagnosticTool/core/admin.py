@@ -10,7 +10,7 @@ class RouterAdmin(admin.ModelAdmin):
     list_display=("name","ip","status",)
 
 class DiagnosticAdmin(admin.ModelAdmin):
-    list_display=("routeur","type_diagno","resultat","date",)
+    list_display=("router","type_diagno","resultat","date",)
 
 class ScenarioAdmin(admin.ModelAdmin):
     list_display=("nom","description","slug",)
