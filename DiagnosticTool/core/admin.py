@@ -16,9 +16,9 @@ class ScenarioAdmin(admin.ModelAdmin):
     list_display=("name","description","slug",)
 
 class InterfaceAdmin(admin.ModelAdmin):
-    list_display = ("interface_name", "router", "admin_status", "oper_status", "ip_address", "timestamp")
+    list_display = ("interface_name", "router", "admin_status", "reachability", "ip_address", "timestamp")
     search_fields = ("interface_name", "ip_address")
-    list_filter = ("admin_status", "oper_status")
+    list_filter = ("admin_status", "reachability")
 
 admin.site.register(Router,RouterAdmin,)
 admin.site.register(Diagnostic,DiagnosticAdmin,)
