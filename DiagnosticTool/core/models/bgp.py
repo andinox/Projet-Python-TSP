@@ -8,9 +8,9 @@ class BGP(models.Model):
         ("Up", "Up"),
         ("Down", "Down"),
     ]
-
+    
+    neighbor_ip = models.GenericIPAddressField(verbose_name="Neighbor IP Address", primary_key=True)
     asn = models.IntegerField(verbose_name="Autonomous System Number") #helpful to understand as admin what the field stands for
-    neighbor_ip = models.GenericIPAddressField(verbose_name="Neighbor IP Address")
     up_down_status = models.CharField(max_length=4, choices=STATUS_CHOICES, verbose_name="BGP Status")
     time_status = models.CharField(max_length=100, verbose_name="Time Since Last Status Change")
 
