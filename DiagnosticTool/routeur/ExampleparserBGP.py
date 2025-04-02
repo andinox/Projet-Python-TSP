@@ -1,6 +1,6 @@
 def convert_bgp_state(state):
     #si jamais ce n'est pas Up mais Established l'état
-    return "Up" if state.upper() == "ESTABLISHED" else "Down"
+    return "Up" if (state.upper() == "ESTABLISHED" or state.upper() == 1) else "Down"
 
 def parse_bgp_notification(notification):
     # Dictionary to collect BGP neighbor entries grouped by their IP address
