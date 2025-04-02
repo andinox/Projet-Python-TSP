@@ -4,7 +4,9 @@ from core.models.router import Router
 from core.models.diagnostic import Diagnostic
 from core.models.scenario import Scenario
 from core.models.interface import Interface
-
+from core.models.arp import ARP
+from core.models.bgp import BGP
+from core.models.icmp import ICMP
 
 class RouterAdmin(admin.ModelAdmin):
     list_display=("name","next_hop","as_bgp","user")
@@ -20,7 +22,22 @@ class InterfaceAdmin(admin.ModelAdmin):
     search_fields = ("interface_name", "ip_address")
     list_filter = ("admin_status", "reachability")
 
+class ARPAdmin(admin.ModelAdmin):
+    list_display = ("ip_arp",)
+    search_fields = ("ip_arp",)
+
+class BGPAdmin(admin.ModelAdmin):
+    list_display = ("asn","neighbor_ip","up_down_status","time_last_change")
+    search_fields = ("asn","neighbor_ip","up_down_status","time_last_change")
+
+class ICMPAdmin(admin.ModelAdmin):
+    list_display = ("icmp_up_down_status","destination","date_test")
+    search_fields = ("icmp_up_down_status","destination","date_test")
+
 admin.site.register(Router,RouterAdmin,)
 admin.site.register(Diagnostic,DiagnosticAdmin,)
 admin.site.register(Scenario,ScenarioAdmin,)
 admin.site.register(Interface,InterfaceAdmin)
+admin.site.register(ARP,ARPAdmin)
+admin.site.register(BGP,BGPAdmin)
+admin.site.register(ICMP,ICMPAdmin)
