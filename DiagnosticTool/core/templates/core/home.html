@@ -21,7 +21,6 @@
             <div class="card shadow-sm border-light">
                 <div class="card-body">
                     <h4 class="card-title text-primary fw-bold mb-3">Quels symptômes observez-vous ?</h4>
-                    {% if scenarios %}
                     <form method="post">
                         {% csrf_token %}
                         {% for scenario in scenarios %}
@@ -34,9 +33,7 @@
                         {% endfor %}
                         <button type="submit" class="btn btn-primary w-100 mt-3">Étape suivante</button>
                     </form>
-                {% else %}
-                    <p class="text-muted">Pas de scénarios disponibles pour l'instant.</p>
-                {% endif %}
+               
 
                 </div>
             </div>

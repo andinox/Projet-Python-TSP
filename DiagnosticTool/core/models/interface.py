@@ -7,9 +7,9 @@ class Interface(models.Model):
     router = models.ForeignKey(Router, on_delete=models.CASCADE)
     interface_name = models.CharField(max_length=100)
     admin_status = models.CharField(max_length=10)
-    oper_status = models.CharField(max_length=10)
+    reachability = models.CharField(max_length=10)
     ip_address = models.GenericIPAddressField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.interface_name} - {self.router.name} (Admin: {self.admin_status}, Oper: {self.oper_status})"
+        return f"{self.interface_name} - {self.router.name} (Admin: {self.admin_status}, Oper: {self.reachability})"

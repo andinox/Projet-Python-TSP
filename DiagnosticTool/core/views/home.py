@@ -1,5 +1,5 @@
 from django.views.generic import ListView
-from django.shortcuts import redirect
+from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse
 from core.models.scenario import Scenario
 
@@ -16,7 +16,7 @@ class HomeView(ListView):
         # Checks if a slug is passed in the URL to redirect
         selected_slug = request.GET.get('scenario')
         if selected_slug:
-            scenario = Scenario.objects.get(slug=selected_slug)
+            scenario = get_object_or_404(Scenario, slug=selected_slug)
             return redirect(reverse('scenario', kwargs={'slug': scenario.slug}))
 
         return super().get(request, *args, **kwargs)
