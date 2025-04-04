@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from core.models.router import Router
 from core.models.diagnostic import Diagnostic
 from core.models.scenario import Scenario
@@ -15,7 +14,9 @@ class DiagnosticAdmin(admin.ModelAdmin):
     list_display=("router","diagnosis_type","result","date",)
 
 class ScenarioAdmin(admin.ModelAdmin):
-    list_display=("name","description","slug",)
+    list_display = ('name', 'description', 'slug')
+    search_fields = ('name', 'description')
+    prepopulated_fields = {'slug': ('name',)}
 
 class InterfaceAdmin(admin.ModelAdmin):
     list_display = ("interface_name", "router", "admin_status", "reachability", "ip_address", "timestamp")

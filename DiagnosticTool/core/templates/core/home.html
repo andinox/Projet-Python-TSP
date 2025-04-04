@@ -1,56 +1,49 @@
 {% extends 'DiagnosticTool/base.html' %}
-
+{% load static %}
 {% block title %}Accueil{% endblock %}
 
-{% block header_title %}Bienvenue sur DiagnosticTools{% endblock %}
-{% block header_subtitle %}Explorez nos diagnostics en toute simplicité{% endblock %}
-
 {% block content %}
-<div class="container mt-4" > <!--ça, ça change la hauteur -->
-    <div class="row justify-content-center " >
-        <section class="col-lg-8">
-            <div class="text-center">
-                <h1 class="display-4 text-primary mb-3">Prenez soin de la santé de votre réseau facilement</h1>
-                <p class="lead text-muted mb-4">Accédez à des diagnostics fiables et rapides, où que vous soyez ;)</p>
-            </div>
+<div class="container mt-5 pt-5" style="background-color: #f8f9fa; padding: 3rem 0;">
+    <div class="row justify-content-center">
+        <section class="col-lg-8 text-center">
+
+            <h1 class="display-4" style="color: #4f5891; font-size: 2.5rem;">Prenez soin de la santé de votre réseau facilement</h1>
+            <p class="lead" style="color: #6c757d; font-size: 1.25rem;">Accédez à des diagnostics fiables et rapides, où que vous soyez ;)</p>
         </section>
     </div>
 
-    <div class="row g-4"><!--ça, ça gère l'espace entre ma card symptome et historique -->
-        <section class="col-lg-11" >
-            <div class="card shadow-sm border-light">
+    <div class="row g-4 justify-content-center">
+        <section class="col-lg-8">
+            <div class="card shadow-sm border-light" style="border-radius: 10px;">
                 <div class="card-body">
-                    <h4 class="card-title text-primary fw-bold mb-3">Quels symptômes observez-vous ?</h4>
-                    <form method="post">
-                        {% csrf_token %}
-                        {% for scenario in scenarios %}
-                            <div class="form-check mb-3">
-                                <input class="form-check-input" type="radio" name="scenario" value="{{scenario.slug}}" id="{{scenario.slug}}">
-                                <label class="form-check-label" for="{{scenario.slug}}">
-                                    {{scenario}}
-                                </label>
-                            </div>
-                        {% endfor %}
-                        <button type="submit" class="btn btn-primary w-100 mt-3">Étape suivante</button>
-                    </form>
-               
-
+                    <h4 class="card-title" style="color: #4f5891; font-weight: bold;">Quels symptômes observez-vous ?</h4>
+                   <form method="post">
+                    {% csrf_token %}
+                    {% for scenario in scenarios %}
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="radio" name="scenario" value="{{ scenario.slug }}" id="{{ scenario.slug }}">
+                            <label class="form-check-label" for="{{ scenario.slug }}">
+                                {{ scenario.name }}
+                            </label>
+                        </div>
+                    {% endfor %}
+                    <button type="submit" class="btn" style="background-color: #4f5891; color: white; border: none; width: 100%; margin-top: 20px;">Étape suivante</button>
+                </form>
                 </div>
             </div>
         </section>
 
-        <section class="col-lg-11" >
-
-            <div class="card shadow-sm border-light">
+        <section class="col-lg-8">
+            <div class="card shadow-sm border-light" style="border-radius: 10px;">
                 <div class="card-body">
-                    <h5 class="card-title text-primary fw-bold mb-3">Historique</h5>
+                    <h5 class="card-title" style="color: #4f5891; font-weight: bold;">Historique</h5>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             <a href="#" class="btn btn-outline-primary btn-sm" download>
                                 <i class="bi bi-cloud-download"></i>
                             </a>
                         </li>
-                        <li class="list-group-item">Aïe ... Aucun diagnostic encore réalisé</li>
+                        <li class="list-group-item" style="color: #6c757d;">Aïe ... Aucun diagnostic encore réalisé</li>
                     </ul>
                 </div>
             </div>

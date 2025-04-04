@@ -12,11 +12,12 @@ class HomeView(ListView):
     template_name = "core/home.html"
     context_object_name = "scenarios"
 
-    def get(self, request, *args, **kwargs):
-        # Checks if a slug is passed in the URL to redirect
-        selected_slug = request.GET.get('scenario')
+    def post(self, request, *args, **kwargs):
+        selected_slug = request.POST.get('scenario')
         if selected_slug:
             scenario = get_object_or_404(Scenario, slug=selected_slug)
             return redirect(reverse('scenario', kwargs={'slug': scenario.slug}))
+        return redirect('home')
 
+    def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
