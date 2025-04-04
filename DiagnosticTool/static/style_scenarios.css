@@ -1,94 +1,110 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+    background-color: #fafafa; /* Fond clair et neutre */
     margin: 0;
     padding: 0;
+    color: #333; /* Texte plus sombre pour plus de lisibilité */
 }
-
 
 .back-button {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     margin-left: 15px;
+    color: #3498db; /* Bleu doux */
+    transition: color 0.3s ease;
 }
 
+.back-button:hover {
+    color: #2980b9; /* Changement de couleur au survol */
+}
 
 .container {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    max-width: 1000px;
-    margin: auto;
+    max-width: 1100px;
+    margin: 40px auto 0; /* Ajout d'une marge en haut pour espacer la container du navbar */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.back-button {
-    color: #ffffff;
-}
 
 .scenario, .analysis {
-    background: white;
-    padding: 20px;
+    background: #ffffff;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     flex: 1;
 }
 
 a {
-    color: #ffffff;
+    color: #3498db; /* Bleu doux pour les liens */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #2980b9;
 }
 
 .analysis {
     margin-left: 20px;
-    border: 1px solid #ccc;
+    border: 2px solid #3498db; /* Bordure bleu doux pour l'analyse */
     overflow: auto;
 }
 
 h2 {
-    color: black;
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .description {
-    color: #007bff;
-    font-weight: bold;
+    color: #2980b9;
+    font-weight: 500;
+}
+
+.diagno-button, .export-button {
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .diagno-button {
-    background-color: #3862b7;
+    background-color: #2980b9; /* Bleu pour le bouton de diagnostic */
     color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-
 }
 
 .export-button {
-    background-color: #d64a55;
+    background-color: #9b59b6; /* Violet pour l'export */
     color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
 }
 
 .diagno-button:hover {
-    background-color: #497bde;
+    background-color: #1abc9c; /* Vert pour le survol */
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
 }
 
 .export-button:hover {
-    background-color: #e75727;
+    background-color: #3498db; /* Bleu pour le survol */
+    transform: scale(1.05);
 }
 
 .analysis-content {
-    padding: 10px;
+    padding: 15px;
+    background-color: #f1f1f1; /* Fond très léger pour la section analyse */
+    border-radius: 8px;
 }
 
 .alert {
-    color: #007bff;
+    color: #e74c3c;
+    font-weight: 600;
+    margin-top: 15px;
 }
