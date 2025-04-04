@@ -5,7 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Projet-Python-TSP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Projet-Python-TSP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiagnosticTool/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/all_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/all_data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3_old" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/routeur/ExampleparserBGP.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/routeur/infosRouteur.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -59,8 +66,8 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "doha",
-    "last_opened_file_path": "/Users/dohaab/Desktop/PROJET_PYTHON_1A/Projet-Python-TSP/DiagnosticTool/gestionnaire_users/templates/gestionnaire_users/registration",
+    "git-widget-placeholder": "47-translate-des-noms-et-des-commentaires-et-tout-ce-qui-est-français-en-anglais",
+    "last_opened_file_path": "/Users/dohaab/Desktop/PROJET_PYTHON_1A/Projet-Python-TSP/DiagnosticTool/staticfiles/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -72,13 +79,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DiagnosticTool/staticfiles/img" />
+      <recent name="$PROJECT_DIR$/DiagnosticTool/static/img" />
       <recent name="$PROJECT_DIR$/DiagnosticTool/gestionnaire_users/templates/gestionnaire_users/registration" />
       <recent name="$PROJECT_DIR$/DiagnosticTool/static" />
       <recent name="$PROJECT_DIR$/DiagnosticTool/core/views" />
-      <recent name="$PROJECT_DIR$/DiagnosticTool/core" />
-      <recent name="$PROJECT_DIR$/" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DiagnosticTool/staticfiles/img" />
       <recent name="$PROJECT_DIR$/DiagnosticTool/core/models" />
       <recent name="$PROJECT_DIR$/DiagnosticTool/core/views" />
       <recent name="$PROJECT_DIR$/DiagnosticTool" />
@@ -101,7 +109,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DiagnosticTool/manage.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="runserver" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -116,8 +124,10 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="DiagnosticTool.settings" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.12 (Projet-Python-TSP)" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -161,6 +171,12 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django Server.Projet-Python-TSP" />
+      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+      <item itemvalue="Docker.Dockerfile" />
+      <item itemvalue="Python.manage" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.manage" />
@@ -209,7 +225,15 @@
       <workItem from="1740510331817" duration="1063000" />
       <workItem from="1740596754843" duration="803000" />
       <workItem from="1740597586424" duration="2000" />
-      <workItem from="1740597595112" duration="5303000" />
+      <workItem from="1740597595112" duration="6270000" />
+      <workItem from="1740773451653" duration="2168000" />
+      <workItem from="1740829500973" duration="596000" />
+      <workItem from="1741437202787" duration="1126000" />
+      <workItem from="1743284856160" duration="2951000" />
+      <workItem from="1743445957193" duration="1079000" />
+      <workItem from="1743623626674" duration="3713000" />
+      <workItem from="1743627822887" duration="115000" />
+      <workItem from="1743795102015" duration="11561000" />
     </task>
     <servers />
   </component>
@@ -243,5 +267,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Projet_Python_TSP$manage.coverage" NAME="manage Coverage Results" MODIFIED="1743800726783" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DiagnosticTool" />
   </component>
 </project>
