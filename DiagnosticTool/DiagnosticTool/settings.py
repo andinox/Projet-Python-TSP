@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gestionnaire_users',
     'core',
-    'routeur'
 ]
 
 MIDDLEWARE = [
