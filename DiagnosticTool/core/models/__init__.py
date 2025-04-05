@@ -1,6 +1,8 @@
 from .diagnostic import Diagnostic
-from .routeur import Routeur
+from .router import Router
 from .scenario import Scenario
 from .interface import Interface
-
-__all__ = ["Diagnostic","Routeur","Scenario","Interface"]
+from .bgp import BGP
+from .arp import ARP
+from .icmp import ICMP
+__all__ = ["Diagnostic","Router","Scenario","Interface","BGP","ARP","ICMP"]
