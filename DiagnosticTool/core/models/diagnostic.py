@@ -1,14 +1,14 @@
 from django.db import models
-from core.models.routeur import Routeur
+from core.models.router import Router
 
 class Diagnostic(models.Model):
     """
-    ce modèle permettra de garder les traces du diagnostic effectué
+    This model keeps track of performed diagnostics.
     """
-    routeur = models.ForeignKey(Routeur, on_delete=models.CASCADE)
-    type_diagno = models.CharField(max_length=100)
-    resultat = models.TextField()
+    router = models.ForeignKey(Router, on_delete=models.CASCADE)
+    diagnosis_type = models.CharField(max_length=100)
+    result = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.routeur.name, self.type_diagno
+        return f"{self.router.name} - {self.diagnosis_type}"

@@ -1,4 +1,8 @@
 .ide*.pyc
 .venv/
-db.sqlite3a/
+venv/
+*migrations/
+db.sqlite3_old/
 __pycache__/
+db.sqlite3/
+
