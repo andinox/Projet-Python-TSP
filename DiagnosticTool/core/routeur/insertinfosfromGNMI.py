@@ -7,7 +7,7 @@ host = hosts[0]
 target = (host["ip_address"], host["port"])
 
 # Chemins OpenConfig à surveiller
-bgp_paths = [
+paths = [
     '/network-instances/network-instance[name=default]/protocols/protocol[name=BGP][identifier=BGP]/bgp/neighbors'
 ]
 
@@ -20,7 +20,7 @@ with gNMIclient(target=target, username=host["username"], password=host["passwor
                 'path': path,
                 'mode': 'on_change',
                 'sample_interval': 0 #nécessaire sur les Cisco-xr même si c'est on change
-            } for path in bgp_paths
+            } for path in paths
         ],
         'mode': 'stream',
         'encoding': 'json'
