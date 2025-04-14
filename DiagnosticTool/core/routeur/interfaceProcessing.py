@@ -5,20 +5,35 @@ def status_to_text(val):
 
 # PARSING - INTERFACES
 def parse_interface_from_json(json_data):
-    parsed_entries=[]
+    parsed_entries = []
 
     if "metrics" not in json_data:
         return parsed_entries
-    
+
+    # mapping interface_index -> ip_address
+    interface_ip_map = {}
+    for m in json_data["metrics"]:
+        if m.get("name") == "interface_ip":
+            f = m.get("fields", {})
+            interface_index = f.get("interface_index")
+            ip_address = f.get("ip_address")
+            if interface_index is not None:
+                interface_ip_map[interface_index] = ip_address
+
+    # interfaces general parsing
     for m in json_data["metrics"]:
         if m.get("name") == "interface_status":
-            f=m.get("fields", {})
-            
-            parsed_entry={
-                "idInterface":f.get("interface_index"),
-                "interface":f.get("interface_name", "inconnu"), # inconnu by default
-                "admin":status_to_text(f.get("ifAdminStatus", -1)), # -1 by default
-                "reachability":status_to_text(f.get("ifOperStatus",-1)) # -1 by default
+            f = m.get("fields", {})
+
+            interface_index = f.get("interface_index")
+            ip_address = interface_ip_map.get(interface_index, "0.0.0.0")
+
+            parsed_entry = {
+                "idInterface": interface_index,
+                "interface": f.get("interface_name", "inconnu"),
+                "admin": status_to_text(f.get("ifAdminStatus", -1)),
+                "reachability": status_to_text(f.get("ifOperStatus", -1)),
+                "interface_ip": ip_address
             }
 
             parsed_entries.append(parsed_entry)
@@ -37,14 +52,14 @@ def save_interfaces_to_db(entries):
             reachability = entry.get("reachability")
 
 
-            router_name_value = router_name(hostInfos) #retrieve router name from infosrouter.py
+            router_name_value = router_name(hostInfos)
             
             if not router_name_value:
                 print(f"[WARNING] Router name not found for interface '{interface_name}'")
                 continue
 
             try:
-                router = Router.objects.get(name=router_name_value) #create router object
+                router = Router.objects.get(name=router_name_value)
             except Router.DoesNotExist:
                 print(f"[ERROR] Router '{router_name_value}' not found in database. Skipping interface '{interface_name}'.")
                 continue
