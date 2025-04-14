@@ -3,6 +3,10 @@
 def status_to_text(val):
     return "up" if val==1 else "down"
 
+def log_debug(message):
+    with open('/tmp/debug_interfaces.log', 'a') as f:
+        f.write(message + "\n")
+        
 # PARSING - INTERFACES
 def parse_interface_from_json(json_data):
     parsed_entries = []
@@ -42,39 +46,35 @@ def parse_interface_from_json(json_data):
     
 # SAVE INTERFACES
 def save_interfaces_to_db(entries):
-    hostInfos = '/home/user/Projet-Python-TSP/DiagnosticTool/core/routeur/infosrouter.py'
+    log_debug(f"[DEBUG] Entries to save : {entries}")
+
+    router = Router.objects.first() # We select the only router (at the moment) in the database, and we link it with the interfaces
+    if not router:
+        log_debug("[ERROR] Aucun routeur trouvé en base. Interfaces non sauvegardées.")
+        return
 
     for entry in entries:
         try:
-            interface_index = entry.get("interface_index")
-            interface_name = entry.get("interface")
-            admin_status = entry.get("admin")
-            reachability = entry.get("reachability")
+            interface_index=entry.get("interface_index")
+            interface_name=entry.get("interface")
+            admin_status=entry.get("admin")
+            reachability=entry.get("reachability")
+            interface_ip=entry.get("interface_ip")
 
-
-            router_name_value = router_name(hostInfos)
-            
-            if not router_name_value:
-                print(f"[WARNING] Router name not found for interface '{interface_name}'")
-                continue
-
-            try:
-                router = Router.objects.get(name=router_name_value)
-            except Router.DoesNotExist:
-                print(f"[ERROR] Router '{router_name_value}' not found in database. Skipping interface '{interface_name}'.")
-                continue
-
+            # Saving interface in DB using Django model
             interface = Interface(
                 router=router,
                 interface_name=interface_name,
                 admin_status=admin_status,
                 reachability=reachability,
-                timestamp=now()
+                timestamp=now(),
+                ip_address=interface_ip
             )
 
             interface.save()
-            print(f"[INFO] Interface '{interface_name}' saved successfully for router '{router_name_value}'")
+            log_debug(f"[INFO] Interface '{interface_name}' avec IP '{interface_ip}' enregistrée.")
 
         except Exception as e:
-            print(f"[ERROR] Unexpected error while saving interface '{entry.get('interface', 'Unknown')}': {e}")
+            log_debug(f"[ERROR] Erreur pendant l'enregistrement de l'interface '{interface_name}': {e}")
+
 
