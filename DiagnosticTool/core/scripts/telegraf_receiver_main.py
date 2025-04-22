@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import json
+import django
+
+# Set up access to the Django environment by adding the project to PYTHONPATH
+# and specifying the settings module
+sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool")
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DiagnosticTool.settings')
+django.setup()
+
+
+# functions importation
+from core.routeur.interfaceProcessing import save_interfaces_to_db, parse_interface_from_json
+from core.routeur.traitementARP import save_arp_entries_to_db, parse_arp_from_json
+from core.routeur.general_functions import log_debug
+
+def main():
+    lines = list(sys.stdin)
+
+    for line in lines:
+        try:
+
+            data = json.loads(line)
+
+            arp_entries = parse_arp_from_json(data)
+            interface_entries = parse_interface_from_json(data)
+
+            save_interfaces_to_db(interface_entries)
+            save_arp_entries_to_db(arp_entries)
+
+        except json.JSONDecodeError as e:
+            print(f"[ERREUR JSON] : {e}")
+        except Exception as e:
+            import traceback
+            print(f"[ERREUR] : {e}")
+            traceback.print_exc()
+
+if __name__ == "__main__":
+    main()
+
+
