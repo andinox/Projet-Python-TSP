@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+
+from core.models import Interface, ARP
+from core.routeur.general_functions import log_debug
+
 def parse_arp_from_json(json_data):
     parsed_entries = []
 
@@ -13,23 +18,24 @@ def parse_arp_from_json(json_data):
                 "idinterface": tags.get("ipNetToMediaIfIndex")
             }
             parsed_entries.append(parsed_entry)
-
+    
     return parsed_entries
 
-
-
-def save_arp_entries_to_db(entries):
+def save_arp_entries_to_db(arp_entries):
+    log_debug(f"[DEBUG] Entries to save : {arp_entries}")
     for entry in arp_entries:
         try:
-            # link with the interface based on the idinterface
-            interface = Interface.objects.get(interface_index=entry["idinterface"])
-
-            ARPEntry.save(
+            interface = Interface.objects.get(idinterface=entry["idinterface"])
+            if not interface:
+                log_debug("[ERROR] No interface found in base.")
+                continue 
+            
+            arp = ARP(
                 ip_arp=entry["ip_arp"],
                 idinterface=interface
             )
+            arp.save()
+            log_debug(f"[DEBUG] ARP saved with IP {entry['ip_arp']} for interface {entry['idinterface']}")
 
-        except Interface.DoesNotExist:
-            print(f"[WARN] Interface avec index {entry['idinterface']} introuvable.")
         except Exception as e:
-            print(f"[ERREUR] Insertion ARP : {e}")
+            log_debug(f"[ERREUR] Insertion ARP : {e}")
