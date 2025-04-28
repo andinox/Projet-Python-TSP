@@ -8,7 +8,7 @@ from core.models.bgp import BGP
 from core.models.icmp import ICMP
 
 class RouterAdmin(admin.ModelAdmin):
-    list_display=("name","next_hop","as_bgp","user")
+    list_display=("name","next_hop","user")
 
 class DiagnosticAdmin(admin.ModelAdmin):
     list_display=("router","diagnosis_type","result","date",)

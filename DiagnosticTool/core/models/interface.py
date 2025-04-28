@@ -4,6 +4,7 @@ class Interface(models.Model):
     """
     This model records the status of interfaces for a router
     """
+    idinterface = models.IntegerField(primary_key=True)
     router = models.ForeignKey(Router, on_delete=models.CASCADE)
     interface_name = models.CharField(max_length=100)
     admin_status = models.CharField(max_length=10)
