@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import ssl
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -135,20 +136,52 @@ STATICFILES_DIRS = [
 # à revoir après pour éviter qu'on puisse accéder aux infos de la page home
 # même si on est en mode déconnecté.
 LOGIN_URL ='login_page'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'login_page'
 
 #config routeur compte
 ROUTEUR_USERNAME ='admin'
 ROUTEUR_PWD = 'dkSDwa80f13faXcwxzj'
 
+
+#password hashers
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "django.contrib.auth.hashers.ScryptPasswordHasher",
+]
+
 #email connexion paramètres
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.yahoo.com"  #serveur SMTP de notre fournisseur
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
+"""EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "mail.infomaniak.com"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "expert.diagtool@ik.me"
+EMAIL_HOST_PASSWORD = "ProjetPython2025!" # To Do : à variabiliser
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+"""
+from django.core.mail.backends.smtp import EmailBackend
+import certifi
+
+# Créer un contexte SSL qui ignore les vérifications du certificat
+context = ssl.create_default_context(cafile=certifi.where())
+context.check_hostname = False
+context.verify_mode = ssl.CERT_NONE
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "mail.infomaniak.com"
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_PORT = 465
+EMAIL_HOST_USER = "expert.diagtool@ik.me"
+EMAIL_HOST_PASSWORD = "ProjetPython2025!"
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Ajouter le contexte SSL personnalisé au backend
+EMAIL_SSL_CONTEXT = context
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
