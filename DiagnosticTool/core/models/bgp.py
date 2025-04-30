@@ -16,6 +16,16 @@ class BGP(models.Model):
     up_down_status = models.CharField(max_length=4, choices=STATUS_CHOICES, verbose_name="BGP Status")
     time_last_change = models.CharField(max_length=100, verbose_name="Time Since Last Status Change")
 
+    class Meta:
+        abstract = True
+
     def __str__(self):
         return f"{self.neighbor_ip} - ASN {self.asn}"
+
+
+class BGP_CONF(BGP):
+    pass
+
+class BGP_TEST(BGP):
+    pass
 
