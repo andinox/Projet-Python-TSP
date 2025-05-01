@@ -11,11 +11,13 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import ssl
+import ssl,os,environ
+
+from django.core.mail import send_mail
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -136,7 +138,8 @@ STATICFILES_DIRS = [
 # à revoir après pour éviter qu'on puisse accéder aux infos de la page home
 # même si on est en mode déconnecté.
 LOGIN_URL ='login_page'
-LOGIN_REDIRECT_URL = 'login_page'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login_page'
 
 #config routeur compte
 ROUTEUR_USERNAME ='admin'
@@ -153,35 +156,17 @@ PASSWORD_HASHERS = [
 ]
 
 #email connexion paramètres
-"""EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "mail.infomaniak.com"
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "expert.diagtool@ik.me"
-EMAIL_HOST_PASSWORD = "ProjetPython2025!" # To Do : à variabiliser
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-"""
-from django.core.mail.backends.smtp import EmailBackend
-import certifi
 
-# Créer un contexte SSL qui ignore les vérifications du certificat
-context = ssl.create_default_context(cafile=certifi.where())
-context.check_hostname = False
-context.verify_mode = ssl.CERT_NONE
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "mail.infomaniak.com"
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "expert.diagtool@ik.me"
-EMAIL_HOST_PASSWORD = "ProjetPython2025!"
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-# Ajouter le contexte SSL personnalisé au backend
-EMAIL_SSL_CONTEXT = context
-
+EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "apikey"  #here always values is  "apikey" for SendGrid
+EMAIL_HOST_PASSWORD =env("EMAIL_HOST_PASSWORD") #API key of SendGrid
+DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER_DEFAULT')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
