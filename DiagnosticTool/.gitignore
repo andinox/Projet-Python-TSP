@@ -6,3 +6,4 @@ db.sqlite3_old
 __pycache__/
 db.sqlite3
 media/avatars/
+.env
