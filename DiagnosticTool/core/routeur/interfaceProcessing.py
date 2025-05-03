@@ -5,10 +5,10 @@ import sys
 import os
 import django
 from django.utils.timezone import now
-from core.models import Interface, Router, ARP
+from core.models import Interface_CONF, Router, ARP_CONF
 
-# Importation of Router & Interface models
-from core.models import Router, Interface
+# Importation of Router & Interface_CONF models
+from core.models import Router, Interface_CONF
 from django.utils.timezone import now
 from core.routeur.general_functions import log_debug
 
@@ -83,7 +83,7 @@ def save_interfaces_to_db(entries):
             }
 
             try:
-                interface = Interface.objects.get(idinterface=interface_index)
+                interface = Interface_CONF.objects.get(idinterface=interface_index)
                 updated = False
 
                 # comparing fields between entries (last and new one) - except timestamp - if there is a change : the interface is updated
@@ -99,9 +99,9 @@ def save_interfaces_to_db(entries):
                 else:
                     log_debug(f"[SKIP] Interface '{interface.interface_name}' (id {interface.idinterface}) not changed.")
 
-            except Interface.DoesNotExist:
+            except Interface_CONF.DoesNotExist:
 
-                Interface.objects.update_or_create(
+                Interface_CONF.objects.update_or_create(
                     idinterface=interface_index,
                     defaults={**defaults, "timestamp": now()}
                 )

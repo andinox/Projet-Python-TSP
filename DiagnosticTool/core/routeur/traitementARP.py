@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from core.models import Interface, ARP
+from core.models import Interface_CONF, ARP_CONF
 from core.routeur.general_functions import log_debug
 
 def parse_arp_from_json(json_data):
@@ -25,12 +25,12 @@ def save_arp_entries_to_db(arp_entries):
     log_debug(f"[DEBUG] Entries to save : {arp_entries}")
     for entry in arp_entries:
         try:
-            interface = Interface.objects.get(idinterface=entry["idinterface"])
+            interface = Interface_CONF.objects.get(idinterface=entry["idinterface"])
             if not interface:
                 log_debug("[ERROR] No interface found in base.")
-                continue 
+                continue
             
-            arp = ARP(
+            arp = ARP_CONF(
                 ip_arp=entry["ip_arp"],
                 idinterface=interface
             )
