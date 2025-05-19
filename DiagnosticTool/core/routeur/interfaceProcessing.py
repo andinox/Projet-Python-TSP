@@ -5,7 +5,7 @@ import sys
 import os
 import django
 from django.utils.timezone import now
-from core.models import Interface_CONF, Router, ARP_CONF
+from core.models import  Router, Interface_CONF, Interface_TEST, ARP_CONF
 
 # Importation of Router & Interface_CONF models
 from core.models import Router, Interface_CONF
@@ -58,19 +58,22 @@ def parse_interface_from_json(json_data):
 
   
 # SAVE INTERFACES
-def save_interfaces_to_db(entries):
-    log_debug(f"[DEBUG] Entries to save : {entries}")
 
+def save_interfaces_to_db(entries):
+    # retrieving router informations
     router = Router.objects.first()
     if not router:
         log_debug("[ERROR] No router found")
         return
 
+    # retrieving interface informations
     for entry in entries:
         try:
             interface_index = entry.get("idinterface")
+
+            # no interfaces found
             if interface_index is None:
-                log_debug(f"[SKIP] No idinterface (interface_index) provided in entry: {entry}")
+                log_debug(f"[SKIP] No idinterface provided in entry: {entry}")
                 continue
 
             # retrieving parsed entries
@@ -83,12 +86,15 @@ def save_interfaces_to_db(entries):
             }
 
             try:
+                # Try to get the current interface in CONF
                 interface = Interface_CONF.objects.get(idinterface=interface_index)
                 updated = False
 
-                # comparing fields between entries (last and new one) - except timestamp - if there is a change : the interface is updated
+                # comparing fields between entries (last and new one) - except timestamp
+                # if there is a change : the interface is updated
                 for field, value in defaults.items():
                     if getattr(interface, field) != value:
+                        log_debug(f"[DEBUG] Field changed: {field} | Old: {getattr(interface, field)} | New: {value}")
                         setattr(interface, field, value)
                         updated = True
 
@@ -96,16 +102,43 @@ def save_interfaces_to_db(entries):
                     interface.timestamp = now()
                     interface.save()
                     log_debug(f"[UPDATE] Interface '{interface.interface_name}' updated (id {interface.idinterface}).")
+
+                    # insert into TEST only if updated
+                    test_entry = Interface_TEST.objects.create(
+                        router=router,
+                        interface_name=defaults["interface_name"],
+                        admin_status=defaults["admin_status"],
+                        reachability=defaults["reachability"],
+                        ip_address=defaults["ip_address"],
+                        timestamp=now()
+                    )
+                    log_debug(f"[HISTORY] Interface_TEST snapshot saved (id={test_entry.id}) for '{defaults['interface_name']}' (id {interface_index}).")
                 else:
                     log_debug(f"[SKIP] Interface '{interface.interface_name}' (id {interface.idinterface}) not changed.")
 
             except Interface_CONF.DoesNotExist:
-
-                Interface_CONF.objects.update_or_create(
+                # first time: create the interface
+                new_interface = Interface_CONF.objects.create(
                     idinterface=interface_index,
-                    defaults={**defaults, "timestamp": now()}
+                    interface_name=defaults["interface_name"],
+                    admin_status=defaults["admin_status"],
+                    reachability=defaults["reachability"],
+                    ip_address=defaults["ip_address"],
+                    router=router,
+                    timestamp=now()
                 )
-                log_debug(f"[CREATE] Interface '{defaults['interface_name']}' created (id {interface_index}).")
+                log_debug(f"[CREATE] Interface '{new_interface.interface_name}' created (id {interface_index}).")
+
+                # also insert into TEST the first time
+                test_entry = Interface_TEST.objects.create(
+                    router=router,
+                    interface_name=defaults["interface_name"],
+                    admin_status=defaults["admin_status"],
+                    reachability=defaults["reachability"],
+                    ip_address=defaults["ip_address"],
+                    timestamp=now()
+                )
+                log_debug(f"[HISTORY] Interface_TEST created for NEW interface (id={test_entry.id}) '{defaults['interface_name']}' (id {interface_index}).")
 
         except Exception as e:
             log_debug(f"[ERROR] Failed to process interface (id {entry.get('idinterface')}): {e}")
