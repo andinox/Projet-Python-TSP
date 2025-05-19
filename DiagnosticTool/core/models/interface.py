@@ -21,4 +21,4 @@ class Interface_CONF(Interface):
     idinterface = models.IntegerField(primary_key=True)
 
 class Interface_TEST(Interface):
-    pass
+    idinterface = models.IntegerField()
