@@ -56,89 +56,62 @@ def parse_interface_from_json(json_data):
 
     return parsed_entries
 
-  
 # SAVE INTERFACES
 
 def save_interfaces_to_db(entries):
-    # retrieving router informations
+    # retrieving router information
     router = Router.objects.first()
     if not router:
         log_debug("[ERROR] No router found")
         return
 
-    # retrieving interface informations
     for entry in entries:
         try:
             interface_index = entry.get("idinterface")
-
-            # no interfaces found
             if interface_index is None:
                 log_debug(f"[SKIP] No idinterface provided in entry: {entry}")
                 continue
 
-            # retrieving parsed entries
-            defaults = {
+            # preparing common interface data
+            interface_data = {
+                "idinterface": interface_index,
+                "router": router,
                 "interface_name": entry.get("interface"),
                 "admin_status": entry.get("admin"),
                 "reachability": entry.get("reachability"),
                 "ip_address": entry.get("interface_ip"),
-                "router": router,
+                "timestamp": now()
             }
 
-            try:
-                # Try to get the current interface in CONF
-                interface = Interface_CONF.objects.get(idinterface=interface_index)
-                updated = False
+            interface_conf = Interface_CONF.objects.filter(idinterface=interface_index).first()
 
-                # comparing fields between entries (last and new one) - except timestamp
-                # if there is a change : the interface is updated
-                for field, value in defaults.items():
-                    if getattr(interface, field) != value:
-                        log_debug(f"[DEBUG] Field changed: {field} | Old: {getattr(interface, field)} | New: {value}")
-                        setattr(interface, field, value)
-                        updated = True
+            if not interface_conf:
+                # first time: create in Interface_CONF and Interface_TEST
+                Interface_CONF.objects.create(**interface_data)
+                Interface_TEST.objects.create(**interface_data)
+                log_debug(f"[CREATE] Interface_CONF & Interface_TEST created for '{interface_data['interface_name']}' (id {interface_index}).")
+            else:
+                # get last recorded state from Interface_TEST
+                last_test = Interface_TEST.objects.filter(idinterface=interface_index).order_by('-timestamp').first()
 
-                if updated:
-                    interface.timestamp = now()
-                    interface.save()
-                    log_debug(f"[UPDATE] Interface '{interface.interface_name}' updated (id {interface.idinterface}).")
+                # if no test entry exists yet (rare case)
+                if not last_test:
+                    Interface_TEST.objects.create(**interface_data)
+                    log_debug(f"[HISTORY] No previous Interface_TEST found, created new for '{interface_data['interface_name']}' (id {interface_index}).")
+                    continue
 
-                    # insert into TEST only if updated
-                    test_entry = Interface_TEST.objects.create(
-                        router=router,
-                        interface_name=defaults["interface_name"],
-                        admin_status=defaults["admin_status"],
-                        reachability=defaults["reachability"],
-                        ip_address=defaults["ip_address"],
-                        timestamp=now()
-                    )
-                    log_debug(f"[HISTORY] Interface_TEST snapshot saved (id={test_entry.id}) for '{defaults['interface_name']}' (id {interface_index}).")
+                # check for actual change
+                changed = (
+                    (last_test.admin_status or "").strip().lower() != (interface_data["admin_status"] or "").strip().lower() or
+                    (last_test.reachability or "").strip().lower() != (interface_data["reachability"] or "").strip().lower() or
+                    (last_test.ip_address or "").strip() != (interface_data["ip_address"] or "").strip()
+                )
+
+                if changed:
+                    Interface_TEST.objects.create(**interface_data)
+                    log_debug(f"[CHANGE] Interface_TEST created due to change from last TEST for '{interface_data['interface_name']}' (id {interface_index}).")
                 else:
-                    log_debug(f"[SKIP] Interface '{interface.interface_name}' (id {interface.idinterface}) not changed.")
-
-            except Interface_CONF.DoesNotExist:
-                # first time: create the interface
-                new_interface = Interface_CONF.objects.create(
-                    idinterface=interface_index,
-                    interface_name=defaults["interface_name"],
-                    admin_status=defaults["admin_status"],
-                    reachability=defaults["reachability"],
-                    ip_address=defaults["ip_address"],
-                    router=router,
-                    timestamp=now()
-                )
-                log_debug(f"[CREATE] Interface '{new_interface.interface_name}' created (id {interface_index}).")
-
-                # also insert into TEST the first time
-                test_entry = Interface_TEST.objects.create(
-                    router=router,
-                    interface_name=defaults["interface_name"],
-                    admin_status=defaults["admin_status"],
-                    reachability=defaults["reachability"],
-                    ip_address=defaults["ip_address"],
-                    timestamp=now()
-                )
-                log_debug(f"[HISTORY] Interface_TEST created for NEW interface (id={test_entry.id}) '{defaults['interface_name']}' (id {interface_index}).")
+                    log_debug(f"[NO CHANGE] No changes detected compared to last Interface_TEST for '{interface_data['interface_name']}' (id {interface_index}).")
 
         except Exception as e:
             log_debug(f"[ERROR] Failed to process interface (id {entry.get('idinterface')}): {e}")
