@@ -19,7 +19,7 @@ def ping(ip):
 
 def traceroute(destination):
     try:
-        output = sbp.check_output(['traceroute', '-n', '-m', '20', destination], stderr=sbp.STDOUT)
+        output = sbp.check_output(['traceroute', '-n', '-m', '20', destination], stderr=sbp.STDOUT, timeout=10)
         lines = output.decode().splitlines()
 
         hops = []
@@ -35,4 +35,3 @@ def traceroute(destination):
             return [], None
     except sbp.CalledProcessError as e:
         return [], None
-
