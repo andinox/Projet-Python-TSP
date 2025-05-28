@@ -24,7 +24,7 @@ class InterfaceConfAdmin(admin.ModelAdmin):
     list_filter = ("admin_status", "reachability")
 
 class InterfaceTestAdmin(admin.ModelAdmin):
-    list_display = ("interface_name", "router", "admin_status", "reachability", "ip_address", "timestamp")
+    list_display = ("interface_name", "router", "admin_status", "reachability", "ip_address", "subnet_mask", "timestamp")
     search_fields = ("interface_name", "ip_address")
     list_filter = ("admin_status", "reachability")    
 
