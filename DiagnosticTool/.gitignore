@@ -2,9 +2,10 @@
 .venv/
 venv/
 *migrations/
-db.sqlite3_old/
+db.sqlite3_old
 __pycache__/
-db.sqlite3/
+db.sqlite3
 media/avatars/
 .idea/
-
+../.idea/
+.env
