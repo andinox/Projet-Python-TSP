@@ -36,7 +36,7 @@ class ScenarioDetailView(DetailView):
         #we take the scenario object matching with the url
         scenario = self.get_object()
 
-        #here we call the class correspinding to the requested scenario &
+        #here we call the class corresponding to the requested scenario &
         #run the diagnostic algo adapted according to the slug
         if scenario.slug =='perte-de-connexion-vers-internet':
             dgc_result = InternetConnectionLossDiagnostic(scenario) #dgc = diagnostic
@@ -49,3 +49,9 @@ class ScenarioDetailView(DetailView):
 
 
 
+"""
+
+
+
+
+"""

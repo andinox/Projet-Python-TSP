@@ -1,40 +1,54 @@
 {% extends 'DiagnosticTool/base.html' %}
 
-{% block title %}{{ scenario.name }}{% endblock %}
-
-{% block header %}
-    <a href="{% url 'home' %}" class="btn btn-secondary">← Retour à l'accueil</a>
+{% block title %}
+    {{ scenario.name }}
 {% endblock %}
 
+{% block header %}
+    <a href="{% url 'home' %}" class="btn btn-secondary">
+        ← Retour à l'accueil
+    </a>
+{% endblock %}
 {% block content %}
 <div class="container mt-4">
 
     <!-- Bloc scénario -->
-    <section class="card mb-4 p-4 shadow-sm">
+<section class="card mb-5 p-4 shadow-sm" style="margin-bottom: 5rem;">
         <h2 class="card-title">🧪 Scénario : {{ scenario.name }}</h2>
         <p class="text-muted">{{ scenario }}</p>
         <p>{{ scenario.description }}</p>
 
         <form method="post">
             {% csrf_token %}
-            <button type="submit" class="btn btn-success mt-3">Lancer le diagnostic</button>
+            <button type="submit" class="btn btn-success mt-3">
+                Lancer le diagnostic
+            </button>
         </form>
     </section>
 
     <!-- Bloc analyse -->
-    <section class="card p-4 shadow-sm">
+<section class="card mb-5 p-4 shadow-sm">
         <h2 class="card-title">🔍 Analyse</h2>
         <div class="analysis-content mt-3">
+
             {% if diagnostic_result %}
-                <p><strong>Résultat :</strong> {{ diagnostic_result }}</p>
+                <p>
+                    <strong>Résultat :</strong> {{ diagnostic_result }}
+                </p>
             {% else %}
-                <p><strong class="text-danger">⚠️ Alerte :</strong> Résultat du diagnostic affiché ici après exécution.</p>
+                <p>
+                    <strong class="text-danger">⚠️ Alerte :</strong>
+                    Résultat du diagnostic affiché ici après exécution.
+                </p>
             {% endif %}
 
             <form method="post" action="">
                 {% csrf_token %}
-                <button class="btn btn-outline-primary mt-3">📄 Exporter le rapport en PDF</button>
+                <button class="btn btn-outline-primary mt-3">
+                    📄 Exporter le rapport en PDF
+                </button>
             </form>
+
         </div>
     </section>
 
