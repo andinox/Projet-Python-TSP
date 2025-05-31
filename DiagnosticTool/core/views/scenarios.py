@@ -1,6 +1,9 @@
 from django.views.generic import DetailView
 from core.models.scenario import Scenario
 from core.diagnostic_scenarios.internet_connection_loss import InternetConnectionLossDiagnostic
+import logging
+logger = logging.getLogger(__name__)
+
 
 class ScenarioDetailView(DetailView):
     """
@@ -39,8 +42,11 @@ class ScenarioDetailView(DetailView):
         #here we call the class corresponding to the requested scenario &
         #run the diagnostic algo adapted according to the slug
         if scenario.slug =='perte-de-connexion-vers-internet':
+	    logger.info("Début du diagnostic perte de connexion vers internet")
             dgc_result = InternetConnectionLossDiagnostic(scenario) #dgc = diagnostic
+	    logger.info("info dgc_result:{}".format(dgc_result))
             self.diagnostic_result = dgc_result.run()
+
         elif scenario.slug =='...':
             #TODO do same for the others scenarios &
             # need to call the implemented function
