@@ -5,14 +5,13 @@ class InternetConnectionLossDiagnostic(Diagnostic):
 
     def get_next_hop(self):
         """
-        TODO: check of how getting next hop (I think we need to use next_hop of model Router that's why I imported it here)
         Returns the next hop from the router
         """
-        pass
+        return self.router.next_hop
 
     def run(self):
         """
-        TODO: algorithm to test + using get_next_hop
+        Runs the tests for internet connection loss by using the decision tree
         """
         report = []
 
@@ -33,13 +32,17 @@ class InternetConnectionLossDiagnostic(Diagnostic):
             else:
                 #traceroute towards 8.8.8.8
                 report.append("ping vers 8.8.8.8 échoué; exécution d’un traceroute...")
-                hops, dernier_hop = traceroute("8.8.8.8")
-                if dernier_hop:
+                hops, last_hop = traceroute("8.8.8.8")
+                if last_hop:
                     report.append(f"OK traceroute réussi; dernier hop atteint : {dernier_hop}")
-                    report.append("problème de connectivité détecté, analyse du dernier hop nécessaire")
-                    report.append("ticket pour investigation")
-                    #TODO: use function get_next_hop ?
-
+		    next_hop = self.get_next_hop()
+		    if next_hop:
+		    	report.append("problème de connectivité détecté, analyse du dernier hop nécessaire")
+                    	report.append("ticket pour investigation")
+			if ping(next_hop):
+				report.append(f"OK ping vers next_hop {next_hop} est réussi !")
+			else:
+				report.append(f"NOK ping vers next_hop {next_hop} a échoué ...")
                 else:
                     report.append("NOK traceroute échoué;  impossible de déterminer le dernier hop")
                     report.append("ticket pour investigation approfondie")
