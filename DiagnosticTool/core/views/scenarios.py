@@ -45,9 +45,14 @@ class ScenarioDetailView(DetailView):
         # run the diagnostic algo adapted according to the slug
         if scenario.slug == 'perte-de-connexion-vers-internet':
             logger.info("Début du diagnostic perte de connexion vers internet")
-            dgc_result = InternetConnectionLossDiagnostic(scenario)  # dgc = diagnostic
+	    diagnostic = Diagnostic.objects.create(router = Router.objects.get(),diagnosis_type = "Perte de connexion vers internet", result = "") #here we only have one router that's why I only do a get
+
+            dgc_result = InternetConnectionLossDiagnostic(diagnostic)  # dgc = diagnostic
             logger.info("info dgc_result:{}".format(dgc_result))
-            self.diagnostic_result = dgc_result.run()
+            diagnostic_result = dgc_result.run()
+	    diagnostic.result = diagnostic_result
+	    diagnostic.save() #we save in DB the result of the diagnostic
+	    self.diagnostic_result = diagnostic_result
 
         elif scenario.slug == '...':
             # TODO do same for the others scenarios &
