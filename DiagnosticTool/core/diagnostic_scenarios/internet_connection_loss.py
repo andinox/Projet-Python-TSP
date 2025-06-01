@@ -5,7 +5,7 @@ from core.scripts.basic_functions import ping, traceroute
 class InternetConnectionLossDiagnostic:
     
     def __init__(self, diagnostic:Diagnostic):
-        self.diagnotic = diagnostic
+        self.diagnostic = diagnostic
 
     def get_next_hop(self):
         """
