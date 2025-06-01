@@ -2,13 +2,16 @@ from core.models import Diagnostic, Router
 from core.scripts.basic_functions import ping, traceroute
 
 
-class InternetConnectionLossDiagnostic(Diagnostic):
+class InternetConnectionLossDiagnostic:
+    
+    def __init__(self, diagnostic:Diagnostic):
+        self.diagnotic = diagnostic
 
     def get_next_hop(self):
         """
         Returns the next hop from the router
         """
-        return self.router.next_hop
+        return self.diagnostic.router.next_hop
 
     def run(self):
         """
