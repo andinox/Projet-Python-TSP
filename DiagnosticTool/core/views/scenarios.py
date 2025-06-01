@@ -57,7 +57,7 @@ class ScenarioDetailView(DetailView):
             diagnostic.result = diagnostic_result
             diagnostic.save()  # we save in DB the result of the diagnostic
             self.diagnostic_result = diagnostic_result
-
+       	    self.object = scenario
         elif scenario.slug == '...':
             # TODO do same for the others scenarios &
             # need to call the implemented function
