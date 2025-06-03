@@ -9,7 +9,7 @@ def ping(ip):
     else return False
     """
     try:
-        sbp.check_output(['sudo','ping','-v' ,'-c', '1', ip], timeout=3)
+        sbp.check_output(['ping','-v' ,'-c', '1', ip], timeout=3)
         return True
     except Exception:
         return False
