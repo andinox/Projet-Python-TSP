@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gestionnaire_users',
     'core',
-    'routeur'
 ]
 
 MIDDLEWARE = [
@@ -151,3 +150,5 @@ EMAIL_HOST_USER = ""
 EMAIL_HOST_PASSWORD = ""
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'

@@ -1,10 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #c6d5ed; /* color5 */
     margin: 0;
     padding: 0;
 }
-
 
 .back-button {
     background: none;
@@ -12,8 +11,8 @@ body {
     font-size: 20px;
     cursor: pointer;
     margin-left: 15px;
+    color: #1b203c; /* color2 */
 }
-
 
 .container {
     display: flex;
@@ -23,47 +22,35 @@ body {
     margin: auto;
 }
 
-.back-button {
-    color: #ffffff;
-}
-
 .scenario, .analysis {
-    background: white;
+    background: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(18, 9, 7, 0.1); /* version color1 */
     flex: 1;
 }
 
 a {
-    color: #ffffff;
+    color: #4f5891; /* color3 */
 }
 
 .analysis {
     margin-left: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid #4f5891; /* color3 */
     overflow: auto;
 }
 
 h2 {
-    color: black;
+    color: #1b203c; /* color2 */
 }
 
 .description {
-    color: #007bff;
+    color: #4f5891; /* color3 */
     font-weight: bold;
 }
 
-.placeholder-text {
-    height: 20px;
-    background-color: #dce7ff;
-    margin: 10px 0;
-    border-radius: 5px;
-    width: 80%;
-}
-
 .diagno-button {
-    background-color: #3862b7;
+    background-color: #4f5891; /* color3 */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -71,11 +58,10 @@ h2 {
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
-
 }
 
 .export-button {
-    background-color: #d64a55;
+    background-color: #8b9de8; /* color4 */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -86,11 +72,11 @@ h2 {
 }
 
 .diagno-button:hover {
-    background-color: #497bde;
+    background-color: #1b203c; /* color2 */
 }
 
 .export-button:hover {
-    background-color: #e75727;
+    background-color: #4f5891; /* color3 */
 }
 
 .analysis-content {
@@ -98,5 +84,5 @@ h2 {
 }
 
 .alert {
-    color: #007bff;
+    color: #4f5891; /* color3 */
 }

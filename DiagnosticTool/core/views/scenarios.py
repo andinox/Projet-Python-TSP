@@ -1,11 +1,17 @@
-from django.shortcuts import render, redirect
+from django.views.generic import DetailView
 from core.models.scenario import Scenario
 
-def scenario_details(request,slug):
+class ScenarioDetailView(DetailView):
     """
-    fonction qui va afficher les détails d'un scénario donné
+    This class-based view displays the details of a given scenario
     """
-    scenario = Scenario.objects.get(slug=slug)
-    return render(request, 'core/scenario_details.html', {'scenario': scenario})
+    model = Scenario
+    template_name = "core/scenario_details.html"
+    context_object_name = "scenarios"
+    slug_url_kwarg = 'slug'  # The URL parameter is 'slug'
 
-
+    def get_object(self):
+        """
+        This method returns the object corresponding to the given slug
+        """
+        return Scenario.objects.get(slug=self.kwargs['slug'])

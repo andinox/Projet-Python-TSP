@@ -1,5 +1,10 @@
 .ide*.pyc
 .venv/
-db.sqlite3a/
+venv/
+*migrations/
+db.sqlite3_old
 __pycache__/
-/home/user/Projet-Python-TSP/DiagnosticTool/logs/telegraf_receiver.log
+db.sqlite3
+media/avatars/
+.idea/
+testteelegraf.py.*

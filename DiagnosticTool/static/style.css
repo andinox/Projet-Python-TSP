@@ -1,8 +1,8 @@
 header {
-    background: linear-gradient(45deg, #f8f9fa, #e9ecef); /* Fond léger */
+    background: linear-gradient(45deg, #c6d5ed, #8b9de8); /* Fond doux avec color5 et color4 */
     padding: 15px 0;
-    border-bottom: 2px solid #d1d1d1; /* Ligne de séparation */
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    border-bottom: 2px solid #4f5891; /* color3 */
+    box-shadow: 0px 2px 10px rgba(18, 9, 7, 0.1); /* ombre douce version color1 */
 }
 
 header .container {
