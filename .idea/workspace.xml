@@ -5,23 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/routeur/insertBGPfromGNMI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/scripts/telegraf_receiver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/scripts/telegraf_receiver.py.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/scripts/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/telegraf/telegraf.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/diagnostic_scenarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/diagnostic_scenarios/internet_connection_loss.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/management/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/management/commands/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/management/commands/diagnostic_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/routeur/ARPProcessing.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/routeur/general_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/LANStatus.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/basic_functions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/checkInterfaceDifferences.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/intStatus.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/telegraf_receiver_main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/telegraf/telegraf.d/snmp.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/fixtures/all_data_2025_06_01.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagnosticTool/fixtures/model_28_04_2025.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/.env" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/routeur.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/routeur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/routeur/ExampleparserBGP.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/routeur/ExampleparserBGP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/arp.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/arp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/bgp.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/bgp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/icmp.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/icmp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/routeur/interfaceProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/routeur/interfaceProcessing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/routeur/traitementARP.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/scripts/telegraf_receiver.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/telegraf/telegraf.conf" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/telegraf/telegraf.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/templates/core/scenario_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/templates/core/scenario_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/views/scenarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/views/scenarios.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3_old" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagnosticTool/templates/DiagnosticTool/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/templates/DiagnosticTool/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
@@ -73,8 +99,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "Merging 49-refaire-bdd-sqlite",
+    "git-widget-placeholder": "Merging 40-password-reset-email",
     "last_opened_file_path": "/Users/dohaab/Desktop/PROJET_PYTHON_1A/Projet-Python-TSP/DiagnosticTool/staticfiles/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -243,6 +270,12 @@
       <workItem from="1743627822887" duration="115000" />
       <workItem from="1743795102015" duration="11694000" />
       <workItem from="1743854826474" duration="624000" />
+      <workItem from="1746732102945" duration="1139000" />
+      <workItem from="1747850465782" duration="3651000" />
+      <workItem from="1748081939983" duration="1998000" />
+      <workItem from="1748098556330" duration="276000" />
+      <workItem from="1748099272902" duration="826000" />
+      <workItem from="1748107011423" duration="7577000" />
     </task>
     <servers />
   </component>

@@ -12,5 +12,8 @@ class ICMP(models.Model):
     destination = models.GenericIPAddressField()
     icmp_up_down_status = models.CharField(max_length=4, choices=STATUS_CHOICES, verbose_name="ICMP Status")
     date_test= models.DateTimeField(auto_now_add=True)
+
     def __str__(self):
         return f"{self.destination} - {self.icmp_up_down_status} -{self.date_test} "
+
+
