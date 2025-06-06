@@ -4,44 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/diagnostic_scenarios/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/diagnostic_scenarios/internet_connection_loss.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/management/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/management/commands/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/management/commands/diagnostic_test.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/routeur/ARPProcessing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/routeur/general_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/LANStatus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/basic_functions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/checkInterfaceDifferences.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/intStatus.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/scripts/telegraf_receiver_main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/core/telegraf/telegraf.d/snmp.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/fixtures/all_data_2025_06_01.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/fixtures/model_28_04_2025.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/.env" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/arp.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/arp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/bgp.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/bgp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/icmp.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/icmp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/router.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/routeur/interfaceProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/routeur/interfaceProcessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/routeur/traitementARP.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/scripts/telegraf_receiver.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/telegraf/telegraf.conf" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/telegraf/telegraf.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/templates/core/scenario_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/templates/core/scenario_details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/views/scenarios.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/views/scenarios.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3_old" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/templates/DiagnosticTool/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/templates/DiagnosticTool/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="merge #26 to #40" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +64,7 @@
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "Merging 40-password-reset-email",
+    "git-widget-placeholder": "40-password-reset-email",
     "last_opened_file_path": "/Users/dohaab/Desktop/PROJET_PYTHON_1A/Projet-Python-TSP/DiagnosticTool/staticfiles/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -277,6 +240,15 @@
       <workItem from="1748099272902" duration="826000" />
       <workItem from="1748107011423" duration="7577000" />
     </task>
+    <task id="LOCAL-00001" summary="merge #26 to #40">
+      <option name="closed" value="true" />
+      <created>1749249008300</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749249008300</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +284,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merge #47 to #49" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge #47 to #49" />
+    <MESSAGE value="merge #26 to #40" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge #26 to #40" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Projet_Python_TSP$manage.coverage" NAME="manage Coverage Results" MODIFIED="1743883129771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DiagnosticTool" />
