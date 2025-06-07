@@ -1,11 +1,13 @@
 from core.models import Diagnostic, Router
 from core.scripts.basic_functions import ping, traceroute
+from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
 
 
 class InternetConnectionLossDiagnostic:
     
     def __init__(self, diagnostic:Diagnostic):
         self.diagnostic = diagnostic
+        self.tests=BasicNetworkTests(router=self.diagnostic.router)
 
     def get_next_hop(self):
         """
@@ -18,6 +20,10 @@ class InternetConnectionLossDiagnostic:
         Runs the tests for internet connection loss by using the decision tree
         """
         report = []
+
+        # interface status check
+        interfaces_report = self.tests.report_interfaces_status()
+        report.append(interfaces_report)
 
         # need to call get_next_hop
         # ping towards google.com
@@ -39,7 +45,7 @@ class InternetConnectionLossDiagnostic:
                 hops, last_hop = traceroute("8.8.8.8")
                 if last_hop:
                     report.append(f"OK traceroute réussi; dernier hop atteint : {last_hop}")
-                    next_hop = self.get_next_hop()
+                    next_hop = get_next_hop()
                     if next_hop:
                         report.append("problème de connectivité détecté, analyse du dernier hop nécessaire")
                         report.append("ticket pour investigation")
