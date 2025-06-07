@@ -1,33 +1,59 @@
 {% extends 'DiagnosticTool/base.html' %}
 
-{% block title %}{{scenario.name}}{% endblock %}
-{% block header %}
-        <a href="{%url 'home'%}" >Retourner</a>
+{% block title %}
+    {{ scenario.name }}
+{% endblock %}
 
+{% block header %}
+    <a href="{% url 'home' %}" class="btn btn-secondary">
+        ← Retour à l'accueil
+    </a>
 {% endblock %}
 {% block content %}
+<div class="container mt-4">
+<div class="row g-4">
+    <!-- Bloc scénario -->
+<div class="col-md-6">
+<section class="card h-100 p-4 shadow-sm" style="margin-bottom: 5rem;">
+        <h2 class="card-title">🧪 Scénario : {{ scenario.name }}</h2>
+        <p class="text-muted">{{ scenario }}</p>
+        <p>{{ scenario.description }}</p>
 
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success mt-3">
+                Lancer le diagnostic
+            </button>
+        </form>
+    </section>
+</div>
+<div class="col-md-6">
+    <!-- Bloc analyse -->
+<section class="card h-100 p-4 shadow-sm">
+        <h2 class="card-title">🔍 Analyse</h2>
+        <div class="analysis-content mt-3">
 
-<div class="container">
-    <div class="scenario">
-        <h2>Scénario</h2>
-        <p class="description">{{scenario}}</p>
-                <p>{{scenario.description}}</p>
-        <button type="submit" class="diagno-button">Lancer le diagnostic</button>
+            {% if diagnostic_result %}
+                <p>
+                    <strong>Résultat :</strong> <pre class="bg-light p-3 border rounded mt-2">{{ diagnostic_result }}</pre>
+                </p>
+            {% else %}
+                <p>
+                    <strong class="text-danger">⚠️ Alerte :</strong>
+                    Résultat du diagnostic affiché ici après exécution.
+                </p>
+            {% endif %}
 
-    </div>
-
-    <div class="analysis">
-        <h2>Analyse</h2>
-        <div class="analysis-content">
-            <!--TODO: ici il faudra faire en sorte que ça se génère quand on lance le diagnostic-->
-            <p><strong class="alert">Alerte :</strong></p>
-                <p>ici il y aura le résultat du diagnostic après avoir cliquer sur "Lancer diagno..."</p>
-            <button class="export-button">Exporter le rapport en format PDF</button>
+            <form method="post" action="">
+                {% csrf_token %}
+                <button class="btn btn-outline-primary mt-3">
+                    📄 Exporter le rapport en PDF
+                </button>
+            </form>
 
         </div>
-    </div>
-
-
+    </section>
+</div>
+</div>
 </div>
 {% endblock %}

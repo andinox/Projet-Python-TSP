@@ -4,24 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/routeur/insertBGPfromGNMI.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/scripts/telegraf_receiver.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/scripts/telegraf_receiver.py.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/scripts/test.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DiagnosticTool/telegraf/telegraf.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/core/models/routeur.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/core/models/routeur.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DiagnosticTool/routeur/ExampleparserBGP.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/routeur/ExampleparserBGP.py" afterDir="false" />
-    </list>
+    <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="merge #26 to #40" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
@@ -73,8 +62,9 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "django.template.preview.state": "SHOW_EDITOR",
-    "git-widget-placeholder": "Merging 49-refaire-bdd-sqlite",
+    "git-widget-placeholder": "40-password-reset-email",
     "last_opened_file_path": "/Users/dohaab/Desktop/PROJET_PYTHON_1A/Projet-Python-TSP/DiagnosticTool/staticfiles/img",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -243,7 +233,22 @@
       <workItem from="1743627822887" duration="115000" />
       <workItem from="1743795102015" duration="11694000" />
       <workItem from="1743854826474" duration="624000" />
+      <workItem from="1746732102945" duration="1139000" />
+      <workItem from="1747850465782" duration="3651000" />
+      <workItem from="1748081939983" duration="1998000" />
+      <workItem from="1748098556330" duration="276000" />
+      <workItem from="1748099272902" duration="826000" />
+      <workItem from="1748107011423" duration="7577000" />
     </task>
+    <task id="LOCAL-00001" summary="merge #26 to #40">
+      <option name="closed" value="true" />
+      <created>1749249008300</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1749249008300</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,7 +284,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="merge #47 to #49" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge #47 to #49" />
+    <MESSAGE value="merge #26 to #40" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge #26 to #40" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Projet_Python_TSP$manage.coverage" NAME="manage Coverage Results" MODIFIED="1743883129771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DiagnosticTool" />
