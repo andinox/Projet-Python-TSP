@@ -45,7 +45,7 @@ class InternetConnectionLossDiagnostic:
                 hops, last_hop = traceroute("8.8.8.8")
                 if last_hop:
                     report.append(f"OK traceroute réussi; dernier hop atteint : {last_hop}")
-                    next_hop = get_next_hop()
+                    next_hop = self.get_next_hop()
                     if next_hop:
                         report.append("problème de connectivité détecté, analyse du dernier hop nécessaire")
                         report.append("ticket pour investigation")
