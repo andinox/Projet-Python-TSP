@@ -1,12 +1,5 @@
 from django.views.generic import DetailView
-
-from core.models import Diagnostic, Router
 from core.models.scenario import Scenario
-from core.diagnostic_scenarios.internet_connection_loss import InternetConnectionLossDiagnostic
-import logging
-
-logger = logging.getLogger(__name__)
-
 
 class ScenarioDetailView(DetailView):
     """
@@ -14,7 +7,7 @@ class ScenarioDetailView(DetailView):
     """
     model = Scenario
     template_name = "core/scenario_details.html"
-    context_object_name = "scenario"
+    context_object_name = "scenarios"
     slug_url_kwarg = 'slug'  # The URL parameter is 'slug'
 
     def get_object(self):
@@ -22,44 +15,3 @@ class ScenarioDetailView(DetailView):
         This method returns the object corresponding to the given slug
         """
         return Scenario.objects.get(slug=self.kwargs['slug'])
-
-    def get_context_data(self, **kwargs):
-        """
-        This method returns the context data; it prepares data that will be passed to the template scenario_details.html
-        """
-        context = super(ScenarioDetailView, self).get_context_data(**kwargs)
-        if hasattr(self,
-                   'diagnostic_result'):  # diagnostic_results will be used in template & it stocks results of self
-            context['diagnostic_result'] = self.diagnostic_result
-        else:
-            context['diagnostic_result'] = None
-        return context
-
-    def post(self, request, *args, **kwargs):
-        """
-        This method handles the POST request
-        """
-
-        # we take the scenario object matching with the url
-        scenario = self.get_object()
-
-        # here we call the class corresponding to the requested scenario &
-        # run the diagnostic algo adapted according to the slug
-        if scenario.slug == 'perte-de-connexion-vers-internet':
-            logger.info("Début du diagnostic perte de connexion vers internet")
-            diagnostic = Diagnostic.objects.create(router=Router.objects.get(),
-                                                   diagnosis_type="Perte de connexion vers internet",
-                                                   result="")  # here we only have one router that's why I only do a get
-
-            dgc_result = InternetConnectionLossDiagnostic(diagnostic)  # dgc = diagnostic
-            logger.info("info dgc_result:{}".format(dgc_result))
-            diagnostic_result = dgc_result.run()
-            diagnostic.result = diagnostic_result
-            diagnostic.save()  # we save in DB the result of the diagnostic
-            self.diagnostic_result = diagnostic_result
-       	    self.object = scenario
-        elif scenario.slug == '...':
-            # TODO do same for the others scenarios &
-            # need to call the implemented function
-            pass
-        return self.render_to_response(self.get_context_data(object=scenario))

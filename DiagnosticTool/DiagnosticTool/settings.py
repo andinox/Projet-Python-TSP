@@ -11,13 +11,10 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import ssl,os,environ
-
-from django.core.mail import send_mail
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -107,22 +104,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#Loggers definition 
-LOGGING = {
-    'version': 1,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'core': { #for the application core ; same implementation can be done for the other ones as gestionnaire_users 
-            'handlers': ['console'],
-            'level': 'DEBUG',
-        },
-    },
-}
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -155,34 +136,19 @@ STATICFILES_DIRS = [
 # même si on est en mode déconnecté.
 LOGIN_URL ='login_page'
 LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login_page'
 
 #config routeur compte
 ROUTEUR_USERNAME ='admin'
 ROUTEUR_PWD = 'dkSDwa80f13faXcwxzj'
 
-
-#password hashers
-PASSWORD_HASHERS = [
-    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
-    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
-    "django.contrib.auth.hashers.Argon2PasswordHasher",
-    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
-    "django.contrib.auth.hashers.ScryptPasswordHasher",
-]
-
 #email connexion paramètres
-
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.sendgrid.net"
+EMAIL_HOST = "smtp.yahoo.com"  #serveur SMTP de notre fournisseur
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "apikey"  #here always values is  "apikey" for SendGrid
-EMAIL_HOST_PASSWORD =env("EMAIL_HOST_PASSWORD") #API key of SendGrid
-DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER_DEFAULT')
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
