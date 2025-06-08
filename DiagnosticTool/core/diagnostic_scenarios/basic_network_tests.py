@@ -103,20 +103,20 @@ class BasicNetworkTests:
                 if result is False:
                     report_lines.append("Status : down")
                     report_lines.append(
-                        "Diagnostic : Interface is down but admin is up → It may be a possible link issue."
+                        "Diagnostic : L'interface est DOWN mais est admin UP → Il peut s'agir d'un problème de lien."
                     )
                 elif result is None:
                     report_lines.append("Status : Unknown")
                     report_lines.append(
-                        "Diagnostic : No test data or cannot determine admin down time."
+                        "Diagnostic: Aucune donnée de test ou impossibilité de déterminer depuis quand l'interface est admin down."
                     )
                 else:
                     formatted = self.format_timedelta(result)
                     report_lines.append("Status : admin down")
-                    report_lines.append(f"Diagnostic : admin down for {formatted}")
+                    report_lines.append(f"Diagnostic : l'interface est admin down depuis {formatted}")
 
         # no issues found, print success message
         if not issues_found:
-            report_lines.append("[INTERFACES] test passed, no issues found.")
+            report_lines.append("[INTERFACES] tests effectués avec succès, aucun problème à signaler.")
 
         return "\n".join(report_lines)

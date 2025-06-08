@@ -24,7 +24,7 @@ def interface_status_comparison():
 
         # If no latest test entry found
         if not latest_test:
-            print(f"No Interface_TEST found for idinterface {idinterface}")
+            print(f"Aucune Interface_TEST trouvée pour l'idinterface {idinterface}")
             return False
 
         # Compare fields between conf entry and the latest test entry and collect differences; putting them in a list called "diffs"
@@ -46,7 +46,7 @@ def interface_status_comparison():
             print(f"Interface {conf_entry.interface_name} (id={idinterface}) has mismatches: {', '.join(diffs)}")
             return False
 
-    print("Test is a success! All Interface_CONF entries match the latest Interface_TEST entries.")
+    print("Le test est un succès ! Toutes les entrées d'Interface_CONF correspondent aux dernières entrées d'Interface_TEST.")
     return True
 
 def main():
