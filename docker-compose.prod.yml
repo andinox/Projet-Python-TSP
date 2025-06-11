@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: diagnostic
+      POSTGRES_USER: diagnostic
+      POSTGRES_PASSWORD: diagnostic
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    command: sh -c "python DiagnosticTool/manage.py migrate && python DiagnosticTool/manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DJANGO_ENV=production
+      - POSTGRES_DB=diagnostic
+      - POSTGRES_USER=diagnostic
+      - POSTGRES_PASSWORD=diagnostic
+      - POSTGRES_HOST=db
+      - POSTGRES_PORT=5432
+    depends_on:
+      - db
+
+volumes:
+  postgres_data:
