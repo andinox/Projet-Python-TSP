@@ -6,8 +6,16 @@
 <div class="container-fluid" style="background-color: #c6d5ed; min-height: 100vh;">
     <div class="row justify-content-center align-items-center" style="min-height: 100vh;">
         <div class="col-md-4" style="background-color: #ffffff; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-            <h2 class="text-center mb-3" style="color: #4f5891;">Se connecter</h2>
-            <form method="post">
+
+            <h2 class="text-center mb-3" style="color: #4f5891;"> Se connecter</h2>
+
+            {% if form.errors %}
+                <div style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+                    Nom d'utilisateur ou mot de passe incorrect.
+                </div>
+            {% endif %}
+
+            <form method="post" novalidate>
                 {% csrf_token %}
                 <div class="mb-3">
                     <label for="username" class="form-label" style="color: #1b203c;">Nom d'utilisateur :</label>
