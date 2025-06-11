@@ -1,5 +1,5 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
-
 from core.models import Diagnostic, Router
 from core.models.scenario import Scenario
 from core.diagnostic_scenarios.internet_connection_loss import InternetConnectionLossDiagnostic
@@ -7,8 +7,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-
-class ScenarioDetailView(DetailView):
+class ScenarioDetailView(LoginRequiredMixin,DetailView):
     """
     This class-based view displays the details of a given scenario
     """
@@ -16,6 +15,7 @@ class ScenarioDetailView(DetailView):
     template_name = "core/scenario_details.html"
     context_object_name = "scenario"
     slug_url_kwarg = 'slug'  # The URL parameter is 'slug'
+    login_url = 'login_page'
 
     def get_object(self):
         """
@@ -57,7 +57,7 @@ class ScenarioDetailView(DetailView):
             diagnostic.result = diagnostic_result
             diagnostic.save()  # we save in DB the result of the diagnostic
             self.diagnostic_result = diagnostic_result
-       	    self.object = scenario
+            self.object = scenario
         elif scenario.slug == '...':
             # TODO do same for the others scenarios &
             # need to call the implemented function
