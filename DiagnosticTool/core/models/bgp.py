@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from .router import Router
 
 
@@ -10,22 +11,25 @@ class BGP(models.Model):
         ("Up", "Up"),
         ("Down", "Down"),
     ]
-    router = models.ForeignKey(Router,null=True, on_delete=models.CASCADE)
-    asn = models.IntegerField(verbose_name="Autonomous System Number") #helpful to understand as admin what the field stands for
-    neighbor_ip = models.GenericIPAddressField(verbose_name="Neighbor IP Address", primary_key=True)
+    router = models.ForeignKey(Router, null=True, on_delete=models.CASCADE)
+    neighbor_ip = models.GenericIPAddressField(verbose_name="Neighbor IP Address")
+    asn = models.IntegerField(verbose_name="Autonomous System Number")
     up_down_status = models.CharField(max_length=4, choices=STATUS_CHOICES, verbose_name="BGP Status")
     time_last_change = models.CharField(max_length=100, verbose_name="Time Since Last Status Change")
+    timestamp = models.DateTimeField(default=timezone.now, verbose_name="Timestamp")
 
     class Meta:
         abstract = True
 
     def __str__(self):
-        return f"{self.neighbor_ip} - ASN {self.asn}"
-
+        return f"ASN {self.asn}"
 
 class BGP_CONF(BGP):
-    pass
+    neighbor_ip = models.GenericIPAddressField(verbose_name="Neighbor IP Address", primary_key=True)
+
+    def __str__(self):
+        return f"[CONF] {self.neighbor_ip} - ASN {self.asn}"
 
 class BGP_TEST(BGP):
-    pass
-
+    def __str__(self):
+        return f"[TEST] {self.neighbor_ip} - ASN {self.asn}"
