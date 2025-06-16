@@ -1,15 +1,6 @@
-import sys
-import os
-import django
 import ipaddress
 from datetime import timedelta
 from django.utils.timezone import now
-
-# Set up access to the Django environment by adding the project to PYTHONPATH
-sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool")
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DiagnosticTool.settings')
-django.setup()
-
 from core.models import ARP_CONF, ARP_TEST, Interface_TEST
 
 def check_arp_test_has_data():
@@ -18,50 +9,64 @@ def check_arp_test_has_data():
     """
     count = ARP_TEST.objects.count()
     if count == 0:
-        print("[ERROR] No entries found in ARP_TEST table.")
-        return False
+        return False, "[ERREUR] Aucun enregistrement trouvé dans ARP_TEST."
     else:
-        print(f"[INFO] {count} entries found in ARP_TEST table.")
-        return True
+        return True, f"[INFO] {count} enregistrements trouvés dans ARP_TEST."
+        
 
 def check_arp_ip_in_interface_network():
     """
     For each ARP_TEST entry, check if the IP is in the same network as its interface
     """
+    messages = []
     errors = 0
     ten_minutes_ago = now() - timedelta(minutes=10)
-    for entry in ARP_TEST.objects.filter(timestamp__gte=ten_minutes_ago):
+
+    entries = ARP_TEST.objects.filter(timestamp__gte=ten_minutes_ago)
+    
+    if not entries.exists():
+        messages.append("[ATTENTION] Aucun enregistrement ARP récent (moins de 10 minutes) trouvé.")
+        return False, messages
+    #just checking if the last entry is correct
+    for entry in entries:
         interface = entry.idinterface
         arp_ip = entry.ip_arp
 
         if not interface.ip_address or not interface.subnet_mask:
-            print(f"[WARNING] Interface {interface.idinterface} has missing IP address or subnet mask.")
+            messages.append(f"[AVERTISSEMENT] Interface {interface.idinterface} sans IP ou masque.")
+            errors += 1
             continue
 
         try:
-            interface_network = ipaddress.ip_interface(f"{interface.ip_address}/{interface.subnet_mask}").network
+            #transforming the information from the database into network objects so that we can check if an IP is in the good network 
+            network = ipaddress.ip_interface(f"{interface.ip_address}/{interface.subnet_mask}").network
             arp_ip_obj = ipaddress.ip_address(arp_ip)
-            if arp_ip_obj not in interface_network:
-                print(f"[ERROR] ARP IP {arp_ip} is NOT in the network {interface_network} of interface {interface.idinterface}.")
+            if arp_ip_obj not in network:
+                messages.append(f"[ERREUR] ARP IP {arp_ip} hors du réseau {network} (interface {interface.idinterface}).")
                 errors += 1
             else:
-                print(f"[OK] ARP IP {arp_ip} is in the network {interface_network} of interface {interface.idinterface}.")
+                messages.append(f"[OK] ARP IP {arp_ip} dans le réseau {network} (interface {interface.idinterface}).")
         except Exception as e:
-            print(f"[ERROR] Failed to check ARP entry {arp_ip} for interface {interface.idinterface}: {e}")
+            messages.append(f"[ERREUR] Vérification impossible pour {arp_ip} (interface {interface.idinterface}) : {e}")
             errors += 1
 
     if errors == 0:
-        print("[INFO] All ARP IPs are in their respective networks.")
-        return True
+        messages.append("[INFO] Tous les ARP IP sont dans leur réseau respectif.")
+        return True, messages
     else:
-        print(f"[SUMMARY] {errors} errors found in ARP IPs network check.")
-        return False
+        messages.append(f"[RÉSUMÉ] {errors} erreurs détectées dans le contrôle des IP ARP.")
+        return False, messages
+
+
 
 def compare_arp_conf_and_test():
     """
     Compare ARP_CONF and ARP_TEST tables, and print differences
     """
     differences = 0
+    messages = []
+    messages.append(" Comparaison ARP_CONF et ARP_TEST ")
+
     # check if ARP_CONF entries are in ARP_TEST
     for conf_entry in ARP_CONF.objects.all():
         ip_conf = conf_entry.ip_arp
@@ -71,7 +76,7 @@ def compare_arp_conf_and_test():
         match = ARP_TEST.objects.filter(idinterface__idinterface=idinterface_conf,ip_arp=ip_conf).order_by('-timestamp').first()
         
         if not match:
-            print(f"[DIFF] ARP_CONF entry {ip_conf} (interface {idinterface_conf}) NOT found in ARP_TEST.")
+            messages.append(f"[DIFF] ARP_CONF {ip_conf} (interface {idinterface_conf}) non trouvé dans ARP_TEST.")
             differences += 1
 
     # check if there are ARP_TEST entries that are not in ARP_CONF
@@ -82,29 +87,11 @@ def compare_arp_conf_and_test():
         match = ARP_CONF.objects.filter(idinterface__idinterface=idinterface_test, ip_arp=ip_test).first()
 
         if not match:
-            print(f"[INFO] ARP_TEST entry {ip_test} (interface {idinterface_test}) NOT found in ARP_CONF. (This may be normal for new entries)")
+            messages.append(f"[INFO] ARP_TEST {ip_test} (interface {idinterface_test}) non trouvé dans ARP_CONF (peut être normal).")
 
     if differences == 0:
-        print("[INFO] All ARP_CONF entries are present in ARP_TEST.")
-        
+        messages.append("[INFO] Tous les ARP_CONF sont présents dans ARP_TEST.")
     else:
-        print(f"[SUMMARY] {differences} ARP_CONF entries missing in ARP_TEST.")
-        
+        messages.append(f"[RÉSUMÉ] {differences} entrées ARP_CONF manquantes dans ARP_TEST.")
+    return messages
 
-def main():
-    step1 = check_arp_test_has_data()
-    if not step1:
-        return False
-
-    step2 = check_arp_ip_in_interface_network()
-    compare_arp_conf_and_test()
-
-    if step1 and step2:
-        print("Success !")
-        return True
-    else:
-        print("Some tests failed. Check logs.")
-        return False
-
-if __name__ == "__main__":
-    main()
