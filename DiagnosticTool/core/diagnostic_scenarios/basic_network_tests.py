@@ -148,4 +148,36 @@ class BasicNetworkTests:
 
         return issues_found, "\n".join(report_lines)
     
-    
+    def run_all_basic_tests(self):
+        """
+        Runs the full sequence of tests: interface status → ARP checks → LAN IP ping.
+
+        Returns:
+            issue_found (bool): True if any problem was detected during the tests.
+            report (str): Full report of the diagnostic process.
+        """
+        full_report = []
+        issue_found = False
+
+        # Step 1: Interface status
+        interfaces_issue, interface_report = self.report_interfaces_status()
+        full_report.append(interface_report)
+
+        if interfaces_issue:
+            issue_found = True
+            full_report.append("\n[INFO] Interface issues detected. ARP and ping tests skipped.")
+            return issue_found, "\n".join(full_report)
+
+        # Step 2: ARP checks
+        arp_passed, arp_report = self.run_arp_tests()
+        full_report.append(arp_report)
+
+        if not arp_passed:
+            issue_found = True
+            full_report.append("\n[INFO] ARP problems detected. Ping test skipped.")
+            return issue_found, "\n".join(full_report)
+
+        # Step 3: LAN ping
+        ### to be added ###
+
+        return not issue_found, "\n".join(full_report)
