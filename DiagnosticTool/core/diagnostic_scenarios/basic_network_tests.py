@@ -2,7 +2,8 @@
 
 from core.models import Interface_CONF, Interface_TEST
 from django.utils.timezone import now
-
+from core.scripts.LANStatus import check_arp_test_has_data,check_arp_ip_in_interface_network,compare_arp_conf_and_test
+from core.scripts.basic_functions import ping
 
 class BasicNetworkTests:
     def __init__(self, router=None):
@@ -62,6 +63,32 @@ class BasicNetworkTests:
         minutes = (total_seconds % 3600) // 60
         seconds = total_seconds % 60
         return f"{days} days {hours:02}:{minutes:02}:{seconds:02}"
+    
+    def run_arp_tests(self):
+        """
+        Executes the three ARP checks and returns whether the tests were successful
+         as well as the messages associated with the tests
+        """
+        report_lines = ["\n[ARP] Lancement des vérifications ARP...\n"]
+        all_passed = True
+
+        # 1. Vérifier si ARP_TEST contient des données
+        status, message = check_arp_test_has_data()
+        report_lines.append(message)
+        if not status:
+            all_passed = False
+
+        # 2. Vérifier si les IP ARP sont dans le bon réseau
+        status, messages = check_arp_ip_in_interface_network()
+        report_lines.extend(messages)
+        if not status:
+            all_passed = False
+
+        # 3. Comparer ARP_CONF et ARP_TEST
+        messages = compare_arp_conf_and_test()
+        report_lines.extend(messages)
+
+        return all_passed, "\n".join(report_lines)
 
     def report_interfaces_status(self):
         """
@@ -119,4 +146,6 @@ class BasicNetworkTests:
         if not issues_found:
             report_lines.append("[INTERFACES] tests effectués avec succès, aucun problème à signaler.")
 
-        return "\n".join(report_lines)
+        return issues_found, "\n".join(report_lines)
+    
+    
