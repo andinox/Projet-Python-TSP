@@ -9,9 +9,9 @@ def check_arp_test_has_data():
     """
     count = ARP_TEST.objects.count()
     if count == 0:
-        return False, "[ERREUR] Aucun enregistrement trouvé dans ARP_TEST."
+        return False, "[ERREUR] Aucun enregistrement trouvé dans la table ARP."
     else:
-        return True, f"[INFO] {count} enregistrements trouvés dans ARP_TEST."
+        return True, f"[INFO] {count} enregistrements trouvés dans la table ARP."
         
 
 def check_arp_ip_in_interface_network():
@@ -54,7 +54,7 @@ def check_arp_ip_in_interface_network():
         messages.append("[INFO] Tous les ARP IP sont dans leur réseau respectif.")
         return True, messages
     else:
-        messages.append(f"[RÉSUMÉ] {errors} erreurs détectées dans le contrôle des IP ARP.")
+        messages.append(f"[RÉSUMÉ] {errors} erreurs détectées lors de la vérification que les IP dans la table ARP sont dans le bon réseau.")
         return False, messages
 
 
@@ -65,7 +65,7 @@ def compare_arp_conf_and_test():
     """
     differences = 0
     messages = []
-    messages.append(" Comparaison ARP_CONF et ARP_TEST ")
+    messages.append(" Comparaison entre la table ARP initiale et la table ARP actuelle : ")
 
     # check if ARP_CONF entries are in ARP_TEST
     for conf_entry in ARP_CONF.objects.all():
@@ -90,7 +90,7 @@ def compare_arp_conf_and_test():
             messages.append(f"[INFO] ARP_TEST {ip_test} (interface {idinterface_test}) non trouvé dans ARP_CONF (peut être normal).")
 
     if differences == 0:
-        messages.append("[INFO] Tous les ARP_CONF sont présents dans ARP_TEST.")
+        messages.append("[INFO] Toutes les entrées dans la table ARP initiale sont présentes dans la table ARP actuelle.")
     else:
         messages.append(f"[RÉSUMÉ] {differences} entrées ARP_CONF manquantes dans ARP_TEST.")
     return messages
