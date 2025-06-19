@@ -68,23 +68,26 @@ class BasicNetworkTests:
         """
         Executes the three ARP checks and returns whether the tests were successful
          as well as the messages associated with the tests
+        Returns:
+            all_passed (bool): False if any problem was detected during the tests.
+            report_lines (str): Full report of the ARP tests.
         """
         report_lines = ["\n[ARP] Lancement des vérifications ARP...\n"]
         all_passed = True
 
-        # 1. Vérifier si ARP_TEST contient des données
+        # step 1 : Check if current ARP table has data
         status, message = check_arp_test_has_data()
         report_lines.append(message)
         if not status:
             all_passed = False
 
-        # 2. Vérifier si les IP ARP sont dans le bon réseau
+        # step 2 : Check if IPs from the ARP table are in the same network as the router interface they are linked with
         status, messages = check_arp_ip_in_interface_network()
         report_lines.extend(messages)
         if not status:
             all_passed = False
 
-        # 3. Comparer ARP_CONF et ARP_TEST
+        # step 3 : compares if initial ARP table and current one have differences
         messages = compare_arp_conf_and_test()
         report_lines.extend(messages)
 

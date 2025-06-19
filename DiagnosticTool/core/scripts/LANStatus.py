@@ -6,6 +6,9 @@ from core.models import ARP_CONF, ARP_TEST, Interface_TEST
 def check_arp_test_has_data():
     """
     Check if ARP_TEST table has any entries
+    Returns:
+            bool: False if any problem was detected during the tests.
+            str: Report of the test.
     """
     count = ARP_TEST.objects.count()
     if count == 0:
@@ -17,6 +20,9 @@ def check_arp_test_has_data():
 def check_arp_ip_in_interface_network():
     """
     For each ARP_TEST entry, check if the IP is in the same network as its interface
+    Returns:
+            bool: False if any problem was detected during the tests.
+            messages (str): Report of the test.
     """
     messages = []
     errors = 0
@@ -62,6 +68,8 @@ def check_arp_ip_in_interface_network():
 def compare_arp_conf_and_test():
     """
     Compare ARP_CONF and ARP_TEST tables, and print differences
+    Returns:
+            str: Report of the test.
     """
     differences = 0
     messages = []
