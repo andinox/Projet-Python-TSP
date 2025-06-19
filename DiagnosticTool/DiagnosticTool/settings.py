@@ -184,10 +184,10 @@ LOGIN_URL ='login_page'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login_page'
 
-#config routeur compte
-ROUTEUR_USERNAME =os.getenv('ROUTEUR_USERNAME')
-ROUTEUR_PWD =os.getenv('ROUTEUR_PWD')
-
+#config router account
+ROUTER_USERNAME =os.getenv('ROUTER_USERNAME')
+ROUTER_PWD =os.getenv('ROUTER_PWD')
+ROUTER_IP = "172.16.10.51"
 
 #password hashers
 PASSWORD_HASHERS = [
