@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gestionnaire_users',
     'core',
+    #'django_q',
 ]
 
 MIDDLEWARE = [
@@ -214,3 +215,7 @@ DEFAULT_FROM_EMAIL = f'Diagnostic Tool <{EMAIL_HOST_USER}>'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
