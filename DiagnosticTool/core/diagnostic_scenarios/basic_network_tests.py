@@ -2,7 +2,8 @@
 
 from core.models import Interface_CONF, Interface_TEST
 from django.utils.timezone import now
-
+from core.scripts.LANStatus import check_arp_test_has_data,check_arp_ip_in_interface_network,compare_arp_conf_and_test
+from core.scripts.basic_functions import ping
 
 class BasicNetworkTests:
     def __init__(self, router=None):
@@ -62,6 +63,35 @@ class BasicNetworkTests:
         minutes = (total_seconds % 3600) // 60
         seconds = total_seconds % 60
         return f"{days} days {hours:02}:{minutes:02}:{seconds:02}"
+    
+    def run_arp_tests(self):
+        """
+        Executes the three ARP checks and returns whether the tests were successful
+         as well as the messages associated with the tests
+        Returns:
+            all_passed (bool): False if any problem was detected during the tests.
+            report_lines (str): Full report of the ARP tests.
+        """
+        report_lines = ["\n[ARP] Lancement des vérifications ARP...\n"]
+        all_passed = True
+
+        # step 1 : Check if current ARP table has data
+        status, message = check_arp_test_has_data()
+        report_lines.append(message)
+        if not status:
+            all_passed = False
+
+        # step 2 : Check if IPs from the ARP table are in the same network as the router interface they are linked with
+        status, messages = check_arp_ip_in_interface_network()
+        report_lines.extend(messages)
+        if not status:
+            all_passed = False
+
+        # step 3 : compares if initial ARP table and current one have differences
+        messages = compare_arp_conf_and_test()
+        report_lines.extend(messages)
+
+        return all_passed, "\n".join(report_lines)
 
     def report_interfaces_status(self):
         """
@@ -119,4 +149,38 @@ class BasicNetworkTests:
         if not issues_found:
             report_lines.append("[INTERFACES] tests effectués avec succès, aucun problème à signaler.")
 
-        return "\n".join(report_lines)
+        return issues_found, "\n".join(report_lines)
+    
+    def run_all_basic_tests(self):
+        """
+        Runs the full sequence of tests: interface status → ARP checks → LAN IP ping.
+
+        Returns:
+            issue_found (bool): True if any problem was detected during the tests.
+            report (str): Full report of the diagnostic process.
+        """
+        full_report = []
+        issue_found = False
+
+        # Step 1: Interface status
+        interfaces_issue, interface_report = self.report_interfaces_status()
+        full_report.append(interface_report)
+
+        if interfaces_issue:
+            issue_found = True
+            full_report.append("\n[INFO] Interface issues detected. ARP and ping tests skipped.")
+            return issue_found, "\n".join(full_report)
+
+        # Step 2: ARP checks
+        arp_passed, arp_report = self.run_arp_tests()
+        full_report.append(arp_report)
+
+        if not arp_passed:
+            issue_found = True
+            full_report.append("\n[INFO] ARP problems detected. Ping test skipped.")
+            return issue_found, "\n".join(full_report)
+
+        # Step 3: LAN ping
+        ### to be added ###
+
+        return not issue_found, "\n".join(full_report)
