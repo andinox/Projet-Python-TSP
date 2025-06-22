@@ -183,4 +183,4 @@ class BasicNetworkTests:
         # Step 3: LAN ping
         ### to be added ###
 
-        return not issue_found, "\n".join(full_report)
+        return issue_found, "\n".join(full_report)

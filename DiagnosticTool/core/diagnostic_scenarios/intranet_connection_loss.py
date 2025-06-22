@@ -35,25 +35,38 @@ class IntranetConnectionLossDiagnostic:
         self.tests=BasicNetworkTests(router=self.diagnostic.router)
 
 
-    def render_report(self):
+    def run(self):
         """
         Returns:
             A string report summarizing the BGP neighbors' status, 
             including ASN, state, and time since last change.
         """
-        lines = ["[BGP - DIAGNOSTIC]\n"]
 
+        report = []
+
+        # Basic network tests
+        issue_found, basic_tests_report = self.tests.run_all_basic_tests()
+        report.append("[Basic network tests]")
+        report.append(basic_tests_report)
+
+        if issue_found:
+            report.append("Des problèmes ont été détectés lors des tests de base incluant l'état des interfaces et du statut du LAN. Fin du diagnostic.")
+            report.append(f"[DEBUG] issue_found = {issue_found}")
+            return "\n".join(report)
+        
+        # BGP analysis
+        report.append("\n[BGP - DIAGNOSTIC]\n")
         bgp_entries = BGP_TEST.objects.filter(router=self.router)
 
         for entry in bgp_entries:
-            lines.append(f"Voisin : {entry.neighbor_ip}")
-            lines.append(f"ASN distant : {entry.asn}")
-            lines.append(f"Statut : {entry.up_down_status}")
-            lines.append(f"Dernier changement d’état : {format_duration(entry.time_last_change)}")
+            report.append(f"Voisin : {entry.neighbor_ip}")
+            report.append(f"ASN distant : {entry.asn}")
+            report.append(f"Statut : {entry.up_down_status}")
+            report.append(f"Dernier changement d’état : {format_duration(entry.time_last_change)}")
 
             if entry.up_down_status.lower() == "up":
-                lines.append("Diagnostic : session BGP stable avec le voisin\n")
+                report.append("Diagnostic : session BGP stable avec le voisin\n")
             else:
-                lines.append("Diagnostic : session BGP inactive, vérifier la configuration et la connectivité\n")
+                report.append("Diagnostic : session BGP inactive, vérifier la configuration et la connectivité\n")
 
-        return "\n".join(lines)
+        return "\n".join(report)

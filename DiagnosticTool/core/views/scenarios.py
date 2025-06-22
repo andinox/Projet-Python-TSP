@@ -90,7 +90,7 @@ class ScenarioDetailView(DetailView):
         elif scenario.slug == "perte-de-connexion-vers-les-sites-de-lentreprise":
             logger.info("[BGP - DIAGNOSTIC]")
             dgc_result = IntranetConnectionLossDiagnostic(diagnostic)
-            diagnostic_result = dgc_result.render_report()
+            diagnostic_result = dgc_result.run()
             logger.info(f"Résultat du diagnostic Intranet :\n{diagnostic_result}")
             diagnostic.result = diagnostic_result
             diagnostic.save()
