@@ -14,40 +14,48 @@ class InternetConnectionLossDiagnostic:
         return self.diagnostic.router.next_hop
 
     def run(self):
-        """
-        Runs the tests for internet connection loss by using the decision tree
-        """
-        report = []
+       """
+       Runs the tests for internet connection loss by using the decision tree
+       """
+       report = []
+       report.append("----- DÉBUT DU DIAGNOSTIC : Perte de connexion Internet -----\n")
 
-        # need to call get_next_hop
-        # ping towards google.com
-        report.append("ping vers google.com en cours...")
-        if ping("google.com"):
-            report.append("OK ping vers google.com réussi; issue causée par accès à extranet")
-            report.append("ticket doit être créé pour signaler le problème")
-            return "\n".join(report)
-        else:
-            # ping towards 8.8.8.8
-            report.append("NOK ping vers google.com échoué; test de ping à faire vers 8.8.8.8")
-            if ping("8.8.8.8"):
-                report.append("OK ping vers 8.8.8.8 réussi; problème DNS détecté")
-                report.append("ticket pour vérifier la résolution DNS")
-                return "\n".join(report)
-            else:
-                # traceroute towards 8.8.8.8
-                report.append("ping vers 8.8.8.8 échoué; exécution d’un traceroute...")
-                hops, last_hop = traceroute("8.8.8.8")
-                if last_hop:
-                    report.append(f"OK traceroute réussi; dernier hop atteint : {last_hop}")
-                    next_hop = self.get_next_hop()
-                    if next_hop:
-                        report.append("problème de connectivité détecté, analyse du dernier hop nécessaire")
-                        report.append("ticket pour investigation")
-                        if ping(next_hop):
-                            report.append(f"OK ping vers next_hop {next_hop} est réussi !")
-                        else:
-                            report.append(f"NOK ping vers next_hop {next_hop} a échoué ...")
-                else:
-                    report.append("NOK traceroute échoué;  impossible de déterminer le dernier hop")
-                    report.append("ticket pour investigation approfondie")
-                return "\n".join(report)
+       # need to call get_next_hop
+       # ping towards google.com
+       report.append("Étape 1 : ping vers google.com...")
+       if ping("google.com"):
+           report.append("Résultat : OK - ping vers google.com réussi.")
+           report.append("Analyse : la connectivité Internet fonctionne correctement.")
+           report.append("Action : le problème vient probablement d'un accès extranet ou d'une application spécifique.")
+           report.append("=> Créer un ticket pour signaler le problème au niveau extranet.")
+           return "\n".join(report)
+       else:
+           report.append("Résultat : ÉCHEC - ping vers google.com échoué.")
+           report.append("Étape 2 : test de ping vers 8.8.8.8...")
+           if ping("8.8.8.8"):
+               report.append("Résultat : OK - ping vers 8.8.8.8 réussi.")
+               report.append("Analyse : le problème vient de la résolution DNS.")
+               report.append("=> Créer un ticket pour vérifier la configuration DNS du routeur.")
+               return "\n".join(report)
+           else:
+               report.append("Résultat : ÉCHEC - ping vers 8.8.8.8 échoué.")
+               report.append("Étape 3 : exécution d’un traceroute vers 8.8.8.8...")
+
+               hops, last_hop = traceroute("8.8.8.8")
+               if last_hop:
+                   report.append(f"Résultat : OK - traceroute réussi. Dernier hop atteint : {last_hop}")
+                   next_hop = self.get_next_hop()
+                   if next_hop:
+                       report.append("Analyse : problème de connectivité détecté, analyse du dernier hop nécessaire.")
+                       report.append("=> Créer un ticket pour investigation.")
+                       report.append(f"Test complémentaire : ping vers le next hop {next_hop}...")
+                       if ping(next_hop):
+                           report.append(f"Résultat : OK - ping vers next hop {next_hop} réussi.")
+                       else:
+                           report.append(f"Résultat : ÉCHEC - ping vers next hop {next_hop} échoué.")
+               else:
+                   report.append("Résultat : ÉCHEC - traceroute échoué, impossible de déterminer le dernier hop.")
+                   report.append("=> Créer un ticket pour investigation approfondie.")
+
+               return "\n".join(report)
+

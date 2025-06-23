@@ -7,7 +7,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-class ScenarioDetailView(LoginRequiredMixin,DetailView):
+class ScenarioDetailView(LoginRequiredMixin, DetailView):
     """
     This class-based view displays the details of a given scenario
     """
@@ -28,11 +28,17 @@ class ScenarioDetailView(LoginRequiredMixin,DetailView):
         This method returns the context data; it prepares data that will be passed to the template scenario_details.html
         """
         context = super(ScenarioDetailView, self).get_context_data(**kwargs)
-        if hasattr(self,
-                   'diagnostic_result'):  # diagnostic_results will be used in template & it stocks results of self
+        
+        # Pass diagnostic_result if it exists
+        if hasattr(self, 'diagnostic_result'):
             context['diagnostic_result'] = self.diagnostic_result
         else:
             context['diagnostic_result'] = None
+
+        # Retrieve and remove 'diagnostic_launched' flag from session to show the alert only once
+        diagnostic_launched = self.request.session.pop('diagnostic_launched', False)
+        context['diagnostic_launched'] = diagnostic_launched
+
         return context
 
     def post(self, request, *args, **kwargs):
@@ -46,20 +52,28 @@ class ScenarioDetailView(LoginRequiredMixin,DetailView):
         # here we call the class corresponding to the requested scenario &
         # run the diagnostic algo adapted according to the slug
         if scenario.slug == 'perte-de-connexion-vers-internet':
-            logger.info("Début du diagnostic perte de connexion vers internet")
-            diagnostic = Diagnostic.objects.create(router=Router.objects.get(),
-                                                   diagnosis_type="Perte de connexion vers internet",
-                                                   result="")  # here we only have one router that's why I only do a get
+            logger.info("Starting internet connection loss diagnostic")
+            diagnostic = Diagnostic.objects.create(
+                router=Router.objects.get(),
+                diagnosis_type="Perte de connexion vers internet",
+                result=""
+            )  # Assuming only one router, hence get()
 
             dgc_result = InternetConnectionLossDiagnostic(diagnostic)  # dgc = diagnostic
-            logger.info("info dgc_result:{}".format(dgc_result))
+            logger.info(f"Diagnostic result info: {dgc_result}")
             diagnostic_result = dgc_result.run()
             diagnostic.result = diagnostic_result
-            diagnostic.save()  # we save in DB the result of the diagnostic
+            diagnostic.save()  # Save the diagnostic result to the DB
+
+            # Store the result to pass it to the template
             self.diagnostic_result = diagnostic_result
             self.object = scenario
+
+            # Set a session flag to display the alert after redirect
+            request.session['diagnostic_launched'] = True
+
         elif scenario.slug == '...':
-            # TODO do same for the others scenarios &
-            # need to call the implemented function
+            # TODO: Implement other scenarios and call their diagnostic functions
             pass
+
         return self.render_to_response(self.get_context_data(object=scenario))

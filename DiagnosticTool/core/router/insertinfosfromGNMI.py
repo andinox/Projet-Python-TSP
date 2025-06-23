@@ -2,7 +2,7 @@
 from infosrouteur import hosts
 from gnmi_bgp_parser import parse_bgp_notification
 
-# Paramètres du router
+# Paramètres du routeur
 host = hosts[0]
 target = (host["ip_address"], host["port"])
 
