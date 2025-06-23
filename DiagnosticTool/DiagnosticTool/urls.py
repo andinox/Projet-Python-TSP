@@ -20,6 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('test500/', lambda request: (_ for _ in ()).throw(Exception("Erreur de test 500")), name='test500'),  # Pour tester la gestion des erreurs
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('', include('gestionnaire_users.urls')),
