@@ -13,9 +13,9 @@ django.setup()
 
 
 # functions importation
-from core.routeur.interfaceProcessing import save_interfaces_to_db, parse_interface_from_json
-from core.routeur.ARPProcessing import save_arp_entries_to_db, parse_arp_from_json
-from core.routeur.general_functions import log_debug
+from core.router.interfaceProcessing import save_interfaces_to_db, parse_interface_from_json
+from core.router.ARPProcessing import save_arp_entries_to_db, parse_arp_from_json
+from core.router.general_functions import log_debug
 
 def main():
     lines = list(sys.stdin)

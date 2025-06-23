@@ -16,7 +16,7 @@ from core.models import Router, Interface_CONF, Interface_TEST, ARP_CONF
 # Importation of Router and Interface_CONF models
 from core.models import Router, Interface_CONF
 from django.utils.timezone import now
-from core.routeur.general_functions import log_debug
+from core.router.general_functions import log_debug
 
 def status_to_text(val):
     """

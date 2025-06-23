@@ -1,16 +1,21 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse
 from core.models.scenario import Scenario
 
-class HomeView(ListView):
+
+
+class HomeView(LoginRequiredMixin,ListView):
     """
     This class-based view displays the available scenarios.
+    Only accessible if user is logged in
     When a scenario is clicked, it redirects the user to the selected scenario's details page
     """
     model = Scenario
     template_name = "core/home.html"
     context_object_name = "scenarios"
+    login_url = 'login_page'
 
     def post(self, request, *args, **kwargs):
         selected_slug = request.POST.get('scenario')

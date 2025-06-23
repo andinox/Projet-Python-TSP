@@ -32,3 +32,4 @@ def user_info(request):
         'profile': profile,
         'form': form
     })
+

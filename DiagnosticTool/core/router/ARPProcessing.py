@@ -2,7 +2,7 @@
 import traceback
 from django.utils.timezone import now
 from core.models import Interface_CONF, Interface_TEST, ARP_CONF, ARP_TEST
-from core.routeur.general_functions import log_debug
+from core.router.general_functions import log_debug
 from datetime import timedelta
 import ipaddress #necessary to calculate IP networks
 

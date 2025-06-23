@@ -11,12 +11,15 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import ssl,os,environ
-
+import ssl,os
+from dotenv import load_dotenv
+import logging
 from django.core.mail import send_mail
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+load_dotenv()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gestionnaire_users',
     'core',
+    #'django_q',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +60,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'DiagnosticTool.urls'
 
-CSRF_TRUSTED_ORIGINS = ["http://172.16.10.50"]
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000'] #in local to change in prod
+
+
+CSRF_COOKIE_SECURE = False #in local
+SESSION_COOKIE_SECURE = False
 
 TEMPLATES = [
     {
@@ -107,19 +115,39 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-#Loggers definition 
+#Loggers definition
 LOGGING = {
     'version': 1,
+    'disable_existing_loggers': False,
     'handlers': {
         'console': {
             'class': 'logging.StreamHandler',
         },
     },
     'loggers': {
-        'core': { #for the application core ; same implementation can be done for the other ones as gestionnaire_users 
+        # Logger Django SMTP email backend
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',  # ici on garde ERROR pour éviter trop de bruit
+            'propagate': True,
+        },
+        'django.security.SuspiciousOperation': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        # Logger pour le backend mail SMTP
+        'django.core.mail': {
+            'handlers': ['console'],
+            'level': 'DEBUG',  # active les logs SMTP détaillés
+            'propagate': True,
+        },
+        'smtp': {
             'handlers': ['console'],
             'level': 'DEBUG',
+            'propagate': True,
         },
+
     },
 }
 
@@ -157,10 +185,11 @@ LOGIN_URL ='login_page'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login_page'
 
-#config routeur compte
-ROUTEUR_USERNAME ='admin'
-ROUTEUR_PWD = 'dkSDwa80f13faXcwxzj'
-
+#config router compte
+ROUTER_USERNAME =os.getenv('ROUTER_USERNAME')
+ROUTER_PWD =os.getenv('ROUTER_PWD')
+ROUTER_PORT = os.getenv('ROUTER_PORT')
+ROUTER_IP = os.getenv('ROUTER_IP')
 
 #password hashers
 PASSWORD_HASHERS = [
@@ -171,18 +200,23 @@ PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.ScryptPasswordHasher",
 ]
 
-#email connexion paramètres
 
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+#email connexion parameters
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.sendgrid.net"
-EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "apikey"  #here always values is  "apikey" for SendGrid
-EMAIL_HOST_PASSWORD =env("EMAIL_HOST_PASSWORD") #API key of SendGrid
-DEFAULT_FROM_EMAIL = env('EMAIL_HOST_USER_DEFAULT')
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = f'Diagnostic Tool <{EMAIL_HOST_USER}>'
+
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
