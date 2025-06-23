@@ -186,9 +186,10 @@ LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login_page'
 
 #config router compte
-ROUTEUR_USERNAME =os.getenv('ROUTEUR_USERNAME')
-ROUTEUR_PWD =os.getenv('ROUTEUR_PWD')
-ROUTEUR_PORT = 57400
+ROUTER_USERNAME =os.getenv('ROUTER_USERNAME')
+ROUTER_PWD =os.getenv('ROUTER_PWD')
+ROUTER_PORT = os.getenv('ROUTER_PORT')
+ROUTER_IP = os.getenv('ROUTER_IP')
 
 #password hashers
 PASSWORD_HASHERS = [
