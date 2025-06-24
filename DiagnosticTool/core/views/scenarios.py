@@ -64,23 +64,6 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         )
 
 
-        # Run basic network tests before launching the full diagnostic
-        basic_tests = BasicNetworkTests(router=router)
-        interfaces_report = basic_tests.report_interfaces_status()
-
-        if "down" in interfaces_report or "admin down" in interfaces_report:
-            logger.info("Interfaces KO, scénario interrompu")
-            diagnostic.result = (
-                interfaces_report +
-                "\n\nScénario interrompu : les interfaces ne sont pas en état opérationnel."
-            )
-            diagnostic.save()
-            self.diagnostic_result = diagnostic.result
-            self.object = scenario
-            return self.render_to_response(self.get_context_data(object=scenario))
-
-        logger.info("Interfaces OK, poursuite du scénario")
-
         # Dispatch based on scenario slug
         if scenario.slug == 'perte-de-connexion-vers-internet':
             logger.info("Starting internet connection loss diagnostic")
