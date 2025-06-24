@@ -10,18 +10,17 @@ def get_router_connection():
     """
     return hosts[0]
 
-def ping(ip, conn = 5, timeout = 2):
+def ping(ip, count=5, timeout=2):
     """
     function sending  a ping from the router to the given ip address
     returns True if ping is successful
-    else returns False    
+    else returns False
     """
     try:
         conn = ConnectHandler(**get_router_connection())
-        output = conn.send_command(f"ping {ip}")
-        conn.disconnect()
-        # On tente d'envoyer un ping direct
-        output = conn.send_command(f"ping {ip} repeat {count} timeout {timeout_ping}")
+
+        # On tente d'envoyer un ping direct avec count et timeout
+        output = conn.send_command(f"ping {ip} repeat {count} timeout {timeout}")
 
         # Si le routeur est en mode interactif
         if "Protocol" in output:
@@ -30,12 +29,15 @@ def ping(ip, conn = 5, timeout = 2):
             output += conn.send_command_timing(ip)  # Target IP
             output += conn.send_command_timing(str(count))  # Repeat count
             output += conn.send_command_timing("")  # Datagram size
-            output += conn.send_command_timing(str(timeout_ping))  # Timeout in seconds
+            output += conn.send_command_timing(str(timeout))  # Timeout in seconds
             output += conn.send_command_timing("")  # Extended commands
             output += conn.send_command_timing("")  # Sweep range
 
+        conn.disconnect()
+
         #Cisco ping output includes '!' for successful answers; it's seen as a True value
         return "!" in output
+
     except Exception as e:
         print(f"[ERROR ping] : {e}")
         return False
