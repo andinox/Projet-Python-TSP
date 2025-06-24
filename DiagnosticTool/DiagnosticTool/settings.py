@@ -201,7 +201,7 @@ PASSWORD_HASHERS = [
 ]
 
 
-#email connexion parameters
+#email connection parameters
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
