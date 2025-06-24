@@ -102,6 +102,7 @@ class BasicNetworkTests:
         issues_found = False
         report_lines = []
 
+        report_lines.append("[Basic network tests]")
         for entry in interfaces:
             idinterface = entry.idinterface
             interface_name = entry.interface_name

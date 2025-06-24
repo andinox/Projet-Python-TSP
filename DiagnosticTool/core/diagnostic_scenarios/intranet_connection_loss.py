@@ -46,16 +46,13 @@ class IntranetConnectionLossDiagnostic:
 
         # Basic network tests
         issue_found, basic_tests_report = self.tests.run_all_basic_tests()
-        report.append("[Basic network tests]")
         report.append(basic_tests_report)
 
         if issue_found:
-            report.append("Des problèmes ont été détectés lors des tests de base incluant l'état des interfaces et du statut du LAN. Fin du diagnostic.")
-            report.append(f"[DEBUG] issue_found = {issue_found}")
             return "\n".join(report)
         
         # BGP analysis
-        report.append("\n[BGP - DIAGNOSTIC]\n")
+        report.append("\n----- DÉBUT DU DIAGNOSTIC : Perte de connexion Intranet -----\n")
         bgp_entries = BGP_TEST.objects.filter(router=self.router)
 
         for entry in bgp_entries:
