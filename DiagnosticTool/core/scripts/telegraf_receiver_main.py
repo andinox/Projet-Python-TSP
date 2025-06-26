@@ -19,7 +19,7 @@ from core.router.BGPProcessing import log_debug
 
 def main():
     lines = list(sys.stdin)
-
+    log_debug("Starting receiver")
     for line in lines:
         try:
             log_debug("--MAIN EXECUTED--")
@@ -34,10 +34,10 @@ def main():
             save_bgp_entries(bgp_entries)
 
         except json.JSONDecodeError as e:
-            print(f"[ERREUR JSON] : {e}")
+            log_debug(f"[ERREUR JSON] : {e}")
         except Exception as e:
             import traceback
-            print(f"[ERREUR] : {e}")
+            log_debug(f"[ERREUR] : {e}")
             traceback.print_exc()
 
 if __name__ == "__main__":
