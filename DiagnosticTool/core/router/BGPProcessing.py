@@ -36,21 +36,22 @@ def parse_bgp_from_json(json_data):
     Extracts peer IP, ASN, peer_status, last_change.
     Returns a list of structured BGP entries.
     """
+    
+    log_debug(f"[TRACE] Contenu JSON reçu: {json.dumps(json_data)}")
     parsed_entries = []
 
     if "metrics" not in json_data:
         return parsed_entries
 
     for m in json_data["metrics"]:
-        if m.get("name") == "bgp_peers":
-            f = m.get("fields", {})
-            tags = m.get("tags", {})
-
+        fields = m.get("fields", {})
+        
+        if all(f in fields for f in ["peer_ip", "peer_as", "peer_status", "peer_last_change"]):
             parsed_entry = {
-                "neighbor_ip": f.get("peer_ip"),
-                "asn": f.get("peer_as"),
-                "up_down_status": map_peer_status_to_updown(f.get("peer_status")),
-                "time_last_change": f"{f.get('peer_last_change')} sec",
+                "neighbor_ip": fields.get("peer_ip"),
+                "asn": fields.get("peer_as"),
+                "up_down_status": map_peer_status_to_updown(fields.get("peer_status")),
+                "time_last_change": f"{fields.get('peer_last_change')} sec",
             }
 
             parsed_entries.append(parsed_entry)
@@ -138,6 +139,7 @@ def save_bgp_entries(entries):
             log_debug(f"[ERREUR] Erreur inattendue pour {entry.get('neighbor_ip')}: {e}")
             log_debug(traceback.format_exc())
 
+"""
 # For testing, we will delete after real BGP is OK
 def main():
     try:
@@ -168,3 +170,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+"""
