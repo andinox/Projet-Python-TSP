@@ -11,25 +11,27 @@ sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool")
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DiagnosticTool.settings')
 django.setup()
 
-
 # functions importation
 from core.router.interfaceProcessing import save_interfaces_to_db, parse_interface_from_json
 from core.router.ARPProcessing import save_arp_entries_to_db, parse_arp_from_json
-from core.router.general_functions import log_debug
+from core.router.BGPProcessing import save_bgp_entries, parse_bgp_from_json
+from core.router.BGPProcessing import log_debug
 
 def main():
     lines = list(sys.stdin)
 
     for line in lines:
         try:
-
+            log_debug("--MAIN EXECUTED--")
             data = json.loads(line)
 
             arp_entries = parse_arp_from_json(data)
             interface_entries = parse_interface_from_json(data)
+            bgp_entries = parse_bgp_from_json(data)
 
             save_interfaces_to_db(interface_entries)
             save_arp_entries_to_db(arp_entries)
+            save_bgp_entries(bgp_entries)
 
         except json.JSONDecodeError as e:
             print(f"[ERREUR JSON] : {e}")
