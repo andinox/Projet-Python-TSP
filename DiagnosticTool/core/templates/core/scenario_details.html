@@ -46,8 +46,7 @@
                                 Le résultat du diagnostic sera affiché ici après que vous aurez cliqué sur <em>Lancer le diagnostic</em>.
                         {% endif %}
                     </div>
-
-                    <form method="post" class="mt-4">
+                    <form method="post" class="mt-4" action="{% url 'export_scenario_pdf' scenario.slug %}">
                         {% csrf_token %}
                         <button class="btn btn-outline-primary w-100">
                             📄 Exporter le rapport en PDF
