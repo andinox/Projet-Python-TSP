@@ -3,6 +3,7 @@ import datetime
 from netmiko import ConnectHandler
 from DiagnosticTool import settings
 from core.router.infosrouter import hosts
+from core.router.general_functions import log_debug
 
 def get_router_connection():
     """
@@ -10,7 +11,7 @@ def get_router_connection():
     """
     return hosts[0]
 
-def ping(ip, count=5, timeout=2):
+def ping(ip, count=5, timeout=2, source="gigabitEthernet 1"):
     """
     function sending  a ping from the router to the given ip address
     returns True if ping is successful
@@ -20,7 +21,7 @@ def ping(ip, count=5, timeout=2):
         conn = ConnectHandler(**get_router_connection())
 
         # On tente d'envoyer un ping direct avec count et timeout
-        output = conn.send_command(f"ping {ip} repeat {count} timeout {timeout}")
+        output = conn.send_command(f"ping {ip} repeat {count} timeout {timeout} source {source}")
 
         # Si le routeur est en mode interactif
         if "Protocol" in output:
@@ -30,11 +31,12 @@ def ping(ip, count=5, timeout=2):
             output += conn.send_command_timing(str(count))  # Repeat count
             output += conn.send_command_timing("")  # Datagram size
             output += conn.send_command_timing(str(timeout))  # Timeout in seconds
-            output += conn.send_command_timing("")  # Extended commands
-            output += conn.send_command_timing("")  # Sweep range
+            output += conn.send_command_timing("yes")  # Extended commands: yes
+            output += conn.send_command_timing(source)  # Source address
+            for _ in range(6):
+                output += conn.send_command_timing("")  # Skip remaining extended options
 
         conn.disconnect()
-
         #Cisco ping output includes '!' for successful answers; it's seen as a True value
         return "!" in output
 
