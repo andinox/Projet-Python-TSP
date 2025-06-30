@@ -66,7 +66,7 @@ def save_arp_entries_to_db(arp_entries):
                 log_debug(f"[SKIP] ARP IP {ip_arp} not in same network as interface {interface.idinterface}.")
 
             # --- ARP TEST ---
-            interfaceT = Interface_TEST.objects.filter(idinterface=entry["idinterface"]).first()
+            interfaceT = Interface_TEST.objects.filter(idinterface=entry["idinterface"]).last()
             if not interfaceT:
                 log_debug("[ERROR] No interface TEST found in base.")
                 continue

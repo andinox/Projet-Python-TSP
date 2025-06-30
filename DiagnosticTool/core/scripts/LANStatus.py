@@ -26,12 +26,12 @@ def check_arp_ip_in_interface_network():
     """
     messages = []
     errors = 0
-    ten_minutes_ago = now() - timedelta(minutes=10)
+    ten_minutes_ago = now() - timedelta(minutes=1)
 
     entries = ARP_TEST.objects.filter(timestamp__gte=ten_minutes_ago)
     
     if not entries.exists():
-        messages.append("[ATTENTION] Aucun enregistrement ARP récent (moins de 10 minutes) trouvé.")
+        messages.append("[ATTENTION] Aucun enregistrement ARP récent (moins de 1 minute) trouvé.")
         return False, messages
     #just checking if the last entry is correct
     for entry in entries:
