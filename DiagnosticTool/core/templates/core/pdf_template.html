@@ -14,6 +14,15 @@
     </div>
 
     <h2>Résultat du diagnostic</h2>
-    <pre>{{ diagnostic.result }}</pre>
+    {% for line in diagnostic.result.splitlines %}
+        {% if "OK" in line %}
+            <div style="color: green;">{{ line }}</div>
+        {% elif "ÉCHEC" in line or "ECHEC" in line or "ERREUR" in line %}
+            <div style="color: red;">{{ line }}</div>
+        {% else %}
+            <div>{{ line }}</div>
+        {% endif %}
+    {% endfor %}
+
 </body>
 </html>
