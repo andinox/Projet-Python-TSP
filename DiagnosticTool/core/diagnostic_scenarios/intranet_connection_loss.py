@@ -59,7 +59,7 @@ class IntranetConnectionLossDiagnostic:
             report.append(f"Voisin : {entry.neighbor_ip}")
             report.append(f"ASN distant : {entry.asn}")
             report.append(f"Statut : {entry.up_down_status}")
-            report.append(f"Dernier changement d’état : {format_duration(entry.time_last_change)}")
+            report.append(f"Dernier changement d’état : Le {entry.timestamp.date()} à {entry.timestamp.time().strftime('%H:%M:%S')}")
 
             if entry.up_down_status.lower() == "up":
                 report.append("Diagnostic : session BGP stable avec le voisin\n")
