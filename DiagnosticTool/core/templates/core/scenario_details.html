@@ -43,15 +43,17 @@
                             <pre class="bg-light p-3 border rounded small mt-2" style="white-space: pre-wrap;">{{ diagnostic_result }}</pre>
                         {% else %}
                                 <strong>ℹ️ Pour votre information :</strong><br>
-                                Le résultat du diagnostic sera affiché ici après que vous aurez cliqué sur <em>Lancer le diagnostic</em>.
+                                Le résultat et l'export PDF du diagnostic sera affiché ici après que vous aurez cliqué sur <em>Lancer le diagnostic</em>.
                         {% endif %}
                     </div>
-                    <form method="post" class="mt-4" action="{% url 'export_scenario_pdf' diagnostic.id %}">
-                        {% csrf_token %}
-                        <button class="btn btn-outline-primary w-100">
-                            📄 Exporter le rapport en PDF
-                        </button>
-                    </form>
+                    {% if diagnostic and diagnostic.id %}
+                        <form method="post" class="mt-4" action="{% url 'export_diagnostic_pdf' diagnostic.id %}">
+                            {% csrf_token %}
+                            <button class="btn btn-outline-primary w-100">
+                                📄 Exporter le rapport en PDF
+                            </button>
+                        </form>
+                    {% endif %}
                 </div>
             </section>
         </div>

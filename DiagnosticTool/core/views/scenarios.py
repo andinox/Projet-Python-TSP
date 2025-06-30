@@ -42,6 +42,8 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         # Retrieve and remove 'diagnostic_launched' flag from session
         context['diagnostic_launched'] = self.request.session.pop('diagnostic_launched', False)
+        
+        context['diagnostic'] = getattr(self, 'diagnostic', None)
 
         return context
 
@@ -72,6 +74,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
             logger.info(f"Résultat du diagnostic :\n{diagnostic_result}")
             diagnostic.result = diagnostic_result
             diagnostic.save()
+            self.diagnostic = diagnostic
             self.diagnostic_result = diagnostic_result
             self.object = scenario
 
@@ -82,6 +85,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
             logger.info(f"Résultat du diagnostic Intranet :\n{diagnostic_result}")
             diagnostic.result = diagnostic_result
             diagnostic.save()
+            self.diagnostic = diagnostic
             self.diagnostic_result = diagnostic_result
             self.object = scenario
 
