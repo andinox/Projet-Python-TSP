@@ -2,7 +2,6 @@ from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
 from django.template.loader import get_template
-from weasyprint import HTML
 import tempfile
 from core.models import Diagnostic
 from core.models.scenario import Scenario
@@ -18,6 +17,7 @@ class ScenarioPDFView(LoginRequiredMixin, DetailView):
         return self.generate_pdf()
 
     def generate_pdf(self):
+        from weasyprint import HTML
 
         diagnostic = self.get_object()
         scenario = diagnostic.get_scenario_display() if hasattr(diagnostic, 'get_scenario_display') else diagnostic.diagnosis_type
