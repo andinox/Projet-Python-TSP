@@ -138,36 +138,3 @@ def save_bgp_entries(entries):
         except Exception as e:
             log_debug(f"[ERREUR] Erreur inattendue pour {entry.get('neighbor_ip')}: {e}")
             log_debug(traceback.format_exc())
-
-"""
-# For testing, we will delete after real BGP is OK
-def main():
-    try:
-        data_file = "/home/user/Projet-Python-TSP/DiagnosticTool/data/bgp_sample.json"
-
-        # Load JSON data from file
-        with open(data_file, "r") as f:
-            json_data = json.load(f)
-
-        # Parse
-        entries = parse_bgp_from_json(json_data)
-        print(f"Entrées {len(entries)} parsées.")
-
-        # Print parsed entries
-        for i, entry in enumerate(entries, start=1):
-            print(f"\n--- Entry {i} ---")
-            for key, value in entry.items():
-                print(f"{key}: {value}")
-
-        save_bgp_entries(entries)
-        print("Entrées BGP sauvegardées dans la base de données.")
-
-    except Exception as e:
-        log_debug(f"[Erreur] Exception dans main_insert_bgp.py: {e}")
-        log_debug(traceback.format_exc())
-        print(f"Erreur: {e}")
-
-
-if __name__ == "__main__":
-    main()
-"""
