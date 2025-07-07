@@ -178,7 +178,7 @@ class BasicNetworkTests:
 
         if not arp_passed:
             issue_found = True
-            full_report.append("\n[INFO] ARP problems detected. Ping test skipped.")
+            full_report.append("\n[INFO] Problèmes ARP détectés. Test ping ignoré.")
             return issue_found, "\n".join(full_report)
 
         # Step 3: LAN ping
