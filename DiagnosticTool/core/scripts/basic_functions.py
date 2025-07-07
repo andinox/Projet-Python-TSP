@@ -1,5 +1,7 @@
 #This file contains the basic functions that will be used in other scripts.
 import datetime
+import nmap
+import re
 from netmiko import ConnectHandler
 from DiagnosticTool import settings
 from core.router.infosrouter import hosts
@@ -73,3 +75,30 @@ def traceroute(destination):
         print(f"[ERROR traceroute] : {e}")
         return [], None
 
+def get_open_ports(ip_address):
+    nm = nmap.PortScanner()
+    nm.scan(ip_address, arguments='-sV')
+
+    results = {}
+    if ip_address in nm.all_hosts():
+        for proto in nm[ip_address].all_protocols():
+            service_info = []
+
+            for port in sorted(nm[ip_address][proto].keys()):
+                port_data = nm[ip_address][proto][port]
+                version = port_data.get("version", "")
+                product = port_data.get("product", "")
+                name = port_data.get("name", "")
+                extrainfo=port_data.get("extrainfo","")
+
+                service_info.append({
+                    "port": port,
+                    "name": name,
+                    "product": product,
+                    "version": version,
+                    "extrainfo":extrainfo
+                })
+
+            results[proto] = service_info
+
+    return results
