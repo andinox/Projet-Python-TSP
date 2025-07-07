@@ -6,6 +6,7 @@ from .bgp import BGP_CONF, BGP_TEST
 from .arp import ARP_CONF, ARP_TEST
 from .icmp import ICMP
 from .security import Security
+from .securityscan import SecurityScan
 
 __all__ = [
     "Diagnostic",
@@ -18,5 +19,6 @@ __all__ = [
     "ARP_CONF",
     "ARP_TEST",
     "ICMP",
-    "Security"
+    "Security",
+    "SecurityScan"
 ]
