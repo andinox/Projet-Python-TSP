@@ -99,6 +99,9 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
                 result = d.run()
                 logger.info(f"Résultat du diagnostic :\n{result}")
                 results.append(result)
+                if any(keyword in result.upper() for keyword in ["ÉCHEC", "ECHEC", "ERREUR"]):
+                    logger.error("Un échec ou une erreur a été détecté. Interruption du diagnostic global.")
+                    break
             all_results = "\n".join(results)
             diagnostic_instance.result = all_results
             diagnostic_instance.save()
