@@ -12,22 +12,40 @@ def get_router_connection():
     returns the router connection details
     """
     return hosts[0]
-def ping(ip):
+
+def ping(ip, count=5, timeout=2, source="172.16.10.51"):
     """
-    function sending  a ping from the router to the given ip address
-    returns True if ping is successful
-    else returns False
+    Sends an interactive ping from the router to the given IP address,
+    using optional source IP. Returns True if ping is successful.
     """
     try:
         conn = ConnectHandler(**get_router_connection())
-        output = conn.send_command(f"ping {ip}")
+        conn.enable()
+        output = conn.send_command_timing("ping")
+        output += conn.send_command_timing("")  # Protocol [ip]
+        output += conn.send_command_timing(ip)  # Target IP
+        output += conn.send_command_timing(str(count))  # Repeat count
+        output += conn.send_command_timing("")  # Datagram size
+        output += conn.send_command_timing(str(timeout))  # Timeout
+        output += conn.send_command_timing("yes")  # Extended commands? yes
+        output += conn.send_command_timing("no")  # Ingress ping? no
+        output += conn.send_command_timing(source if source else "")  # Source address
+        output += conn.send_command_timing("")  # DSCP
+        output += conn.send_command_timing("")  # TOS
+        output += conn.send_command_timing("")  # DF bit
+        output += conn.send_command_timing("")  # Validate reply
+        output += conn.send_command_timing("")  # Data pattern
+        output += conn.send_command_timing("")  # LSR/Timestamp/etc
+        output += conn.send_command_timing("")  # Sweep range
+
         conn.disconnect()
 
-        #Cisco ping output includes '!' for successful answers; it's seen as a True value
+        print("[DEBUG ping output]:\n", output)
         return "!" in output
     except Exception as e:
         print(f"[ERROR ping] : {e}")
         return False
+
 
 
 def traceroute(destination):
@@ -58,7 +76,7 @@ def traceroute(destination):
         print(f"[ERROR traceroute] : {e}")
         return [], None
 
-def get_open_ports(ip_address):
+def nmap_scan(ip_address):
     nm = nmap.PortScanner()
     nm.scan(ip_address, arguments='-sV')
 

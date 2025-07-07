@@ -190,6 +190,7 @@ ROUTER_USERNAME =os.getenv('ROUTER_USERNAME')
 ROUTER_PWD =os.getenv('ROUTER_PWD')
 ROUTER_PORT = os.getenv('ROUTER_PORT')
 ROUTER_IP = os.getenv('ROUTER_IP')
+ENABLE=os.getenv('ENABLE')
 
 #password hashers
 PASSWORD_HASHERS = [

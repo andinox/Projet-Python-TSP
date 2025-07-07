@@ -1,4 +1,4 @@
-from DiagnosticTool.settings import ROUTER_PWD, ROUTER_USERNAME, ROUTER_IP
+from DiagnosticTool.settings import ROUTER_PWD, ROUTER_USERNAME, ROUTER_IP,ENABLE
 
 #info to connect to the router
 
@@ -8,7 +8,8 @@ hosts = [
         "device_type": "cisco_xr",
         #"port": 57400,
         "port": 22,
-	"username": ROUTER_USERNAME,
-        "password": ROUTER_PWD
+	    "username": ROUTER_USERNAME,
+        "password": ROUTER_PWD,
+        "secret": ENABLE
     }
 ]
