@@ -50,13 +50,12 @@
                             </thead>
                             <tbody>
                                 {% for diag in diagnostic_history %}
-                                <!--{{diag.diagnosis_type}}-->
                                 <tr>
                                     <td><strong>{{ diag.diagnosis_type }}</strong></td>
                                     <td><em>{{ diag.router.name }}</em></td>
                                     <td style="color:#6c757d;">{{ diag.date|date:"d/m/Y H:i" }}</td>
                                     <td class="text-center">
-                                        <a href="{% url 'export_diagnostic_pdf' diag.id %}" class="btn btn-outline-primary btn-sm " title="Téléchargement non disponible">
+                                        <a href="{% url 'export_diagnostic_pdf' diag.id %}" class="btn btn-outline-primary btn-sm " title="Téléchargement">
                                             <i class="bi bi-cloud-download"></i>
                                         </a>
                                     </td>
