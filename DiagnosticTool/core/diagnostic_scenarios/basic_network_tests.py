@@ -102,7 +102,6 @@ class BasicNetworkTests:
         issues_found = False
         report_lines = []
 
-        report_lines.append("[Basic network tests]")
         for entry in interfaces:
             idinterface = entry.idinterface
             interface_name = entry.interface_name
@@ -145,10 +144,13 @@ class BasicNetworkTests:
                     formatted = self.format_timedelta(result)
                     report_lines.append("Status : admin down")
                     report_lines.append(f"Diagnostic : l'interface est admin down depuis {formatted}")
-
+            else : 
+                report_lines.append(f"\n [OK]  Interface : {interface_name} ({idinterface})")
+                report_lines.append(f"Admin status : {admin_status}")
+                report_lines.append(f"Reachability : {reachability}")
         # no issues found, print success message
         if not issues_found:
-            report_lines.append("[INTERFACES] tests effectués avec succès, aucun problème à signaler.")
+            report_lines.append("[OK] Tests sur les interfaces effectués avec succès, aucun problème à signaler.")
 
         return issues_found, "\n".join(report_lines)
     
@@ -162,14 +164,17 @@ class BasicNetworkTests:
         """
         full_report = []
         issue_found = False
+        
+        full_report.append("[Tests Réseaux de base]")
 
         # Step 1: Interface status
         interfaces_issue, interface_report = self.report_interfaces_status()
+        full_report.append("[INTERFACES] Lancement des tests sur les interfaces")
         full_report.append(interface_report)
 
         if interfaces_issue:
             issue_found = True
-            full_report.append("\n[INFO] Interface issues detected. ARP and ping tests skipped.")
+            full_report.append("\n[INFO] Problèmes d'interfaces détectés. Tests ARP et ping ignorés.")
             return issue_found, "\n".join(full_report)
 
         # Step 2: ARP checks
