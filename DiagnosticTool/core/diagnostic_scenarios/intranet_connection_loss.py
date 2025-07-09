@@ -1,6 +1,7 @@
 from core.models import Diagnostic, Router
 from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
 from core.models.bgp import BGP_TEST, BGP_CONF
+from core.scripts.basic_functions import ping
 
 def format_duration(seconds_str):
     """
@@ -63,6 +64,14 @@ class IntranetConnectionLossDiagnostic:
 
             if entry.up_down_status.lower() == "up":
                 report.append("Diagnostic : session BGP stable avec le voisin\n")
+
+                if ping("10.255.255.1",5,2,"192.168.68.8"):
+                    report.append("[OK] ping vers le serveur de l'entreprise réussi.")
+                    report.append("Demander une analyse plus pousser pour comprendre à quel niveau est le problème")
+                else :
+                    report.append("[ECHEC] Le ping vers le serveur de l'entreprise a échoué")
+                    report.append("Problème détecté au niveau du lien BGP")
+
             else:
                 report.append("Diagnostic : session BGP inactive, vérifier la configuration et la connectivité\n")
 
