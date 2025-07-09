@@ -1,6 +1,6 @@
 # basic_network_tests.py
 
-from core.models import Interface_CONF, Interface_TEST
+from core.models import Interface_CONF, Interface_TEST, ARP_CONF
 from django.utils.timezone import now
 from core.scripts.LANStatus import check_arp_test_has_data,check_arp_ip_in_interface_network,compare_arp_conf_and_test
 from core.scripts.basic_functions import ping
@@ -187,6 +187,14 @@ class BasicNetworkTests:
             return issue_found, "\n".join(full_report)
 
         # Step 3: LAN ping
-        ### to be added ###
+        arp_entry = ARP_CONF.objects.filter(idinterface__id=1).exclude(ip_arp="172.16.10.51").first()
+
+        if arp_entry:
+            ip = arp_entry.ip_arp
+            if ping(ip) :
+                full_report.append(f"[OK] Les ping vers l'IP {ip} située dans le LAN ont réussi")
+            else : 
+                issue_found = True
+                full_report.append(f"[ECHEC] Impossible de faire de ping vers l'IP {ip} située dans le LAN")
 
         return issue_found, "\n".join(full_report)
