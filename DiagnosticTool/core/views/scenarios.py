@@ -9,6 +9,8 @@ from core.diagnostic_scenarios.internet_connection_loss import (
     InternetConnectionLossDiagnostic,
 )
 from core.diagnostic_scenarios.intranet_connection_loss import IntranetConnectionLossDiagnostic
+from core.diagnostic_scenarios.security_scenario import SecurityDiagnostic
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -87,6 +89,17 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
             diagnostic.save()
             self.diagnostic = diagnostic
             self.diagnostic_result = diagnostic_result
+            self.object = scenario
+
+        elif scenario.slug == "je-souhaite-verifier-la-securite-de-mon-reseau":
+            logger.info("[DIAGNOSTIC DE SÉCURITÉ]")
+            dgc = SecurityDiagnostic(router)
+            diagnostic_result = dgc.run()
+            logger.info(f"Résultat du diagnostic de sécurité :\n{diagnostic_result}")
+            diagnostic.result = diagnostic_result
+            diagnostic.save()
+            self.diagnostic=diagnostic
+            self.diagnostic_result=diagnostic_result
             self.object = scenario
 
 

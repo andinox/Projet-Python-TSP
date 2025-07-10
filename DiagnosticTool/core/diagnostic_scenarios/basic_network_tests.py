@@ -1,6 +1,6 @@
 # basic_network_tests.py
 
-from core.models import Interface_CONF, Interface_TEST
+from core.models import Interface_CONF, Interface_TEST, ARP_CONF
 from django.utils.timezone import now
 from core.scripts.LANStatus import check_arp_test_has_data,check_arp_ip_in_interface_network,compare_arp_conf_and_test
 from core.scripts.basic_functions import ping
@@ -102,7 +102,6 @@ class BasicNetworkTests:
         issues_found = False
         report_lines = []
 
-        report_lines.append("[Basic network tests]")
         for entry in interfaces:
             idinterface = entry.idinterface
             interface_name = entry.interface_name
@@ -145,10 +144,13 @@ class BasicNetworkTests:
                     formatted = self.format_timedelta(result)
                     report_lines.append("Status : admin down")
                     report_lines.append(f"Diagnostic : l'interface est admin down depuis {formatted}")
-
+            else : 
+                report_lines.append(f"\n [OK]  Interface : {interface_name} ({idinterface})")
+                report_lines.append(f"Admin status : {admin_status}")
+                report_lines.append(f"Reachability : {reachability}")
         # no issues found, print success message
         if not issues_found:
-            report_lines.append("[INTERFACES] tests effectués avec succès, aucun problème à signaler.")
+            report_lines.append("[OK] Tests sur les interfaces effectués avec succès, aucun problème à signaler.")
 
         return issues_found, "\n".join(report_lines)
     
@@ -162,14 +164,17 @@ class BasicNetworkTests:
         """
         full_report = []
         issue_found = False
+        
+        full_report.append("[Tests Réseaux de base]")
 
         # Step 1: Interface status
         interfaces_issue, interface_report = self.report_interfaces_status()
+        full_report.append("[INTERFACES] Lancement des tests sur les interfaces")
         full_report.append(interface_report)
 
         if interfaces_issue:
             issue_found = True
-            full_report.append("\n[INFO] Interface issues detected. ARP and ping tests skipped.")
+            full_report.append("\n[INFO] Problèmes d'interfaces détectés. Tests ARP et ping ignorés.")
             return issue_found, "\n".join(full_report)
 
         # Step 2: ARP checks
@@ -182,6 +187,14 @@ class BasicNetworkTests:
             return issue_found, "\n".join(full_report)
 
         # Step 3: LAN ping
-        ### to be added ###
+        arp_entry = ARP_CONF.objects.filter(idinterface__id=1).exclude(ip_arp="172.16.10.51").first()
+
+        if arp_entry:
+            ip = arp_entry.ip_arp
+            if ping(ip) :
+                full_report.append(f"[OK] Les ping vers l'IP {ip} située dans le LAN ont réussi")
+            else : 
+                issue_found = True
+                full_report.append(f"[ECHEC] Impossible de faire de ping vers l'IP {ip} située dans le LAN")
 
         return issue_found, "\n".join(full_report)

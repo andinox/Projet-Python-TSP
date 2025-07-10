@@ -103,3 +103,14 @@ def nmap_scan(ip_address):
             results[proto] = service_info
 
     return results
+
+def convert_uptime(uptime_centisecs):
+    """
+    Convert uptime from centiseconds to days, hours, minutes, seconds.
+    """
+    total_seconds = int(uptime_centisecs) // 100
+    days = total_seconds // 86400
+    hours = (total_seconds % 86400) // 3600
+    minutes = (total_seconds % 3600) // 60
+    seconds = total_seconds % 60
+    return f"{days}d {hours}h {minutes}m {seconds}s"
