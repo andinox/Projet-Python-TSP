@@ -55,8 +55,8 @@
                   <td><em>{{ diag.router.name }}</em></td>
                   <td class="text-muted-custom">{{ diag.date|date:"d/m/Y H:i" }}</td>
                   <td class="text-center">
-                    <!-- TODO: @Aude Remplacer # par l'url réelle -->
-                    <a href="#" class="btn btn-outline-primary btn-sm disabled" title="Téléchargement">
+                      <a href="{% url 'export_diagnostic_pdf' diag.id %}" class="btn btn-outline-primary btn-sm " title="Téléchargement non disponible">
+
                       <i class="bi bi-cloud-download"></i>
                     </a>
                   </td>

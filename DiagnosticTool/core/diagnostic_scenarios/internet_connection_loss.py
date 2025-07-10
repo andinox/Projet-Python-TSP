@@ -20,7 +20,7 @@ class InternetConnectionLossDiagnostic:
         Runs the tests for internet connection loss by using the decision tree
         """
         report = []
-        report.append("----- DÉBUT DU DIAGNOSTIC : Perte de connexion Internet -----\n")
+        report.append("DÉBUT DU DIAGNOSTIC : Perte de connexion Internet\n\n")
         # starts with the basic tests
         issue_found, basic_tests_report = self.tests.run_all_basic_tests()
         report.append(basic_tests_report)
