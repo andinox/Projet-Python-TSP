@@ -20,6 +20,14 @@
                         </div>
                         <form method="post" class="mt-4">
                             {% csrf_token %}
+                                <!-- Animation de chargement cachée -->
+    <div id="loadingSpinner" class="d-none text-center my-3">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Chargement...</span>
+        </div>
+        <p>Diagnostic en cours, veuillez patienter...</p>
+    </div>
+
                             <button type="submit" class="btn btn-success w-100">Lancer le diagnostic
                             </button>
                         </form>
@@ -77,3 +85,16 @@
     </div>
 
 {% endblock %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form'); // ou plus précis avec un id
+    const spinner = document.getElementById('loadingSpinner');
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function(e) {
+        // Affiche le spinner et désactive le bouton
+        spinner.classList.remove('d-none');
+        submitButton.disabled = true;
+    });
+});
+</script>
