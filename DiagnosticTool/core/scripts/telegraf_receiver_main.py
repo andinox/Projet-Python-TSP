@@ -43,15 +43,6 @@ def main():
             save_security_entries(security_entries)
             save_security_entries(security_entries)
             
-            if security_entries:
-                hostname = security_entries[0].get("sysName")
-                log_debug(f"[SCAN] Lancement du scan de sécurité sur {ROUTER_IP} pour {hostname}")
-                perform_security_scan(ROUTER_IP, hostname)
-            else:
-                log_debug("[SECU][WARN] Aucun hostname trouvé, scan de sécurité non effectué")
-
-        except json.JSONDecodeError as e:
-            log_debug(f"[ERREUR JSON] : {e}")
         except Exception as e:
             import traceback
             log_debug(f"[ERREUR] : {e}")
