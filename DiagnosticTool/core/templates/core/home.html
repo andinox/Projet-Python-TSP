@@ -36,7 +36,8 @@
     <section class="col-lg-10">
       <div class="card custom-card">
         <div class="card-body">
-          <h5 class="card-title mb-3">Historique</h5>
+          <h5 class="card-title mb-3"><img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo" style="width: 24px; height: auto;" class="me-2">
+Historique</h5>
           {% if diagnostic_history %}
           <div class="table-responsive">
             <table class="table table-hover align-middle mb-0">
@@ -57,7 +58,7 @@
                   <td class="text-center">
                       <a href="{% url 'export_diagnostic_pdf' diag.id %}" class="btn btn-outline-primary btn-sm " title="Téléchargement non disponible">
 
-                      <i class="bi bi-cloud-download"></i>
+                      <i class="bi bi-cloud-download pdf_file_icon.svg"></i>
                     </a>
                   </td>
                 </tr>

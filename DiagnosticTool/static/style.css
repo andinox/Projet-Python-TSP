@@ -14,3 +14,70 @@ header .container {
 header img {
     margin-right: 15px;
 }
+
+/* ✅ Alertes personnalisées */
+.alert-success {
+    background-color: #dce6fa !important;
+    color: #34538b !important;
+    border: 1px solid #a5bde9 !important;
+}
+
+.alert-danger {
+    background-color: #fbe2e2 !important;
+    color: #9e1c1c !important;
+    border: 1px solid #f5a9a9 !important;
+}
+
+/* ✅ Cartes */
+.card {
+    background-color: #f7f8fc;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+}
+
+.card-title {
+    color: #4f5891;
+}
+
+/* ✅ Tableaux */
+.table {
+    background-color: #ffffff;
+    border-color: #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f5ff;
+}
+
+.table thead {
+    background-color: #c6d5ed;
+    color: #3a3f78;
+    font-weight: bold;
+}
+
+/* ✅ List group pour Statistiques */
+.list-group-item {
+    background-color: #eef2ff;
+    border: none;
+    color: #333;
+}
+
+/* ✅ Card-header pour "Statistiques Interfaces Test" */
+.card-header {
+    background: linear-gradient(45deg, #8b9de8, #c6d5ed);
+    color: white !important;
+    font-weight: bold;
+}
+
+/* ✅ Header si utilisé */
+header {
+    background: linear-gradient(45deg, #c6d5ed, #8b9de8);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #fff;
+    font-weight: 600;
+}
+
