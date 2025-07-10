@@ -41,7 +41,7 @@ class HomeView(LoginRequiredMixin,ListView):
         context = super().get_context_data(**kwargs)
         diagnostics_history = DiagnosticHistory.get_diagnostic_history_last_30d()
 
-        paginator = Paginator(diagnostics_history, 10)
+        paginator = Paginator(diagnostics_history, 3)
         page = self.request.GET.get('page')
         try:
             diagnostics_page = paginator.page(page)

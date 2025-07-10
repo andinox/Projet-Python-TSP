@@ -48,6 +48,9 @@
                         {% if diagnostic_result %}
                             <label class="fw-bold">Résultat :</label>
                         {% for line in diagnostic_result.splitlines %}
+                             {% if " DÉBUT DU " in line %}
+<div class="text-success">{{ line }}</div>
+                             {% endif%}
                             {% if "OK" in line %}
                                 <div class="text-success">{{ line }}</div>
                             {% elif "ÉCHEC" in line or "ECHEC" in line or "ERREUR" in line %}

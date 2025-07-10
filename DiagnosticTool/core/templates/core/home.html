@@ -33,73 +33,70 @@
             </div>
         </section>
 
-        <section class="col-lg-10">
-            <div class="card shadow-sm border-light" style="border-radius: 10px;">
-                <div class="card-body">
-                    <h5 class="card-title" style="color: #4f5891; font-weight: bold;">Historique</h5>
-                    {% if diagnostic_history %}
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
-                            <thead style="background-color: #4f5891; color: white;">
-                                <tr>
-                                    <th scope="col">Type de diagnostic</th>
-                                    <th scope="col">Routeur</th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col" class="text-center">Téléchargement</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for diag in diagnostic_history %}
-                                <tr>
-                                    <td><strong>{{ diag.diagnosis_type }}</strong></td>
-                                    <td><em>{{ diag.router.name }}</em></td>
-                                    <td style="color:#6c757d;">{{ diag.date|date:"d/m/Y H:i" }}</td>
-                                    <td class="text-center">
-                                        <a href="{% url 'export_diagnostic_pdf' diag.id %}" class="btn btn-outline-primary btn-sm " title="Téléchargement">
-                                            <i class="bi bi-cloud-download"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
+    <section class="col-lg-10">
+      <div class="card custom-card">
+        <div class="card-body">
+          <h5 class="card-title mb-3">Historique</h5>
+          {% if diagnostic_history %}
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">Type de diagnostic</th>
+                  <th scope="col">Routeur</th>
+                  <th scope="col">Date</th>
+                  <th scope="col" class="text-center">Téléchargement</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for diag in diagnostic_history %}
+                <tr>
+                  <td><strong>{{ diag.diagnosis_type }}</strong></td>
+                  <td><em>{{ diag.router.name }}</em></td>
+                  <td class="text-muted-custom">{{ diag.date|date:"d/m/Y H:i" }}</td>
+                  <td class="text-center">
+                    <!-- TODO: @Aude Remplacer # par l'url réelle -->
+                    <a href="#" class="btn btn-outline-primary btn-sm disabled" title="Téléchargement">
+                      <i class="bi bi-cloud-download"></i>
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
 
-                    <nav aria-label="Pagination historique" class="mt-3">
-                      <ul class="pagination justify-content-center">
-                        {% if diagnostic_history.has_previous %}
-                          <li class="page-item">
-                            <a class="page-link" href="?page={{ diagnostic_history.previous_page_number }}" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                            </a>
-                          </li>
-                        {% else %}
-                          <li class="page-item disabled">
-                            <span class="page-link">&laquo;</span>
-                          </li>
-                        {% endif %}
+          <nav aria-label="Pagination historique" class="mt-4">
+            <ul class="pagination justify-content-center mb-0">
+              {% if diagnostic_history.has_previous %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ diagnostic_history.previous_page_number }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+              {% endif %}
 
-                        {% for num in diagnostic_history.paginator.page_range %}
-                          {% if diagnostic_history.number == num %}
-                            <li class="page-item active"><span class="page-link">{{ num }}</span></li>
-                          {% else %}
-                            <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-                          {% endif %}
-                        {% endfor %}
+              {% for num in diagnostic_history.paginator.page_range %}
+                {% if diagnostic_history.number == num %}
+                  <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                {% else %}
+                  <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                {% endif %}
+              {% endfor %}
 
-                        {% if diagnostic_history.has_next %}
-                          <li class="page-item">
-                            <a class="page-link" href="?page={{ diagnostic_history.next_page_number }}" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                            </a>
-                          </li>
-                        {% else %}
-                          <li class="page-item disabled">
-                            <span class="page-link">&raquo;</span>
-                          </li>
-                        {% endif %}
-                      </ul>
-                    </nav>
+              {% if diagnostic_history.has_next %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ diagnostic_history.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              {% else %}
+                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+              {% endif %}
+            </ul>
+          </nav>
 
                     {% else %}
                         <p style="color: #6c757d;">Aïe ... Aucun diagnostic encore réalisé</p>
