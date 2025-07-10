@@ -67,6 +67,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
             result=""
         )
 
+
         # Dispatch based on scenario slug
         if scenario.slug == 'perte-de-connexion-vers-internet':
             logger.info("Starting internet connection loss diagnostic")

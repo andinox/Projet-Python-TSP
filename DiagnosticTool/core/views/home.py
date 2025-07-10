@@ -14,7 +14,7 @@ class DiagnosticHistory:
     @staticmethod
     def get_diagnostic_history_last_30d( days=30):
         since = timezone.now() - timedelta(days=days)
-        return Diagnostic.objects.filter(date__gte=since).order_by('-date')
+        return Diagnostic.objects.filter(date__gte=since).select_related('router').order_by('-date')
 
 class HomeView(LoginRequiredMixin,ListView):
     """

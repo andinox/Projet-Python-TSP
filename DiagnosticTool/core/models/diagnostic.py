@@ -12,3 +12,11 @@ class Diagnostic(models.Model):
 
     def __str__(self):
         return f"{self.router.name} - {self.diagnosis_type}"
+
+    class Meta:
+        """
+        This class overrides the default Django Meta class to optimize SQL request
+        """
+        indexes = [
+            models.Index(fields=['date']),
+        ]

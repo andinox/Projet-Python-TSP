@@ -6,7 +6,6 @@
 <div class="container mt-5 pt-5" style="background-color: #f8f9fa; padding: 3rem 0;">
     <div class="row justify-content-center">
         <section class="col-lg-8 text-center">
-
             <h1 class="display-4" style="color: #4f5891; font-size: 2.5rem;">Prenez soin de la santé de votre réseau facilement</h1>
             <p class="lead" style="color: #6c757d; font-size: 1.25rem;">Accédez à des diagnostics fiables et rapides, où que vous soyez ;)</p>
         </section>
@@ -33,72 +32,75 @@
             </div>
         </section>
 
-    <section class="col-lg-10">
-      <div class="card custom-card">
-        <div class="card-body">
-          <h5 class="card-title mb-3"><img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo" style="width: 24px; height: auto;" class="me-2">
-Historique</h5>
-          {% if diagnostic_history %}
-          <div class="table-responsive">
-            <table class="table table-hover align-middle mb-0">
-              <thead>
-                <tr>
-                  <th scope="col">Type de diagnostic</th>
-                  <th scope="col">Routeur</th>
-                  <th scope="col">Date</th>
-                  <th scope="col" class="text-center">Téléchargement</th>
-                </tr>
-              </thead>
-              <tbody>
-                {% for diag in diagnostic_history %}
-                <tr>
-                  <td><strong>{{ diag.diagnosis_type }}</strong></td>
-                  <td><em>{{ diag.router.name }}</em></td>
-                  <td class="text-muted-custom">{{ diag.date|date:"d/m/Y H:i" }}</td>
-                  <td class="text-center">
-                      <a href="{% url 'export_diagnostic_pdf' diag.id %}" class="btn btn-outline-primary btn-sm " title="Téléchargement non disponible">
+        <section class="col-lg-10">
+            <div class="card custom-card">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">
+                        <img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo" style="width: 24px; height: auto;" class="me-2">
+                        Historique
+                    </h5>
 
-                      <i class="bi bi-cloud-download pdf_file_icon.svg"></i>
-                    </a>
-                  </td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
+                    {% if diagnostic_history %}
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Type de diagnostic</th>
+                                        <th scope="col">Routeur</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col" class="text-center">Téléchargement</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for diag in diagnostic_history %}
+                                        {% with diag.router as routeur %}
+                                            <tr>
+                                                <td><strong>{{ diag.diagnosis_type }}</strong></td>
+                                                <td><em>{{ routeur.name }}</em></td>
+                                                <td class="text-muted-custom">{{ diag.date|date:"d/m/Y H:i" }}</td>
+                                                <td class="text-center">
+                                                    <a href="{% url 'export_diagnostic_pdf' diag.id %}" class="btn btn-outline-primary btn-sm" title="Téléchargement non disponible">
+                                                        <i class="bi bi-cloud-download pdf_file_icon.svg"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endwith %}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
 
-          <nav aria-label="Pagination historique" class="mt-4">
-            <ul class="pagination justify-content-center mb-0">
-              {% if diagnostic_history.has_previous %}
-                <li class="page-item">
-                  <a class="page-link" href="?page={{ diagnostic_history.previous_page_number }}" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                  </a>
-                </li>
-              {% else %}
-                <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
-              {% endif %}
+                        <nav aria-label="Pagination historique" class="mt-4">
+                            <ul class="pagination justify-content-center mb-0">
+                                {% if diagnostic_history.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ diagnostic_history.previous_page_number }}" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                                {% endif %}
 
-              {% for num in diagnostic_history.paginator.page_range %}
-                {% if diagnostic_history.number == num %}
-                  <li class="page-item active"><span class="page-link">{{ num }}</span></li>
-                {% else %}
-                  <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
-                {% endif %}
-              {% endfor %}
+                                {% for num in diagnostic_history.paginator.page_range %}
+                                    {% if diagnostic_history.number == num %}
+                                        <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                                    {% else %}
+                                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
 
-              {% if diagnostic_history.has_next %}
-                <li class="page-item">
-                  <a class="page-link" href="?page={{ diagnostic_history.next_page_number }}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                  </a>
-                </li>
-              {% else %}
-                <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
-              {% endif %}
-            </ul>
-          </nav>
-
+                                {% if diagnostic_history.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ diagnostic_history.next_page_number }}" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
                     {% else %}
                         <p style="color: #6c757d;">Aïe ... Aucun diagnostic encore réalisé</p>
                     {% endif %}
