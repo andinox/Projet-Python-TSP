@@ -5,6 +5,7 @@ cffi==1.17.1
 cryptography==45.0.5
 cssselect2==0.8.0
 Django==5.1.2
+django-debug-toolbar==5.2.0
 dotenv==0.9.9
 fonttools==4.58.5
 future==1.0.0

@@ -60,6 +60,10 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 
 ]
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "172.16.10.50",
+]
 
 ROOT_URLCONF = 'DiagnosticTool.urls'
 
@@ -182,13 +186,11 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# à revoir après pour éviter qu'on puisse accéder aux infos de la page home
-# même si on est en mode déconnecté.
 LOGIN_URL ='login_page'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'login_page'
 
-#config router compte
+#config router account
 ROUTER_USERNAME =os.getenv('ROUTER_USERNAME')
 ROUTER_PWD =os.getenv('ROUTER_PWD')
 ROUTER_PORT = os.getenv('ROUTER_PORT')
@@ -207,8 +209,6 @@ PASSWORD_HASHERS = [
 
 #email connection parameters
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST = 'smtp.gmail.com'
