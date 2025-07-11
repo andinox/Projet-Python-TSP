@@ -18,15 +18,9 @@
                         <div class="bg-light p-3 rounded border text-muted mb-4">
                             {{ scenario.description|linebreaksbr }}
                         </div>
-                        <form method="post" class="mt-4">
+                        <form id="diagnosticForm" method="post" class="mt-4">
                             {% csrf_token %}
-                                <!-- Animation de chargement cachée -->
-    <div id="loadingSpinner" class="d-none text-center my-3">
-        <div class="spinner-border text-primary" role="status">
-          <span class="visually-hidden">Chargement...</span>
-        </div>
-        <p>Diagnostic en cours, veuillez patienter...</p>
-    </div>
+                                
 
                             <button type="submit" class="btn btn-success w-100">Lancer le diagnostic
                             </button>
@@ -40,20 +34,27 @@
                 <section class="card h-100 shadow-sm border-0">
                     <div class="card-body p-4">
                         <h4 class="card-title mb-3"><strong>Analyse</strong></h4>
-                        {% if diagnostic and diagnostic.id %}
-                            <form method="post" class="mt-4" action="{% url 'export_diagnostic_pdf' diagnostic.id %}">
-                                {% csrf_token %}
+                        <!-- Animation de chargement cachée -->
+                        <div id="loadingSpinner" class="text-center my-3" style="display: none;">
 
-                                <button class="btn btn-outline-primary w-100">
-                                    <img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo"
-                                         style="width: 34px; height: auto;" class="me-2">
+                            <img src="{% static 'img/logo_no_txt.png' %}" alt="Chargement..." class="pulsing-logo">
+                            <p>Diagnostic en cours, veuillez patienter...</p>
+                        </div>
+                        
+                        <div id="diagnostic-result" class="bg-light p-3 rounded border text-muted mb-4">
+                            {% if diagnostic and diagnostic.id %}
+                                <form method="post" class="mt-4" action="{% url 'export_diagnostic_pdf' diagnostic.id %}">
+                                    {% csrf_token %}
 
-                                    Exporter le rapport en PDF
+                                    <button class="btn btn-outline-primary w-100">
+                                        <img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo"
+                                            style="width: 34px; height: auto;" class="me-2">
 
-                                </button>
-                            </form>
-                        {% endif %}
-                        <div class="bg-light p-3 rounded border text-muted mb-4">
+                                        Exporter le rapport en PDF
+
+                                    </button>
+                                </form>
+                            {% endif %}
                             {% if diagnostic_result %}
                                 <label class="fw-bold">Résultat :</label>
                                 {% for line in diagnostic_result.splitlines %}
@@ -85,16 +86,26 @@
     </div>
 
 {% endblock %}
+{% block extra_scripts %}
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('form'); // ou plus précis avec un id
+    const form = document.getElementById('diagnosticForm');
     const spinner = document.getElementById('loadingSpinner');
     const submitButton = form.querySelector('button[type="submit"]');
+    const resultContainer = document.getElementById('diagnostic-result');
 
     form.addEventListener('submit', function(e) {
-        // Affiche le spinner et désactive le bouton
-        spinner.classList.remove('d-none');
+        // Affiche le spinner
+        spinner.style.display = 'block';
+
+        // Vide l'ancienne analyse
+        if (resultContainer) {
+            resultContainer.innerHTML = '';
+        }
+
+        // Désactive le bouton
         submitButton.disabled = true;
     });
 });
 </script>
+{% endblock %}
