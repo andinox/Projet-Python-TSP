@@ -46,7 +46,7 @@ def interface_status_comparison():
             print(f"Interface {conf_entry.interface_name} (id={idinterface}) has mismatches: {', '.join(diffs)}")
             return False
 
-    print("Le test est un succès ! Toutes les entrées d'Interface_CONF correspondent aux dernières entrées d'Interface_TEST.")
+    print("Test is a success! All Interface_CONF entries match the latest Interface_TEST entries.")
     return True
 
 def main():

@@ -1,0 +1,26 @@
+FROM python:3.12.7-slim
+
+# Installation des dépendances système minimales (ex: psycopg2, Pillow)
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Définir le répertoire de travail
+WORKDIR /app
+
+# Copier uniquement les fichiers nécessaires pour installer les deps
+COPY requirements.txt .
+
+# Installer les dépendances Python
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
+
+# Copier tout le reste
+COPY . .
+
+# Exposer le port utilisé par Gunicorn
+EXPOSE 8000
+
+# Commande par défaut (Gunicorn)
+CMD ["gunicorn", "DiagnosticTool.wsgi:application", "--bind", "0.0.0.0:8000"]
