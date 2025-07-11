@@ -6,7 +6,6 @@ hosts = [
     {
         "ip": ROUTER_IP, 
         "device_type": "cisco_xr",
-        #"port": 57400,
         "port": 22,
 	    "username": ROUTER_USERNAME,
         "password": ROUTER_PWD,

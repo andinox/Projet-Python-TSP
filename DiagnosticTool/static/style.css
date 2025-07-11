@@ -1,8 +1,8 @@
-header {
-    background: linear-gradient(45deg, #c6d5ed, #8b9de8); /* Fond doux avec color5 et color4 */
-    padding: 15px 0;
-    border-bottom: 2px solid #4f5891; /* color3 */
-    box-shadow: 0px 2px 10px rgba(18, 9, 7, 0.1); /* ombre douce version color1 */
+ header {
+    background: linear-gradient(45deg, #c6d5ed, #8b9de8);
+    padding: 1.5rem 0;
+    border-bottom: 2px solid #4f5891;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 header .container {
@@ -39,7 +39,6 @@ header img {
     color: #4f5891;
 }
 
-/* ✅ Tableaux */
 .table {
     background-color: #ffffff;
     border-color: #dee2e6;
@@ -55,21 +54,18 @@ header img {
     font-weight: bold;
 }
 
-/* ✅ List group pour Statistiques */
 .list-group-item {
     background-color: #eef2ff;
     border: none;
     color: #333;
 }
 
-/* ✅ Card-header pour "Statistiques Interfaces Test" */
 .card-header {
     background: linear-gradient(45deg, #8b9de8, #c6d5ed);
     color: white !important;
     font-weight: bold;
 }
 
-/* ✅ Header si utilisé */
 header {
     background: linear-gradient(45deg, #c6d5ed, #8b9de8);
     padding: 1.5rem 0;

@@ -1,6 +1,10 @@
 body {
     background-color: #c6d5ed; /* color5 */
 }
+main {
+    padding-left: 40px;
+    padding-right: 40px;
+}
 
 .navbar {
     background-color: #ffffff;
