@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'gestionnaire_users',
     'core',
     'debug_toolbar',
-    #'django_q',
 ]
 
 MIDDLEWARE = [
@@ -64,10 +63,13 @@ INTERNAL_IPS = [
     "127.0.0.1",
     "172.16.10.50",
 ]
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+}
 
 ROOT_URLCONF = 'DiagnosticTool.urls'
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000'] #in local to change in prod
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','http://172.16.10.50'] #in local to change in prod
 
 
 CSRF_COOKIE_SECURE = False #in local
