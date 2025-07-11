@@ -187,7 +187,7 @@ class BasicNetworkTests:
             return issue_found, "\n".join(full_report)
 
         # Step 3: LAN ping
-        arp_entry = ARP_CONF.objects.filter(idinterface__id=1).exclude(ip_arp="172.16.10.51").first()
+        arp_entry = ARP_CONF.objects.filter(idinterface=1).exclude(ip_arp="172.16.10.51").first()
 
         if arp_entry:
             ip = arp_entry.ip_arp
