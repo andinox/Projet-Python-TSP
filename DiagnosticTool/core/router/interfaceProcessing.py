@@ -1,17 +1,22 @@
 #!/usr/bin/env python3
 
-import traceback
-import sys
 import os
+import sys
+import traceback
 import django
+
+# Setup Django environment
+sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DiagnosticTool.settings")
+django.setup()
+
 from django.utils.timezone import now
 from core.models import Router, Interface_CONF, Interface_TEST, ARP_CONF
 
 # Importation of Router and Interface_CONF models
 from core.models import Router, Interface_CONF
 from django.utils.timezone import now
-from core.routeur.general_functions import log_debug
-
+from core.router.general_functions import log_debug
 
 def status_to_text(val):
     """
@@ -98,6 +103,8 @@ def save_interfaces_to_db(entries):
             if interface_index is None:
                 log_debug(f"[SKIP] No idinterface provided in entry: {entry}")
                 continue
+            log_debug(f"[DEBUG] Traitement de l'interface ID {entry.get('idinterface')}, données: {entry}")
+
 
             # preparing common interface data
             interface_data = {

@@ -1,0 +1,1284 @@
+[
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2025-06-01T17:47:13.595Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Cisco-XR",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2025-06-01T17:52:25.416Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Cisco-XR",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2025-06-01T18:08:03.496Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "5",
+        "object_repr": "Null0 - Cisco-XR (Admin: up, Oper: up, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2025-06-01T18:08:03.506Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "4",
+        "object_repr": "GigabitEthernet4 - Cisco-XR (Admin: up, Oper: up, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2025-06-01T18:08:03.511Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "GigabitEthernet3 - Cisco-XR (Admin: up, Oper: up, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2025-06-01T18:08:03.519Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "GigabitEthernet2 - Cisco-XR (Admin: down, Oper: down, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2025-06-01T18:08:03.569Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "GigabitEthernet1 - Cisco-XR (Admin: up, Oper: up, Mask: 255.255.255.0)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2025-06-01T18:08:38.145Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "5",
+        "object_repr": "GigabitEthernet3 - Cisco-XR (Admin: up, Oper: up, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2025-06-01T18:08:38.146Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "4",
+        "object_repr": "GigabitEthernet2 - Cisco-XR (Admin: down, Oper: down, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2025-06-01T18:08:38.147Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "3",
+        "object_repr": "GigabitEthernet1 - Cisco-XR (Admin: up, Oper: up, Mask: 255.255.255.0)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2025-06-01T18:08:38.151Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "Null0 - Cisco-XR (Admin: up, Oper: up, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2025-06-01T18:08:38.152Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "1",
+        "object_repr": "GigabitEthernet4 - Cisco-XR (Admin: up, Oper: up, Mask: None)",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2025-06-01T18:51:54.996Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "12",
+        "object_repr": "GigabitEthernet2 - Cisco-XR (Admin: up, Oper: up, Mask: )",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2025-06-01T18:52:23.712Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "13",
+        "object_repr": "GigabitEthernet2 - Cisco-XR (Admin: down, Oper: down, Mask: )",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add profile",
+        "content_type": 7,
+        "codename": "add_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change profile",
+        "content_type": 7,
+        "codename": "change_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete profile",
+        "content_type": 7,
+        "codename": "delete_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view profile",
+        "content_type": 7,
+        "codename": "view_profile"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add icmp",
+        "content_type": 8,
+        "codename": "add_icmp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change icmp",
+        "content_type": 8,
+        "codename": "change_icmp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete icmp",
+        "content_type": 8,
+        "codename": "delete_icmp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view icmp",
+        "content_type": 8,
+        "codename": "view_icmp"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add scenario",
+        "content_type": 9,
+        "codename": "add_scenario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change scenario",
+        "content_type": 9,
+        "codename": "change_scenario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete scenario",
+        "content_type": 9,
+        "codename": "delete_scenario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view scenario",
+        "content_type": 9,
+        "codename": "view_scenario"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add router",
+        "content_type": 10,
+        "codename": "add_router"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change router",
+        "content_type": 10,
+        "codename": "change_router"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete router",
+        "content_type": 10,
+        "codename": "delete_router"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view router",
+        "content_type": 10,
+        "codename": "view_router"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add interface_test",
+        "content_type": 11,
+        "codename": "add_interface_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change interface_test",
+        "content_type": 11,
+        "codename": "change_interface_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete interface_test",
+        "content_type": 11,
+        "codename": "delete_interface_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view interface_test",
+        "content_type": 11,
+        "codename": "view_interface_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add interface_conf",
+        "content_type": 12,
+        "codename": "add_interface_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change interface_conf",
+        "content_type": 12,
+        "codename": "change_interface_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete interface_conf",
+        "content_type": 12,
+        "codename": "delete_interface_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view interface_conf",
+        "content_type": 12,
+        "codename": "view_interface_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add diagnostic",
+        "content_type": 13,
+        "codename": "add_diagnostic"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change diagnostic",
+        "content_type": 13,
+        "codename": "change_diagnostic"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete diagnostic",
+        "content_type": 13,
+        "codename": "delete_diagnostic"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view diagnostic",
+        "content_type": 13,
+        "codename": "view_diagnostic"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add bg p_test",
+        "content_type": 14,
+        "codename": "add_bgp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change bg p_test",
+        "content_type": 14,
+        "codename": "change_bgp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete bg p_test",
+        "content_type": 14,
+        "codename": "delete_bgp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view bg p_test",
+        "content_type": 14,
+        "codename": "view_bgp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add bg p_conf",
+        "content_type": 15,
+        "codename": "add_bgp_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change bg p_conf",
+        "content_type": 15,
+        "codename": "change_bgp_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete bg p_conf",
+        "content_type": 15,
+        "codename": "delete_bgp_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view bg p_conf",
+        "content_type": 15,
+        "codename": "view_bgp_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add ar p_test",
+        "content_type": 16,
+        "codename": "add_arp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change ar p_test",
+        "content_type": 16,
+        "codename": "change_arp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete ar p_test",
+        "content_type": 16,
+        "codename": "delete_arp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view ar p_test",
+        "content_type": 16,
+        "codename": "view_arp_test"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 65,
+    "fields": {
+        "name": "Can add ar p_conf",
+        "content_type": 17,
+        "codename": "add_arp_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 66,
+    "fields": {
+        "name": "Can change ar p_conf",
+        "content_type": 17,
+        "codename": "change_arp_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 67,
+    "fields": {
+        "name": "Can delete ar p_conf",
+        "content_type": 17,
+        "codename": "delete_arp_conf"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 68,
+    "fields": {
+        "name": "Can view ar p_conf",
+        "content_type": 17,
+        "codename": "view_arp_conf"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$600000$l2jOkCZ6zP5USeLgbkPHKe$kKE+uyoxf3Rg5iXPWtulMN5qiiaFl/lr0AyHsK/iwrw=",
+        "last_login": "2025-06-01T18:38:40.370Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-06-01T17:45:07.220Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "gestionnaire_users",
+        "model": "profile"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "core",
+        "model": "icmp"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "core",
+        "model": "scenario"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "core",
+        "model": "router"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "core",
+        "model": "interface_test"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "core",
+        "model": "interface_conf"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "core",
+        "model": "diagnostic"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "core",
+        "model": "bgp_test"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "core",
+        "model": "bgp_conf"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "core",
+        "model": "arp_test"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 17,
+    "fields": {
+        "app_label": "core",
+        "model": "arp_conf"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "hjgjsa69cctn1phc1kad1ymlxuasvh5k",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlm7a-wslPScwVr_cAA5UpxUiLtDpBTQvpl5L-VlXapfe579mNRZoTr8bkHiI7cNpLu026Tj1JZ5DHpT9E67vk4pPy-7-3dQpddvLZaZkMHyyWAiIHKRsxugFAF2QtYQBgiQmBmOxdhEEY1BJDcEJ-r9AaMUNjo:1uLnZw:dvZ6VOhcDC9Go12HThQiTHYqNuOzIwc0vLV0w6EH4e0",
+        "expire_date": "2025-06-15T18:38:40.385Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "nef8vdqip75jqh1ymjdunwv3o6juzwlk",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGlm7a-wslPScwVr_cAA5UpxUiLtDpBTQvpl5L-VlXapfe579mNRZoTr8bkHiI7cNpLu026Tj1JZ5DHpT9E67vk4pPy-7-3dQpddvLZaZkMHyyWAiIHKRsxugFAF2QtYQBgiQmBmOxdhEEY1BJDcEJ-r9AaMUNjo:1uLmle:sConfmlZUB7JzROvHvqHqarBRDEcwP1AO6wakDnbEZQ",
+        "expire_date": "2025-06-15T17:46:42.424Z"
+    }
+},
+{
+    "model": "core.router",
+    "pk": 2,
+    "fields": {
+        "name": "Cisco-XR",
+        "next_hop": "172.16.10.1",
+        "user": 1
+    }
+},
+{
+    "model": "core.interface_conf",
+    "pk": 1,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet1",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": "172.16.10.51",
+        "timestamp": "2025-06-01T18:20:03.705Z",
+        "subnet_mask": "255.255.255.0"
+    }
+},
+{
+    "model": "core.interface_conf",
+    "pk": 2,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet2",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.729Z",
+        "subnet_mask": null
+    }
+},
+{
+    "model": "core.interface_conf",
+    "pk": 3,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet3",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.744Z",
+        "subnet_mask": null
+    }
+},
+{
+    "model": "core.interface_conf",
+    "pk": 4,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet4",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.763Z",
+        "subnet_mask": null
+    }
+},
+{
+    "model": "core.interface_conf",
+    "pk": 5,
+    "fields": {
+        "router": 2,
+        "interface_name": "Null0",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.782Z",
+        "subnet_mask": null
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 6,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet1",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": "172.16.10.51",
+        "timestamp": "2025-06-01T18:20:03.720Z",
+        "subnet_mask": "255.255.255.0",
+        "idinterface": 1
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 7,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet2",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.737Z",
+        "subnet_mask": null,
+        "idinterface": 2
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 8,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet3",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.753Z",
+        "subnet_mask": null,
+        "idinterface": 3
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 9,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet4",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.773Z",
+        "subnet_mask": null,
+        "idinterface": 4
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 10,
+    "fields": {
+        "router": 2,
+        "interface_name": "Null0",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:20:03.786Z",
+        "subnet_mask": null,
+        "idinterface": 5
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 11,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet2",
+        "admin_status": "down",
+        "reachability": "down",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:40:03.724Z",
+        "subnet_mask": null,
+        "idinterface": 2
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 12,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet2",
+        "admin_status": "up",
+        "reachability": "up",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:51:54.995Z",
+        "subnet_mask": null,
+        "idinterface": 2
+    }
+},
+{
+    "model": "core.interface_test",
+    "pk": 13,
+    "fields": {
+        "router": 2,
+        "interface_name": "GigabitEthernet2",
+        "admin_status": "down",
+        "reachability": "down",
+        "ip_address": null,
+        "timestamp": "2025-06-01T18:52:23.710Z",
+        "subnet_mask": null,
+        "idinterface": 2
+    }
+},
+{
+    "model": "core.arp_conf",
+    "pk": "172.16.10.1",
+    "fields": {
+        "timestamp": "2025-06-01T18:20:03.789Z",
+        "idinterface": 1
+    }
+},
+{
+    "model": "core.arp_conf",
+    "pk": "172.16.10.50",
+    "fields": {
+        "timestamp": "2025-06-01T18:20:03.796Z",
+        "idinterface": 1
+    }
+},
+{
+    "model": "core.arp_conf",
+    "pk": "172.16.10.51",
+    "fields": {
+        "timestamp": "2025-06-01T18:20:03.801Z",
+        "idinterface": 1
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 76,
+    "fields": {
+        "timestamp": "2025-06-01T18:20:03.793Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.1"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 77,
+    "fields": {
+        "timestamp": "2025-06-01T18:20:03.798Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.50"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 78,
+    "fields": {
+        "timestamp": "2025-06-01T18:20:03.814Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.51"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 79,
+    "fields": {
+        "timestamp": "2025-06-01T18:30:03.693Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.51"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 80,
+    "fields": {
+        "timestamp": "2025-06-01T18:30:03.711Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.1"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 81,
+    "fields": {
+        "timestamp": "2025-06-01T18:30:03.728Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.50"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 82,
+    "fields": {
+        "timestamp": "2025-06-01T18:40:03.746Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.51"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 83,
+    "fields": {
+        "timestamp": "2025-06-01T18:40:03.757Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.1"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 84,
+    "fields": {
+        "timestamp": "2025-06-01T18:40:03.773Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.50"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 85,
+    "fields": {
+        "timestamp": "2025-06-01T18:50:03.768Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.51"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 86,
+    "fields": {
+        "timestamp": "2025-06-01T18:50:03.786Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.1"
+    }
+},
+{
+    "model": "core.arp_test",
+    "pk": 87,
+    "fields": {
+        "timestamp": "2025-06-01T18:50:03.795Z",
+        "idinterface": 6,
+        "ip_arp": "172.16.10.50"
+    }
+}
+]

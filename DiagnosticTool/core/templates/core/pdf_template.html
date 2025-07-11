@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport de diagnostic - {{ scenario.name }}</title>
+</head>
+<body>
+    <h1>Rapport de Diagnostic</h1>
+
+    <div class="meta">
+        <p><strong>Scénario :</strong> {{ scenario.name }}</p>
+        <p><strong>Date :</strong> {{ created_at|date:"d/m/Y H:i" }}</p>
+        <p><strong>Routeur :</strong> {{ router.name }}</p>
+    </div>
+
+    <h2>Résultat du diagnostic</h2>
+    {% for line in diagnostic.result.splitlines %}
+        {% if "OK" in line %}
+            <div style="color: green;">{{ line }}</div>
+        {% elif "ÉCHEC" in line or "ECHEC" in line or "ERREUR" in line %}
+            <div style="color: red;">{{ line }}</div>
+        {% else %}
+            <div>{{ line }}</div>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>

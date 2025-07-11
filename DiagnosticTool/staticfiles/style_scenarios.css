@@ -1,88 +1,43 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #c6d5ed; /* color5 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+    background-color: #fafafa; /* Fond clair et neutre */
     margin: 0;
     padding: 0;
+    color: #333; /* Texte plus sombre pour plus de lisibilité */
 }
 
 .back-button {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     margin-left: 15px;
-    color: #1b203c; /* color2 */
+    color: #3498db; /* Bleu doux */
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #2980b9; /* Changement de couleur au survol */
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     padding: 40px;
-    max-width: 1000px;
-    margin: auto;
+    max-width: 1100px;
+    margin: 40px auto 0; /* Ajout d'une marge en haut pour espacer la container du navbar */
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 
 .scenario, .analysis {
     background: #ffffff;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(18, 9, 7, 0.1); /* version color1 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     flex: 1;
 }
 
-a {
-    color: #4f5891; /* color3 */
-}
 
-.analysis {
-    margin-left: 20px;
-    border: 1px solid #4f5891; /* color3 */
-    overflow: auto;
-}
-
-h2 {
-    color: #1b203c; /* color2 */
-}
-
-.description {
-    color: #4f5891; /* color3 */
-    font-weight: bold;
-}
-
-.diagno-button {
-    background-color: #4f5891; /* color3 */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.export-button {
-    background-color: #8b9de8; /* color4 */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin-top: 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.diagno-button:hover {
-    background-color: #1b203c; /* color2 */
-}
-
-.export-button:hover {
-    background-color: #4f5891; /* color3 */
-}
-
-.analysis-content {
-    padding: 10px;
-}
-
-.alert {
-    color: #4f5891; /* color3 */
-}

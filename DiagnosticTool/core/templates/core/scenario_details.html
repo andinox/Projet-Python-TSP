@@ -1,33 +1,100 @@
 {% extends 'DiagnosticTool/base.html' %}
-
-{% block title %}{{scenario.name}}{% endblock %}
-{% block header %}
-        <a href="{%url 'home'%}" >Retourner</a>
-
+{% load static %}
+{% block title %}
+    {{ scenario.name }}
 {% endblock %}
+
 {% block content %}
+    <div class="container my-5">
+
+        <div class="row g-4 align-items-stretch">
 
 
-<div class="container">
-    <div class="scenario">
-        <h2>Scénario</h2>
-        <p class="description">{{scenario}}</p>
-                <p>{{scenario.description}}</p>
-        <button type="submit" class="diagno-button">Lancer le diagnostic</button>
-
+            <!-- Scenarios info -->
+            <div class="col-md-6">
+                <section class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3"> <strong>Scénario : {{ scenario.name }}</strong></h4>
+                        <div class="bg-light p-3 rounded border text-muted mb-4">
+                            {{ scenario.description|linebreaksbr }}
+                        </div>
+                        <form method="post" class="mt-4">
+                            {% csrf_token %}
+                                <!-- Animation de chargement cachée -->
+    <div id="loadingSpinner" class="d-none text-center my-3">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Chargement...</span>
+        </div>
+        <p>Diagnostic en cours, veuillez patienter...</p>
     </div>
 
-    <div class="analysis">
-        <h2>Analyse</h2>
-        <div class="analysis-content">
-            <!--TODO: ici il faudra faire en sorte que ça se génère quand on lance le diagnostic-->
-            <p><strong class="alert">Alerte :</strong></p>
-                <p>ici il y aura le résultat du diagnostic après avoir cliquer sur "Lancer diagno..."</p>
-            <button class="export-button">Exporter le rapport en format PDF</button>
+                            <button type="submit" class="btn btn-success w-100">Lancer le diagnostic
+                            </button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Analyse -->
+            <div class="col-md-6">
+                <section class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3"><strong>Analyse</strong></h4>
+                        {% if diagnostic and diagnostic.id %}
+                            <form method="post" class="mt-4" action="{% url 'export_diagnostic_pdf' diagnostic.id %}">
+                                {% csrf_token %}
+
+                                <button class="btn btn-outline-primary w-100">
+                                    <img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo"
+                                         style="width: 34px; height: auto;" class="me-2">
+
+                                    Exporter le rapport en PDF
+
+                                </button>
+                            </form>
+                        {% endif %}
+                        <div class="bg-light p-3 rounded border text-muted mb-4">
+                            {% if diagnostic_result %}
+                                <label class="fw-bold">Résultat :</label>
+                                {% for line in diagnostic_result.splitlines %}
+                                    {% if " DÉBUT DU " in line %}
+                                        <div class="text-success">{{ line }}</div>
+                                    {% endif %}
+                                    {% if "OK" in line %}
+                                        <div class="text-success">{{ line }}</div>
+                                    {% elif "ÉCHEC" in line or "ECHEC" in line or "ERREUR" in line %}
+                                        <div class="text-danger">{{ line }}</div>
+                                    {% else %}
+                                        <div>{{ line }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% else %}
+                                <strong> <img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo"
+                                              style="width: 24px; height: auto;" class="me-2">
+                                    Pour votre information :</strong><br>
+                                Le résultat et l'export PDF du diagnostic sera affiché ici après que vous aurez cliqué
+                                sur <em>Lancer le diagnostic</em>.
+                            {% endif %}
+                        </div>
+
+                    </div>
+                </section>
+            </div>
 
         </div>
     </div>
 
-
-</div>
 {% endblock %}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form'); // ou plus précis avec un id
+    const spinner = document.getElementById('loadingSpinner');
+    const submitButton = form.querySelector('button[type="submit"]');
+
+    form.addEventListener('submit', function(e) {
+        // Affiche le spinner et désactive le bouton
+        spinner.classList.remove('d-none');
+        submitButton.disabled = true;
+    });
+});
+</script>

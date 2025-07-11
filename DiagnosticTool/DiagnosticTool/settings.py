@@ -11,10 +11,16 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+import ssl,os
+from dotenv import load_dotenv
+import logging
+from django.core.mail import send_mail
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv()
 
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -39,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gestionnaire_users',
     'core',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -49,11 +56,24 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 ]
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "172.16.10.50",
+]
+DEBUG_TOOLBAR_CONFIG = {
+    'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+}
 
 ROOT_URLCONF = 'DiagnosticTool.urls'
 
-CSRF_TRUSTED_ORIGINS = ["http://172.16.10.50"]
+CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','http://172.16.10.50'] #in local to change in prod
+
+
+CSRF_COOKIE_SECURE = False #in local
+SESSION_COOKIE_SECURE = False
 
 TEMPLATES = [
     {
@@ -104,6 +124,42 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#Loggers definition
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        # Logger Django SMTP email backend
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',  # ici on garde ERROR pour éviter trop de bruit
+            'propagate': True,
+        },
+        'django.security.SuspiciousOperation': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        # Logger pour le backend mail SMTP
+        'django.core.mail': {
+            'handlers': ['console'],
+            'level': 'DEBUG',  # active les logs SMTP détaillés
+            'propagate': True,
+        },
+        'smtp': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+
+    },
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
@@ -132,23 +188,39 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-# à revoir après pour éviter qu'on puisse accéder aux infos de la page home
-# même si on est en mode déconnecté.
 LOGIN_URL ='login_page'
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'login_page'
 
-#config routeur compte
-ROUTEUR_USERNAME ='admin'
-ROUTEUR_PWD = 'dkSDwa80f13faXcwxzj'
+#config router account
+ROUTER_USERNAME =os.getenv('ROUTER_USERNAME')
+ROUTER_PWD =os.getenv('ROUTER_PWD')
+ROUTER_PORT = os.getenv('ROUTER_PORT')
+ROUTER_IP = os.getenv('ROUTER_IP')
+ENABLE=os.getenv('ENABLE')
 
-#email connexion paramètres
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.yahoo.com"  #serveur SMTP de notre fournisseur
-EMAIL_PORT = 587
+#password hashers
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.BCryptSHA256PasswordHasher",
+    "django.contrib.auth.hashers.ScryptPasswordHasher",
+]
+
+
+#email connection parameters
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = ""
-EMAIL_HOST_PASSWORD = ""
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_PORT = 587
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = f'Diagnostic Tool <{EMAIL_HOST_USER}>'
+
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
