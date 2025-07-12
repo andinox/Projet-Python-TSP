@@ -18,12 +18,6 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
     slug_url_kwarg = 'slug'
     login_url = 'login_page'
 
-    def get_object(self):
-        """
-        This method returns the object corresponding to the given slug
-        """
-        return Scenario.objects.get(slug=self.kwargs['slug'])
-
     def get_queryset(self):
         """
         Returns the base queryset for retrieving Scenario objects; can be extended with select_related or prefetch_related for optimization.
@@ -114,7 +108,6 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         diagnostic.result = diagnostic_result
         diagnostic.save()
 
-        self.diagnostic = diagnostic
         self.diagnostic_result = diagnostic_result
         self.object = scenario
         request.session['diagnostic_launched'] = True
