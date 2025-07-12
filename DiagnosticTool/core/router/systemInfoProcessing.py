@@ -1,20 +1,16 @@
 #!/home/user/python-project/bin/python
-import json
 import os
 import sys
-import traceback
 import django
-import logging
 import nmap
 
 # Setup Django environment
-sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool")
+sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool") # TODO: need to change the path or put it in variable maybe
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DiagnosticTool.settings")
 django.setup()
 
-from django.utils.timezone import now
-from core.models import Router, Security,SecurityScan
-from core.router.general_functions import log_debug
+from core.models import Security,SecurityScan
+from core.router import log_debug
 
 def activated_protocol(status):
     """

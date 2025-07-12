@@ -1,6 +1,6 @@
-from core.models import Diagnostic, Router
-from core.scripts.basic_functions import ping, traceroute
-from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
+from core.models import Diagnostic
+from core.scripts import ping, traceroute
+from core.diagnostic_scenarios import BasicNetworkTests
 
 
 class InternetConnectionLossDiagnostic:
@@ -19,8 +19,7 @@ class InternetConnectionLossDiagnostic:
         """
         Runs the tests for internet connection loss by using the decision tree
         """
-        report = []
-        report.append("DÉBUT DU DIAGNOSTIC : Perte de connexion Internet\n\n")
+        report = ["DÉBUT DU DIAGNOSTIC : Perte de connexion Internet\n\n"]
         # starts with the basic tests
         issue_found, basic_tests_report = self.tests.run_all_basic_tests()
         report.append(basic_tests_report)

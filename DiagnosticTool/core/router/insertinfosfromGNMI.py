@@ -1,5 +1,5 @@
 
-from infosrouteur import hosts
+from infosrouter import hosts
 from gnmi_bgp_parser import parse_bgp_notification
 
 # Paramètres du routeur

@@ -1,18 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
-
-from core.models import Diagnostic, Router
-from core.models.scenario import Scenario
-from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
-
-from core.diagnostic_scenarios.internet_connection_loss import (
-    InternetConnectionLossDiagnostic,
-)
-from core.diagnostic_scenarios.intranet_connection_loss import IntranetConnectionLossDiagnostic
-from core.diagnostic_scenarios.security_scenario import SecurityDiagnostic
+from core.models import Diagnostic, Router, Scenario
+from core.diagnostic_scenarios import InternetConnectionLossDiagnostic,IntranetConnectionLossDiagnostic,SecurityDiagnostic
 
 import logging
-
 logger = logging.getLogger(__name__)
 
 

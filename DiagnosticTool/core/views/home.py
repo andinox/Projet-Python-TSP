@@ -3,8 +3,8 @@ from django.views.generic import ListView
 from django.shortcuts import redirect, get_object_or_404
 from django.urls import reverse
 
-from core.models import Diagnostic
-from core.models.scenario import Scenario
+from core.models import Diagnostic, Scenario
+
 from django.utils import timezone
 from datetime import timedelta
 
@@ -37,12 +37,11 @@ class HomeView(LoginRequiredMixin,ListView):
             return redirect(reverse('scenario', kwargs={'slug': scenario.slug}))
         return redirect('home')
 
-
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         diagnostics_history = DiagnosticHistory.get_diagnostic_history_last_30d(user=self.request.user)
 
+        # pagination
         paginator = Paginator(diagnostics_history, 3)
         page = self.request.GET.get('page')
         try:

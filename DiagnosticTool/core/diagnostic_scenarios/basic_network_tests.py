@@ -1,9 +1,8 @@
 # basic_network_tests.py
 
-from core.models import Interface_CONF, Interface_TEST, ARP_CONF
+from core.models import Interface_CONF, ARP_CONF
 from django.utils.timezone import now
-from core.scripts.LANStatus import check_arp_test_has_data,check_arp_ip_in_interface_network,compare_arp_conf_and_test
-from core.scripts.basic_functions import ping
+from core.scripts import ping, check_arp_test_has_data,check_arp_ip_in_interface_network,compare_arp_conf_and_test
 
 class BasicNetworkTests:
     def __init__(self, router=None):

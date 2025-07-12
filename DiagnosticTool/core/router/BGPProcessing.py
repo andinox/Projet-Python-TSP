@@ -6,7 +6,7 @@ import traceback
 import django
 
 # Setup Django environment
-sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool")
+sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool") # TODO: need to change the path or put it in variable maybe
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DiagnosticTool.settings")
 django.setup()
 

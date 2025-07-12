@@ -1,7 +1,7 @@
-from core.models import Diagnostic, Router
-from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
-from core.models.bgp import BGP_TEST, BGP_CONF
-from core.scripts.basic_functions import ping
+from core.models import Diagnostic
+from core.diagnostic_scenarios import BasicNetworkTests
+from core.models.bgp import BGP_TEST
+from core.scripts import ping
     
 class IntranetConnectionLossDiagnostic:
     """

@@ -4,7 +4,6 @@ from django.views.generic import DetailView
 from django.template.loader import get_template
 import tempfile
 from core.models import Diagnostic
-from core.models.scenario import Scenario
 
 class ScenarioPDFView(LoginRequiredMixin, DetailView):
     model = Diagnostic

@@ -1,11 +1,7 @@
 #This file contains the basic functions that will be used in other scripts.
-import datetime
 import nmap
-import re
 from netmiko import ConnectHandler
-from DiagnosticTool import settings
-from core.router.infosrouter import hosts
-from core.router.general_functions import log_debug
+from core.router import hosts
 
 def get_router_connection():
     """

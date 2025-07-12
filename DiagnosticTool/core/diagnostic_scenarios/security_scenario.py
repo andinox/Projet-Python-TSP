@@ -1,11 +1,6 @@
 from core.models import Router, Security, SecurityScan
-from core.router.systemInfoProcessing import (
-    parse_sys_infos_from_json,
-    save_security_entries,
-    perform_security_scan,
-)
-from core.router.general_functions import log_debug
-from core.scripts.basic_functions import convert_uptime
+from core.router import perform_security_scan
+from core.scripts import convert_uptime
 from dotenv import load_dotenv
 import os
 

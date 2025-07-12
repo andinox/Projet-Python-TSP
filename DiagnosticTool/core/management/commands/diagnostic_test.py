@@ -2,6 +2,9 @@ from django.core.management.base import BaseCommand
 from core.scripts.basic_functions import ping, traceroute
 
 class Command(BaseCommand):
+    """
+    Tested locally on the VM to debug
+    """
     help = "Testing ping and traceroute functions towards an Ip address"
 
     def add_arguments(self, parser):
