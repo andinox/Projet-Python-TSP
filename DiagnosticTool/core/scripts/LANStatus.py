@@ -75,31 +75,33 @@ def compare_arp_conf_and_test():
     messages = []
     messages.append(" Comparaison entre la table ARP initiale et la table ARP actuelle : ")
 
-    # check if ARP_CONF entries are in ARP_TEST
-    for conf_entry in ARP_CONF.objects.select_related("idinterface").all():
-        ip_conf = conf_entry.ip_arp
-        idinterface_conf = conf_entry.idinterface.idinterface  # receive the idinterface of the interface linked with ARP
+    # listing the entries only once and saving them in the memory
+    arp_conf_entries = list(ARP_CONF.objects.select_related("idinterface").all())
+    arp_test_entries = list(ARP_TEST.objects.select_related("idinterface").all())
 
-        # Verify that the entry exists in ARP_TEST
-        match = ARP_TEST.objects.filter(idinterface__idinterface=idinterface_conf,ip_arp=ip_conf).order_by('-timestamp').first()
-        
-        if not match:
-            messages.append(f"[DIFF] ARP_CONF {ip_conf} (interface {idinterface_conf}) non trouvé dans ARP_TEST.")
+    # creating sets to compare more efficiently
+    conf_keys = {(entry.idinterface.idinterface, entry.ip_arp) for entry in arp_conf_entries}
+    test_keys = {(entry.idinterface.idinterface, entry.ip_arp) for entry in arp_test_entries}
+
+    # step 1 : check that every ARP_CONF entries are in ARP_TEST
+    for key in conf_keys:
+        if key not in test_keys:
+            idinterface, ip = key
+            messages.append(f"[DIFF] ARP_CONF {ip} (interface {idinterface}) non trouvé dans ARP_TEST.")
             differences += 1
 
-    # check if there are ARP_TEST entries that are not in ARP_CONF
-    for test_entry in ARP_TEST.objects.select_related("idinterface").all():
-        ip_test = test_entry.ip_arp
-        idinterface_test = test_entry.idinterface.idinterface
+    # step 2 : list ARP_TEST not in ARP_CONF
+    for key in test_keys:
+        if key not in conf_keys:
+            idinterface, ip = key
+            messages.append(f"[INFO] ARP_TEST {ip} (interface {idinterface}) non trouvé dans ARP_CONF (peut être normal).")
 
-        match = ARP_CONF.objects.filter(idinterface__idinterface=idinterface_test, ip_arp=ip_test).first()
-
-        if not match:
-            messages.append(f"[INFO] ARP_TEST {ip_test} (interface {idinterface_test}) non trouvé dans ARP_CONF (peut être normal).")
-
+    # summary
     if differences == 0:
         messages.append("[INFO] Toutes les entrées dans la table ARP initiale sont présentes dans la table ARP actuelle.")
     else:
         messages.append(f"[RÉSUMÉ] {differences} entrées ARP_CONF manquantes dans ARP_TEST.")
+
     return messages
+
 
