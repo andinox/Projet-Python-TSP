@@ -137,7 +137,7 @@ LOGGING = {
         # Logger Django SMTP email backend
         'django.request': {
             'handlers': ['console'],
-            'level': 'ERROR',  # ici on garde ERROR pour éviter trop de bruit
+            'level': 'ERROR',  # here we keep ERROR to not have all the info not useful
             'propagate': True,
         },
         'django.security.SuspiciousOperation': {
@@ -148,7 +148,7 @@ LOGGING = {
         # Logger pour le backend mail SMTP
         'django.core.mail': {
             'handlers': ['console'],
-            'level': 'DEBUG',  # active les logs SMTP détaillés
+            'level': 'DEBUG',  # activate detailed SMTP logs SMTP
             'propagate': True,
         },
         'smtp': {

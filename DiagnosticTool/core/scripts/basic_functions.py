@@ -2,14 +2,14 @@
 import nmap
 from netmiko import ConnectHandler
 from core.router import hosts
-
+import os
 def get_router_connection():
     """
     returns the router connection details
     """
     return hosts[0]
 
-def ping(ip, count=5, timeout=2, source="172.16.10.51"):
+def ping(ip, count=5, timeout=2, source=os.getenv('ROUTER_IP')):
     """
     Sends an interactive ping from the router to the given IP address,
     using optional source IP. Returns True if ping is successful.
@@ -48,7 +48,7 @@ def traceroute(destination):
     """
     executes a traceroute from the router to the given destination
     returns a list of hops and the last hop if available
-    if failur then returns ([], None)
+    if failure then returns ([], None)
     """
     try:
         conn = ConnectHandler(**get_router_connection())
