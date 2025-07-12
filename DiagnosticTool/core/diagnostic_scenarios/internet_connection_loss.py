@@ -1,6 +1,6 @@
 from core.models import Diagnostic
 from core.scripts import ping, traceroute
-from core.diagnostic_scenarios import BasicNetworkTests
+from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
 
 
 class InternetConnectionLossDiagnostic:

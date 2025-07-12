@@ -1,5 +1,5 @@
 from core.models import Diagnostic
-from core.diagnostic_scenarios import BasicNetworkTests
+from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
 from core.models.bgp import BGP_TEST
 from core.scripts import ping
     
