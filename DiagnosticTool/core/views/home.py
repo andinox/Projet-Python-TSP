@@ -12,9 +12,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class DiagnosticHistory:
     @staticmethod
-    def get_diagnostic_history_last_30d( days=30):
+    def get_diagnostic_history_last_30d(user, days=30):
         since = timezone.now() - timedelta(days=days)
-        return Diagnostic.objects.filter(date__gte=since).select_related('router').order_by('-date')
+        return Diagnostic.objects.filter(router__user=user,date__gte=since).select_related('router').order_by('-date')
 
 class HomeView(LoginRequiredMixin,ListView):
     """
@@ -34,12 +34,11 @@ class HomeView(LoginRequiredMixin,ListView):
             return redirect(reverse('scenario', kwargs={'slug': scenario.slug}))
         return redirect('home')
 
-    #def get(self, request, *args, **kwargs):
-    #    return super().get(request, *args, **kwargs)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        diagnostics_history = DiagnosticHistory.get_diagnostic_history_last_30d()
+        diagnostics_history = DiagnosticHistory.get_diagnostic_history_last_30d(user=self.request.user)
 
         paginator = Paginator(diagnostics_history, 3)
         page = self.request.GET.get('page')
