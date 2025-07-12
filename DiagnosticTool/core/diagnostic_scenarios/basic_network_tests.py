@@ -9,49 +9,41 @@ class BasicNetworkTests:
     def __init__(self, router=None):
         self.router = router
 
-    def check_interface_status(self, idinterface):
+    def check_interface_status_from_tests(self, tests):
         """
-        Check the operational status of an interface.
-        returns True if it is operationally up (reachable),
-        returns timedelta if admin down (duration since the most recent continuous admin down),
-        returns False if link down,
-        returns None if no test data.
+        Check status from a list of Interface_TEST objects (already loaded).
+        Returns:
+            True if operationally up,
+            False if reachability down and admin up,
+            timedelta if admin down,
+            None if no data.
         """
+        if not tests:
+            return None
 
-        # retrieve the latest test entry for the given interface
-        latest_test = (
-            Interface_TEST.objects.filter(idinterface=idinterface)
-            .order_by("-timestamp")
-            .first()
-        )
+        # Get latest test entry
+        latest_test = max(tests, key=lambda x: x.timestamp, default=None)
 
         if not latest_test:
             return None
 
-        # reachability and admin status checks
         reachability = (latest_test.reachability or "").strip().lower()
         if reachability == "up":
             return True
 
         admin_status = (latest_test.admin_status or "").strip().lower()
         if admin_status == "down":
-            test_entries = Interface_TEST.objects.filter(
-                idinterface=idinterface
-            ).order_by("-timestamp")
-
+            # Walk back in time for continuous admin down entries
             down_since = latest_test.timestamp
-
-            # walk back in time through continuous "down" entries
-            for entry in test_entries:
-                status = (entry.admin_status or "").strip().lower()
-                if status != "down":
+            for test in sorted(tests, key=lambda x: x.timestamp, reverse=True):
+                if (test.admin_status or "").strip().lower() != "down":
                     break
-                down_since = entry.timestamp
-
+                down_since = test.timestamp
             return now() - down_since
 
-        # if admin is up but reachability is down → possible link issue
+        # Admin is up but not reachable → link issue
         return False
+
 
     def format_timedelta(self, delta):
         """
@@ -97,8 +89,7 @@ class BasicNetworkTests:
         """
         Generate a report of the status of all interfaces.
         """
-
-        interfaces = Interface_CONF.objects.all()
+        interfaces = Interface_CONF.objects.prefetch_related("tests").all()
         issues_found = False
         report_lines = []
 
@@ -106,70 +97,74 @@ class BasicNetworkTests:
             idinterface = entry.idinterface
             interface_name = entry.interface_name
 
-            # retrieve the latest test entry for the given interface
-            latest_test = (
-                Interface_TEST.objects.filter(idinterface=idinterface)
-                .order_by("-timestamp")
-                .first()
-            )
+            tests = list(entry.tests.all())  # saved in memory so we only do the query once
 
-            # no test data available for this interface
+            if not tests:
+                continue
+
+            latest_test = max(tests, key=lambda x: x.timestamp, default=None)
+
             if not latest_test:
                 continue
 
             admin_status = (latest_test.admin_status or "").strip().lower()
             reachability = (latest_test.reachability or "").strip().lower()
 
-            result = self.check_interface_status(idinterface)
+            result = self.check_interface_status_from_tests(tests)
 
-            # if an issue was found, print details
             if result is not True:
                 issues_found = True
-
                 report_lines.append(f"\nInterface : {interface_name} ({idinterface})")
                 report_lines.append(f"Admin status : {admin_status}")
                 report_lines.append(f"Reachability : {reachability}")
 
                 if result is False:
                     report_lines.append("Status : down")
-                    report_lines.append(
-                        "Diagnostic : L'interface est DOWN mais est admin UP → Il peut s'agir d'un problème de lien."
-                    )
+                    report_lines.append("Diagnostic : L'interface est DOWN mais est admin UP → Il peut s'agir d'un problème de lien.")
                 elif result is None:
                     report_lines.append("Status : Unknown")
-                    report_lines.append(
-                        "Diagnostic: Aucune donnée de test ou impossibilité de déterminer depuis quand l'interface est admin down."
-                    )
+                    report_lines.append("Diagnostic: Aucune donnée de test ou impossibilité de déterminer depuis quand l'interface est admin down.")
                 else:
                     formatted = self.format_timedelta(result)
                     report_lines.append("Status : admin down")
                     report_lines.append(f"Diagnostic : l'interface est admin down depuis {formatted}")
-            else : 
-                report_lines.append(f"\n [OK]  Interface : {interface_name} ({idinterface})")
+            else:
+                report_lines.append(f"\n[OK] Interface : {interface_name} ({idinterface})")
                 report_lines.append(f"Admin status : {admin_status}")
                 report_lines.append(f"Reachability : {reachability}")
-        # no issues found, print success message
+
         if not issues_found:
             report_lines.append("[OK] Tests sur les interfaces effectués avec succès, aucun problème à signaler.")
 
         return issues_found, "\n".join(report_lines)
+
+
     
     def run_all_basic_tests(self):
         """
-        Runs the full sequence of tests: interface status → ARP checks → LAN IP ping.
+        Run the full sequence of basic network tests:
+        - interface status check
+        - ARP table validation
+        - LAN ping test
 
         Returns:
             issue_found (bool): True if any problem was detected during the tests.
-            report (str): Full report of the diagnostic process.
+            report (str): Full diagnostic report.
         """
         full_report = []
         issue_found = False
-        
+
         full_report.append("[Tests Réseaux de base]")
 
-        # Step 1: Interface status
-        interfaces_issue, interface_report = self.report_interfaces_status()
+        # Step 0: Preload all interface configurations to avoid duplicate SQL queries
+        interface_conf_map = {
+            interface.idinterface: interface
+            for interface in Interface_CONF.objects.select_related("router")
+        }
+
+        # Step 1: Interface status check
         full_report.append("[INTERFACES] Lancement des tests sur les interfaces")
+        interfaces_issue, interface_report = self.report_interfaces_status()
         full_report.append(interface_report)
 
         if interfaces_issue:
@@ -177,23 +172,33 @@ class BasicNetworkTests:
             full_report.append("\n[INFO] Problèmes d'interfaces détectés. Tests ARP et ping ignorés.")
             return issue_found, "\n".join(full_report)
 
-        # Step 2: ARP checks
-        arp_passed, arp_report = self.run_arp_tests()
-        full_report.append(arp_report)
+        # Step 2: ARP tests
+        full_report.append("\n[ARP] Lancement des vérifications ARP...\n")
 
-        if not arp_passed:
+        status, message = check_arp_test_has_data()
+        full_report.append(message)
+        if not status:
             issue_found = True
-            full_report.append("\n[INFO] Problèmes ARP détectés. Test ping ignoré.")
             return issue_found, "\n".join(full_report)
 
-        # Step 3: LAN ping
-        arp_entry = ARP_CONF.objects.filter(idinterface=1).exclude(ip_arp="172.16.10.51").first()
+        status, messages = check_arp_ip_in_interface_network()
+        full_report.extend(messages)
+        if not status:
+            issue_found = True
+            return issue_found, "\n".join(full_report)
+
+        # Compare ARP_CONF and ARP_TEST
+        arp_compare_messages = compare_arp_conf_and_test(interface_conf_map )
+        full_report.extend(arp_compare_messages)
+
+        # Step 3: Ping test to one ARP IP in LAN
+        arp_entry = ARP_CONF.objects.filter(idinterface=1).exclude(ip_arp="172.16.10.51").only("ip_arp").first()
 
         if arp_entry:
             ip = arp_entry.ip_arp
-            if ping(ip) :
+            if ping(ip):
                 full_report.append(f"[OK] Les ping vers l'IP {ip} située dans le LAN ont réussi")
-            else : 
+            else:
                 issue_found = True
                 full_report.append(f"[ECHEC] Impossible de faire de ping vers l'IP {ip} située dans le LAN")
 

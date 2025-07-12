@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+
 import traceback
 from django.utils.timezone import now
 from core.models import Interface_CONF, Interface_TEST, ARP_CONF, ARP_TEST
@@ -29,9 +29,10 @@ def save_arp_entries_to_db(arp_entries):
     for entry in arp_entries:
         try:
             # --- ARP CONF ---
-            interface = Interface_CONF.objects.get(idinterface=entry["idinterface"])
-            if not interface:
-                log_debug("[ERROR] No interface found in base.")
+            try:
+                interface = Interface_CONF.objects.get(idinterface=entry["idinterface"])
+            except Interface_CONF.DoesNotExist:
+                log_debug(f"[ERROR] Interface_CONF with idinterface={entry['idinterface']} not found.")
                 continue
 
             ip_arp = entry["ip_arp"]
