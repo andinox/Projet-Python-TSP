@@ -33,6 +33,12 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         """
         return Scenario.objects.get(slug=self.kwargs['slug'])
 
+    def get_queryset(self):
+        """
+        Returns the base queryset for retrieving Scenario objects; can be extended with select_related or prefetch_related for optimization.
+        """
+        return Scenario.objects.all()
+    
     def get_context_data(self, **kwargs):
         """
         This method returns the context data; it prepares data that will be passed to the template
@@ -59,55 +65,46 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         logger.info(f"Début du diagnostic pour le scénario : {scenario.slug}")
 
+        #prefetch datas
+        try:
+            router=Router.objects.prefetch_related(
+                "bgp_tests",
+                "bgp_confs",
+                "interface_tests",
+                "interface_confs"
+            ).select_related("user").get(user=request.user)
+        except Router.DoesNotExist:
+            logger.error("Aucun routeur trouvé en base de données.")
+            return self.render_to_response(self.get_context_data(object=scenario))
+        
         # Create diagnostic object (assuming only one router)
-        router = Router.objects.get()
         diagnostic = Diagnostic.objects.create(
             router=router,
             diagnosis_type=scenario.slug,
             result=""
         )
 
-
         # Dispatch based on scenario slug
+        diagnostic_result=""
         if scenario.slug == 'perte-de-connexion-vers-internet':
             logger.info("Starting internet connection loss diagnostic")
             dgc = InternetConnectionLossDiagnostic(diagnostic)
             diagnostic_result = dgc.run()
-            logger.info(f"Résultat du diagnostic :\n{diagnostic_result}")
-            diagnostic.result = diagnostic_result
-            diagnostic.save()
-            self.diagnostic = diagnostic
-            self.diagnostic_result = diagnostic_result
-            self.object = scenario
 
         elif scenario.slug == "perte-de-connexion-vers-les-sites-de-lentreprise":
-            logger.info("[BGP - DIAGNOSTIC]")
+            logger.info("Starting intranet connection loss diagnostic")
             dgc = IntranetConnectionLossDiagnostic(diagnostic)
             diagnostic_result = dgc.run()
-            logger.info(f"Résultat du diagnostic Intranet :\n{diagnostic_result}")
-            diagnostic.result = diagnostic_result
-            diagnostic.save()
-            self.diagnostic = diagnostic
-            self.diagnostic_result = diagnostic_result
-            self.object = scenario
 
         elif scenario.slug == "je-souhaite-verifier-la-securite-de-mon-reseau":
             logger.info("[DIAGNOSTIC DE SÉCURITÉ]")
             dgc = SecurityDiagnostic(router)
             diagnostic_result = dgc.run()
-            logger.info(f"Résultat du diagnostic de sécurité :\n{diagnostic_result}")
-            diagnostic.result = diagnostic_result
-            diagnostic.save()
-            self.diagnostic=diagnostic
-            self.diagnostic_result=diagnostic_result
-            self.object = scenario
-
 
         elif scenario.slug == "diagnostiquer-tous-les-scenarios-ci-dessus":
             logger.info("[DIAGNOSTIC GÉNÉRAL]")
             results=[]
-            diagnostic_instance = diagnostic
-            diagnostics = [InternetConnectionLossDiagnostic(diagnostic),IntranetConnectionLossDiagnostic(diagnostic)]
+            diagnostics = [InternetConnectionLossDiagnostic(diagnostic),IntranetConnectionLossDiagnostic(diagnostic),SecurityDiagnostic(diagnostic)]
             for d in diagnostics:
                 result = d.run()
                 logger.info(f"Résultat du diagnostic :\n{result}")
@@ -115,17 +112,19 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
                 if any(keyword in result.upper() for keyword in ["ÉCHEC", "ECHEC", "ERREUR"]):
                     logger.error("Un échec ou une erreur a été détecté. Interruption du diagnostic global.")
                     break
-            all_results = "\n".join(results)
-            diagnostic_instance.result = all_results
-            diagnostic_instance.save()
-            self.diagnostic_result = all_results
-            self.object = scenario
+            diagnostic_result="\n".join(results)
+        else:
+            logger.warning("Scénario non reconnu : aucune action lancée.")
+       
+       
+        logger.info(f"Résultat final du diagnostic ({scenario.slug}) :\n{diagnostic_result}")
 
-        elif scenario.slug == "...":
-            # TODO: Implement other scenarios and call their diagnostic functions
-            self.object = scenario
+        diagnostic.result = diagnostic_result
+        diagnostic.save()
 
-        # Set session flag to show alert once
+        self.diagnostic = diagnostic
+        self.diagnostic_result = diagnostic_result
+        self.object = scenario
         request.session['diagnostic_launched'] = True
 
         return self.render_to_response(self.get_context_data(object=scenario))
