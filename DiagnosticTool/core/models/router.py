@@ -7,7 +7,7 @@ class Router(models.Model):
     """
     name = models.CharField(max_length=100, verbose_name="Router Name")
     next_hop = models.GenericIPAddressField(verbose_name="Next Hop IP")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="Associated User")
+    users = models.ManyToManyField(User, verbose_name="Associated Users")
 
     def __str__(self):
         return f"{self.name}"

@@ -14,8 +14,11 @@ class DiagnosticHistory:
     @staticmethod
     def get_diagnostic_history_last_30d(user, days=30):
         since = timezone.now() - timedelta(days=days)
-        return Diagnostic.objects.filter(router__user=user,date__gte=since).select_related('router').order_by('-date')
-
+        if user.is_superuser: #if admin user than view of all the history
+            return Diagnostic.objects.filter(date__gte=since).select_related('router').order_by('-date')
+        else: #else the user can check only theirs
+            return Diagnostic.objects.filter(created_by=user, date__gte=since).select_related('router').order_by(
+                '-date')
 class HomeView(LoginRequiredMixin,ListView):
     """
     This class-based view displays the available scenarios.

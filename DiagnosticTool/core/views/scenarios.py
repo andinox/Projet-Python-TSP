@@ -38,7 +38,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         Returns the base queryset for retrieving Scenario objects; can be extended with select_related or prefetch_related for optimization.
         """
         return Scenario.objects.all()
-    
+
     def get_context_data(self, **kwargs):
         """
         This method returns the context data; it prepares data that will be passed to the template
@@ -50,7 +50,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         # Retrieve and remove 'diagnostic_launched' flag from session
         context['diagnostic_launched'] = self.request.session.pop('diagnostic_launched', False)
-        
+
         context['diagnostic'] = getattr(self, 'diagnostic', None)
 
         return context
@@ -65,27 +65,28 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         logger.info(f"Début du diagnostic pour le scénario : {scenario.slug}")
 
-        #prefetch datas
+        # prefetch datas
         try:
-            router=Router.objects.prefetch_related(
+            router = Router.objects.prefetch_related(
                 "bgp_tests",
                 "bgp_confs",
                 "interface_tests",
                 "interface_confs"
-            ).select_related("user").get(user=request.user)
+            ).select_related().filter(users=request.user).first()
         except Router.DoesNotExist:
             logger.error("Aucun routeur trouvé en base de données.")
-            return self.render_to_response(self.get_context_data(object=scenario))
-        
+            self.object = scenario
+            return self.render_to_response(self.get_context_data())
         # Create diagnostic object (assuming only one router)
         diagnostic = Diagnostic.objects.create(
             router=router,
             diagnosis_type=scenario.slug,
-            result=""
+            result="",
+            created_by=self.request.user,
         )
 
         # Dispatch based on scenario slug
-        diagnostic_result=""
+        diagnostic_result = ""
         if scenario.slug == 'perte-de-connexion-vers-internet':
             logger.info("Starting internet connection loss diagnostic")
             dgc = InternetConnectionLossDiagnostic(diagnostic)
@@ -103,8 +104,9 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         elif scenario.slug == "diagnostiquer-tous-les-scenarios-ci-dessus":
             logger.info("[DIAGNOSTIC GÉNÉRAL]")
-            results=[]
-            diagnostics = [InternetConnectionLossDiagnostic(diagnostic),IntranetConnectionLossDiagnostic(diagnostic),SecurityDiagnostic(diagnostic)]
+            results = []
+            diagnostics = [InternetConnectionLossDiagnostic(diagnostic), IntranetConnectionLossDiagnostic(diagnostic),
+                           SecurityDiagnostic(diagnostic)]
             for d in diagnostics:
                 result = d.run()
                 logger.info(f"Résultat du diagnostic :\n{result}")
@@ -112,11 +114,10 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
                 if any(keyword in result.upper() for keyword in ["ÉCHEC", "ECHEC", "ERREUR"]):
                     logger.error("Un échec ou une erreur a été détecté. Interruption du diagnostic global.")
                     break
-            diagnostic_result="\n".join(results)
+            diagnostic_result = "\n".join(results)
         else:
             logger.warning("Scénario non reconnu : aucune action lancée.")
-       
-       
+
         logger.info(f"Résultat final du diagnostic ({scenario.slug}) :\n{diagnostic_result}")
 
         diagnostic.result = diagnostic_result

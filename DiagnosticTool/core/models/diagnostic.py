@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from core.models.router import Router
 
@@ -9,9 +10,10 @@ class Diagnostic(models.Model):
     diagnosis_type = models.CharField(max_length=100)
     result = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='diagnostics')
 
     def __str__(self):
-        return f"{self.router.name} - {self.diagnosis_type}"
+        return f"{self.router.name} - {self.diagnosis_type} - {self.created_by.username}"
 
     class Meta:
         """
