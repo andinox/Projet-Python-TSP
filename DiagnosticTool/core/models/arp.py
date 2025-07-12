@@ -18,12 +18,12 @@ class ARP(models.Model):
 
 
 class ARP_CONF(ARP):
-    idinterface = models.ForeignKey(Interface_CONF, on_delete=models.CASCADE)
+    idinterface = models.ForeignKey(Interface_CONF, on_delete=models.CASCADE, related_name="arp_confs")
     ip_arp = models.GenericIPAddressField(verbose_name="IP ARP",primary_key=True)
 
 
 class ARP_TEST(ARP):
-    idinterface = models.ForeignKey(Interface_TEST, on_delete=models.CASCADE)
+    idinterface = models.ForeignKey(Interface_TEST, on_delete=models.CASCADE, related_name="arp_tests")
     ip_arp = models.GenericIPAddressField(verbose_name="IP ARP")
 
 

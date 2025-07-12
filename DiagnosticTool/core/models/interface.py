@@ -20,6 +20,8 @@ class Interface(models.Model):
 
 class Interface_CONF(Interface):
     idinterface = models.IntegerField(primary_key=True)
+    router = models.ForeignKey(Router, on_delete=models.CASCADE, related_name="interface_confs")
 
 class Interface_TEST(Interface):
     idinterface = models.IntegerField()
+    router = models.ForeignKey(Router, on_delete=models.CASCADE, related_name="interface_tests")

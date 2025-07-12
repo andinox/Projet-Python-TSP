@@ -26,10 +26,22 @@ class BGP(models.Model):
 
 class BGP_CONF(BGP):
     neighbor_ip = models.GenericIPAddressField(verbose_name="Neighbor IP Address", primary_key=True)
+    router = models.ForeignKey(
+        Router,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name='bgp_confs'
+    )
 
     def __str__(self):
         return f"[CONF] {self.neighbor_ip} - ASN {self.asn}"
 
 class BGP_TEST(BGP):
+    router = models.ForeignKey(
+        Router,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name='bgp_tests'
+    )
     def __str__(self):
         return f"[TEST] {self.neighbor_ip} - ASN {self.asn}"
