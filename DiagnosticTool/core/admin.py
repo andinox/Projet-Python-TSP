@@ -10,7 +10,17 @@ from core.models.security import Security
 from core.models.securityscan import SecurityScan
 
 class RouterAdmin(admin.ModelAdmin):
-    list_display=("name","next_hop","user")
+    list_display=("name","next_hop","all_users")
+
+    def all_users(self, obj):
+        """
+        Return all users associated to this router
+        """
+        usernames = []
+        for user in obj.users.all():
+            usernames.append(user.username)
+        return ", ".join(usernames)
+
 
 class DiagnosticAdmin(admin.ModelAdmin):
     list_display=("router","diagnosis_type","result","date",)
