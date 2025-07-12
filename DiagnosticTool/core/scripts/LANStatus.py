@@ -28,7 +28,7 @@ def check_arp_ip_in_interface_network():
     errors = 0
     ten_minutes_ago = now() - timedelta(minutes=1)
 
-    entries = ARP_TEST.objects.filter(timestamp__gte=ten_minutes_ago)
+    entries = ARP_TEST.objects.select_related("idinterface").filter(timestamp__gte=ten_minutes_ago)
     
     if not entries.exists():
         messages.append("[ATTENTION] Aucun enregistrement ARP récent (moins de 1 minute) trouvé.")
@@ -76,7 +76,7 @@ def compare_arp_conf_and_test():
     messages.append(" Comparaison entre la table ARP initiale et la table ARP actuelle : ")
 
     # check if ARP_CONF entries are in ARP_TEST
-    for conf_entry in ARP_CONF.objects.all():
+    for conf_entry in ARP_CONF.objects.select_related("idinterface").all():
         ip_conf = conf_entry.ip_arp
         idinterface_conf = conf_entry.idinterface.idinterface  # receive the idinterface of the interface linked with ARP
 
@@ -88,7 +88,7 @@ def compare_arp_conf_and_test():
             differences += 1
 
     # check if there are ARP_TEST entries that are not in ARP_CONF
-    for test_entry in ARP_TEST.objects.all():
+    for test_entry in ARP_TEST.objects.select_related("idinterface").all():
         ip_test = test_entry.ip_arp
         idinterface_test = test_entry.idinterface.idinterface
 
