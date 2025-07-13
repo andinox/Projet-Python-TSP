@@ -10,11 +10,12 @@ def check_arp_test_has_data():
             bool: False if any problem was detected during the tests.
             str: Report of the test.
     """
-    count = ARP_TEST.objects.count()
+    one_minute_ago = now() - timedelta(minutes=1)
+    count = ARP_TEST.objects.filter(timestamp__gte=one_minute_ago).count()
     if count == 0:
-        return False, "[ERREUR] Aucun enregistrement trouvé dans la table ARP."
+        return False, "[ECHEC] Aucun enregistrement trouvé dans la table ARP. \n [Ticket] Erreur détectée côté LAN."
     else:
-        return True, f"[INFO] {count} enregistrements trouvés dans la table ARP."
+        return True, f"[OK] {count} enregistrements trouvés dans la table ARP récente."
         
 
 def check_arp_ip_in_interface_network():
@@ -70,7 +71,8 @@ def check_arp_ip_in_interface_network():
         messages.append("[INFO] Tous les ARP IP sont dans leur réseau respectif.")
         return True, messages
     else:
-        messages.append(f"[RÉSUMÉ] {errors} erreurs détectées lors de la vérification des IP ARP.")
+        messages.append(f"[ECHEC] {errors} erreurs détectées lors de la vérification des IP ARP.")
+        messages.append(f"[Ticket] Erreur détectée côté LAN.")
         return False, messages
 
 
@@ -88,7 +90,6 @@ def compare_arp_conf_and_test(interface_conf_map):
     messages = []
     messages.append("Comparaison entre la table ARP initiale et les entrées ARP_TEST récentes :")
 
-    # Time threshold: 1 minute ago
     one_minute_ago = now() - timedelta(minutes=1)
 
     # Load only recent ARP_TEST entries
