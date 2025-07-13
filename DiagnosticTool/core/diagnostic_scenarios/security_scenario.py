@@ -19,7 +19,7 @@ class SecurityDiagnostic:
         str: A diagnostic report including system info and open ports.
         """
         report = []
-        report.append("\n----- DÉBUT DU DIAGNOSTIC : Je souhaite vérifier la sécurité de mon réseau -----\n")
+        report.append("\nDÉBUT DU DIAGNOSTIC : Je souhaite vérifier la sécurité de mon réseau\n\n")
 
         # Retrieve system info from DB
         security_obj = Security.objects.filter(hostname=self.router.name).order_by("-id").first()

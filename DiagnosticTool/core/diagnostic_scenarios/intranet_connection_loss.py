@@ -32,7 +32,7 @@ class IntranetConnectionLossDiagnostic:
             return "\n".join(report)
         
         # BGP analysis
-        report.append("\n----- DÉBUT DU DIAGNOSTIC : Perte de connexion Intranet -----\n")
+        report.append("\nDÉBUT DU DIAGNOSTIC : Perte de connexion Intranet\n")
         bgp_entries = BGP_TEST.objects.filter(router=self.router)
 
         for entry in bgp_entries:
@@ -46,7 +46,7 @@ class IntranetConnectionLossDiagnostic:
 
                 if ping("10.255.255.1",5,2,"192.168.68.8"):
                     report.append("[OK] ping vers le serveur de l'entreprise réussi.")
-                    report.append("Demander une analyse plus pousser pour comprendre à quel niveau est le problème")
+                    report.append("Demander une analyse plus poussée pour comprendre à quel niveau est le problème")
                 else :
                     report.append("[ECHEC] Le ping vers le serveur de l'entreprise a échoué")
                     report.append("Problème détecté au niveau du lien BGP")
