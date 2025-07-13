@@ -60,8 +60,11 @@ class InternetConnectionLossDiagnostic:
                 report.append(f"Test complémentaire : ping vers le next hop {next_hop}...")
                 if ping(next_hop):
                     report.append(f"Résultat : OK - ping vers next hop {next_hop} réussi.")
+                    report.append("Problème détecté entre le next-hop et internet.")
+
                 else:
                     report.append(f"Résultat : ÉCHEC - ping vers next hop {next_hop} échoué.")
+                    report.append("Problème détecté avec le next-hop.")
 
             report.append("Analyse : problème de connectivité détecté, analyse du dernier hop nécessaire.")
             report.append("=> Créer un ticket pour investigation.")
