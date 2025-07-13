@@ -1,0 +1,38 @@
+[
+{
+  "model": "core.scenario",
+  "pk": 6,
+  "fields": {
+    "name": "Je souhaite vérifier la sécurité de mon réseau",
+    "description": "Je souhaite vérifier la sécurité de mon réseau",
+    "slug": "je-souhaite-verifier-la-securite-de-mon-reseau"
+  }
+},
+{
+  "model": "core.scenario",
+  "pk": 7,
+  "fields": {
+    "name": "Perte de connexion vers Internet",
+    "description": "Ce diagnostic permet de savoir si le problème vient d'Internet en général, de la résolution des noms de sites, ou d’un blocage plus profond dans le réseau. \r\nTests effectués: \r\n1. Test de connexion à un site Web \r\n→ Ping vers google.com pour vérifier si l'accès Internet fonctionne normalement via les noms de domaine. \r\n\r\n2. Test de connexion directe à une adresse IP \r\n→ Ping vers l’adresse IP de Google (8.8.8.8) pour vérifier si Internet fonctionne sans utiliser le système de noms (DNS). \r\n\r\n3. Analyse du chemin réseau \r\n→ Traceroute vers 8.8.8.8 pour identifier à quel niveau du réseau (fournisseur, routeur, etc.) la coupure se produit.",
+    "slug": "perte-de-connexion-vers-internet"
+  }
+},
+{
+  "model": "core.scenario",
+  "pk": 8,
+  "fields": {
+    "name": "Perte de connexion vers les sites de l’entreprise",
+    "description": "Ce diagnostic permet de vérifier que les routeurs du réseau interne communiquent bien entre eux. Si une session est inactive, cela peut expliquer la perte de connexion sur votre Intranet. \r\n\r\n1.Vérification des sessions entre routeurs (protocole BGP) \r\n→ On contrôle les connexions entre votre routeur et ses voisins dans le réseau interne. \r\n→ Pour chaque voisin, on regarde : Son adresse IP Son identifiant (ASN) L’état de la connexion (active ou inactive) La date et l’heure du dernier changement de statut \r\n\r\n2. Diagnostic de stabilité des connexions \r\n→ Si la connexion avec un voisin est active, cela signifie que la communication entre routeurs fonctionne normalement. \r\n→ Si la connexion est inactive, cela peut indiquer un problème de configuration ou de connectivité à résoudre.",
+    "slug": "perte-de-connexion-vers-les-sites-de-lentreprise"
+  }
+},
+{
+  "model": "core.scenario",
+  "pk": 9,
+  "fields": {
+    "name": "Diagnostiquer tous les scénarios ci-dessus",
+    "description": "Possibilité de lancer les trois testes de diagnostic en même temps: \r\n\r\n1- diagnostic de la perte de connexion vers internet \r\n2- diagnostic de la perte de connexion vers l'extranet \r\n3- diagnostic de la sécurité du réseau",
+    "slug": "diagnostiquer-tous-les-scenarios-ci-dessus"
+  }
+}
+]

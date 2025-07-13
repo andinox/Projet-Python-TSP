@@ -1,0 +1,17 @@
+[
+{
+  "model": "core.router",
+  "pk": 2,
+  "fields": {
+    "name": "pod5-cat8kv",
+    "next_hop": "172.16.10.1",
+    "users": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}
+]

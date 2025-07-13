@@ -1,0 +1,92 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$TccghQv01oUm0w4ZHGXTZX$B7so58el+bZTlClNwCAT60UPW+Guz/YzvmUAALkCHck=",
+    "last_login": "2025-07-13T13:10:06.453Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "Admin",
+    "last_name": "",
+    "email": "expertsdiagnostictool@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-06-01T17:45:07Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$05g1eaoKyWFsHKZKDAlu1x$mCJ2MbHqM15YVXdECo4BsFbq1eiO1EptWZldNNyMgnA=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "doha",
+    "first_name": "doha",
+    "last_name": "",
+    "email": "doha.aberkane@telecom-sudparis.eu",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-11T15:35:55Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$AMS0tFyIkLj0A73NGpnAxH$DRLuzWmBzHeSC6K8WK9av9wFi0ENJy2ya0Gk8TydEYA=",
+    "last_login": "2025-07-12T13:28:51.732Z",
+    "is_superuser": false,
+    "username": "aude",
+    "first_name": "Aude",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-11T15:36:44Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$qICJmcGeaZJyYwlaKr65MJ$jo3MJJNRCj2H7Fw6lcXtuhNv+mmWnk0TDOsrEQvsgsI=",
+    "last_login": "2025-07-11T23:39:46.425Z",
+    "is_superuser": false,
+    "username": "claire",
+    "first_name": "Claire",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-11T15:37:09Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$600000$mMmuuv4nhHgFcUQ7ZpTAGB$tr8lPrLeuI9aNp+z82M4dqqZf0HnxKTMaTJ5ZYdXnzQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "nicolas",
+    "first_name": "Nicolas",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-07-11T15:37:35Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
