@@ -57,26 +57,30 @@
                             {% endif %}
                             {% if diagnostic_result %}
                                 <label class="fw-bold">Résultat :</label>
-                                {% for line in diagnostic_result.splitlines %}
-                                    {% if " DÉBUT DU " in line %}
-                                        <div class="text-success">{{ line }}</div>
-                                    {% elif "OK" in line %}
-                                        <div class="text-success">{{ line }}</div>
-                                    {% elif "ÉCHEC" in line or "ECHEC" in line or "ERREUR" in line %}
-                                        <div class="text-danger">{{ line }}</div>
-                                    {% else %}
-                                        <div>{{ line }}</div>
-                                    {% endif %}
-                                {% endfor %}
+                                <div class="bg-light p-3 rounded border text-muted mb-4">
+                                    {% for line in diagnostic_result.splitlines %}
+                                        {% if "DÉBUT DU" in line %}
+                                            <span class="fw-bold">{{ line }}</span><br>
+                                        {% elif "OK" in line %}
+                                            <span class="text-success">{{ line }}</span><br>
+                                        {% elif "ÉCHEC" in line or "ECHEC" in line or "ERREUR" in line %}
+                                            <span class="text-danger">{{ line }}</span><br>
+                                        {% elif "(!)" in line %}
+                                            <span class="text-warning">{{ line }}</span><br>
+                                        {% else %}
+                                            <span>{{ line }}</span><br>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
                             {% else %}
                                 <strong> <img src="{% static 'img/pdf_file_icon.svg' %}" alt="Logo"
-                                              style="width: 24px; height: auto;" class="me-2">
+                                            style="width: 24px; height: auto;" class="me-2">
                                     Pour votre information :</strong><br>
                                 Le résultat et l'export PDF du diagnostic sera affiché ici après que vous aurez cliqué
                                 sur <em>Lancer le diagnostic</em>.
                             {% endif %}
-                        </div>
 
+                        </div>
                     </div>
                 </section>
             </div>
