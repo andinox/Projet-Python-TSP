@@ -1,12 +1,97 @@
 # basic_network_tests.py
 
-from core.models import Interface_CONF, ARP_CONF
+from core.models import Interface_CONF, ARP_CONF, ARP_TEST
 from django.utils.timezone import now
-from core.scripts import ping, check_arp_test_has_data,check_arp_ip_in_interface_network,compare_arp_conf_and_test
+from core.scripts import ping
+import ipaddress
+from datetime import timedelta
+from django.utils.timezone import now
 
 class BasicNetworkTests:
     def __init__(self, router=None):
         self.router = router
+
+    def check_arp_test_has_data(self):
+        one_minute_ago = now() - timedelta(minutes=1)
+        count = ARP_TEST.objects.filter(timestamp__gte=one_minute_ago).count()
+        if count == 0:
+            return False, "[ECHEC] Aucun enregistrement trouvé dans la table ARP. \n [Ticket] Erreur détectée côté LAN."
+        else:
+            return True, f"[OK] {count} enregistrements trouvés dans la table ARP récente."
+
+    def check_arp_ip_in_interface_network(self):
+        messages = []
+        errors = 0
+        one_minute_ago = now() - timedelta(minutes=1)
+
+        entries = ARP_TEST.objects.select_related("idinterface").filter(timestamp__gte=one_minute_ago)
+
+        if not entries.exists():
+            messages.append("[ATTENTION] Aucun enregistrement ARP récent (moins de 1 minute) trouvé.")
+            return False, messages
+
+        for entry in entries:
+            interface = entry.idinterface
+            arp_ip = entry.ip_arp
+            ip_addr = interface.ip_address
+            mask = interface.subnet_mask
+
+            if not ip_addr or not mask:
+                messages.append(f"[AVERTISSEMENT] Interface {interface.idinterface} sans IP ou masque.")
+                errors += 1
+                continue
+
+            try:
+                network = ipaddress.ip_interface(f"{ip_addr}/{mask}").network
+                arp_ip_obj = ipaddress.ip_address(arp_ip)
+
+                if arp_ip_obj not in network:
+                    messages.append(f"[ERREUR] ARP IP {arp_ip} hors du réseau {network} (interface {interface.idinterface}).")
+                    errors += 1
+                else:
+                    messages.append(f"[OK] ARP IP {arp_ip} dans le réseau {network} (interface {interface.idinterface}).")
+            except Exception as e:
+                messages.append(f"[ERREUR] Vérification impossible pour {arp_ip} (interface {interface.idinterface}) : {e}")
+                errors += 1
+
+        if errors == 0:
+            messages.append("[INFO] Tous les ARP IP sont dans leur réseau respectif.")
+            return True, messages
+        else:
+            messages.append(f"[ECHEC] {errors} erreurs détectées lors de la vérification des IP ARP.")
+            messages.append("[Ticket] Erreur détectée côté LAN.")
+            return False, messages
+
+    def compare_arp_conf_and_test(self, interface_conf_map):
+        differences = 0
+        messages = ["Comparaison entre la table ARP initiale et les entrées ARP_TEST récentes :"]
+        one_minute_ago = now() - timedelta(minutes=1)
+
+        arp_test_entries = ARP_TEST.objects.select_related("idinterface").filter(timestamp__gte=one_minute_ago)
+        arp_conf_entries = ARP_CONF.objects.select_related("idinterface").all()
+
+        conf_keys = {(entry.idinterface.idinterface, entry.ip_arp) for entry in arp_conf_entries}
+        test_keys = {(entry.idinterface.idinterface.idinterface, entry.ip_arp) for entry in arp_test_entries}
+
+        for key in conf_keys - test_keys:
+            idinterface, ip = key
+            interface = interface_conf_map.get(idinterface)
+            name = interface.interface_name if interface else f"ID {idinterface}"
+            messages.append(f"[DIFF] ARP_CONF {ip} (interface {name}) non trouvé dans ARP_TEST (récente).")
+            differences += 1
+
+        for key in test_keys - conf_keys:
+            idinterface, ip = key
+            interface = interface_conf_map.get(idinterface)
+            name = interface.interface_name if interface else f"ID {idinterface}"
+            messages.append(f"[INFO] ARP_TEST {ip} (interface {name}) non trouvé dans ARP_CONF (peut être normal).")
+
+        if differences == 0:
+            messages.append("[INFO] Toutes les IP ARP initiales sont présentes dans les données ARP récentes.")
+        else:
+            messages.append(f"[RÉSUMÉ] {differences} IP manquantes dans ARP_TEST récent comparé à ARP_CONF.")
+
+        return messages
 
     def check_interface_status_from_tests(self, tests):
         """
@@ -55,7 +140,7 @@ class BasicNetworkTests:
         seconds = total_seconds % 60
         return f"{days} days {hours:02}:{minutes:02}:{seconds:02}"
     
-    def run_arp_tests(self):
+    def run_arp_tests(self,interface_conf_map):
         """
         Executes the three ARP checks and returns whether the tests were successful
          as well as the messages associated with the tests
@@ -63,23 +148,23 @@ class BasicNetworkTests:
             all_passed (bool): False if any problem was detected during the tests.
             report_lines (str): Full report of the ARP tests.
         """
-        report_lines = ["\n[ARP] Lancement des vérifications ARP...\n"]
+        report_lines = ["\n"]
         all_passed = True
 
         # step 1 : Check if current ARP table has data
-        status, message = check_arp_test_has_data()
+        status, message = self.check_arp_test_has_data()
         report_lines.append(message)
         if not status:
             all_passed = False
 
         # step 2 : Check if IPs from the ARP table are in the same network as the router interface they are linked with
-        status, messages = check_arp_ip_in_interface_network()
+        status, messages = self.check_arp_ip_in_interface_network()
         report_lines.extend(messages)
         if not status:
             all_passed = False
 
         # step 3 : compares if initial ARP table and current one have differences
-        messages = compare_arp_conf_and_test()
+        messages = self.compare_arp_conf_and_test(interface_conf_map)
         report_lines.extend(messages)
 
         return all_passed, "\n".join(report_lines)
@@ -174,21 +259,11 @@ class BasicNetworkTests:
         # Step 2: ARP tests
         full_report.append("\n[ARP] Lancement des vérifications ARP...\n")
 
-        status, message = check_arp_test_has_data()
-        full_report.append(message)
-        if not status:
+        arp_ok, arp_report = self.run_arp_tests(interface_conf_map)
+        full_report.append(arp_report)
+        if not arp_ok:
             issue_found = True
             return issue_found, "\n".join(full_report)
-
-        status, messages = check_arp_ip_in_interface_network()
-        full_report.extend(messages)
-        if not status:
-            issue_found = True
-            return issue_found, "\n".join(full_report)
-
-        # Compare ARP_CONF and ARP_TEST
-        arp_compare_messages = compare_arp_conf_and_test(interface_conf_map )
-        full_report.extend(arp_compare_messages)
 
         # Step 3: Ping test to one ARP IP in LAN
         arp_entry = ARP_CONF.objects.filter(idinterface=1).exclude(ip_arp="172.16.10.51").only("ip_arp").first()
