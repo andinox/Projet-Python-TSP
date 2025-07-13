@@ -20,8 +20,8 @@ class IntranetConnectionLossDiagnostic:
 
     def compare_bgp_conf_and_test(self):
         """
-        Compare BGP_CONF avec la dernière entrée BGP_TEST (par voisin).
-        Retourne un rapport textuel des différences.
+        Compare BGP_CONF with last entry of BGP TEST for the same Neighbor.
+        Returns messages (str) : report about whether there are differences.
         """
         messages = []
         differences = 0
