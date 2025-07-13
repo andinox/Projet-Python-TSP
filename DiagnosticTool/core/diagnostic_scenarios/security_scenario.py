@@ -1,4 +1,4 @@
-from core.models import Router, Security, SecurityScan
+from core.models import Router, Security, SecurityScan, Diagnostic
 from core.router import perform_security_scan
 from core.scripts import convert_uptime
 from dotenv import load_dotenv
@@ -7,8 +7,9 @@ import os
 load_dotenv()
 
 class SecurityDiagnostic:
-    def __init__(self, router: Router):
-        self.router = router
+    def __init__(self, diagnostic: Diagnostic):
+        self.diagnostic = diagnostic
+        self.router = diagnostic.router
 
     def run(self):
         """
