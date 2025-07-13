@@ -74,8 +74,9 @@ class IntranetConnectionLossDiagnostic:
 
 
 
-    def run(self):
+    def run(self, skip_basic_network_tests=False):
         """
+        :param skip_basic_network_tests: False by default ; at True when launching whole scenarios
         Returns:
             A string report summarizing the BGP neighbors' status, 
             including ASN, state, and time since last change.
@@ -84,12 +85,13 @@ class IntranetConnectionLossDiagnostic:
         report = []
 
         # Basic network tests
-        issue_found, basic_tests_report = self.tests.run_all_basic_tests()
-        report.append(basic_tests_report)
+        if not skip_basic_network_tests:
+            issue_found, basic_tests_report = self.tests.run_all_basic_tests()
+            report.append(basic_tests_report)
 
-        if issue_found:
-            return "\n".join(report)
-        
+            if issue_found:
+                return "\n".join(report)
+
         # BGP analysis
         report.append("\nDÉBUT DU DIAGNOSTIC : Perte de connexion Intranet\n")
         bgp_entries = BGP_TEST.objects.filter(router=self.router)

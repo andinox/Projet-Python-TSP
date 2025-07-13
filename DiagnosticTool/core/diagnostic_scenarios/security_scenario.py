@@ -1,4 +1,4 @@
-from core.models import Router, Security, SecurityScan, Diagnostic
+from core.models import  Security, SecurityScan, Diagnostic
 from core.router import perform_security_scan
 from core.scripts import convert_uptime
 from dotenv import load_dotenv
@@ -11,8 +11,9 @@ class SecurityDiagnostic:
         self.diagnostic = diagnostic
         self.router = diagnostic.router
 
-    def run(self):
+    def run(self,skip_basic_network_tests=False):
         """
+        :param skip_basic_network_tests: no needed here but for other class ; in scenarios.py it will be used as false to not get an issue with the loop
         Runs the security diagnostic using system info from DB and a live port scan.
 
         Returns:
