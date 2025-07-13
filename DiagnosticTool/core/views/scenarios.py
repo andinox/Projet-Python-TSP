@@ -92,8 +92,15 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
             results = []
             diagnostics = [InternetConnectionLossDiagnostic(diagnostic), IntranetConnectionLossDiagnostic(diagnostic),
                            SecurityDiagnostic(diagnostic)]
-            for d in diagnostics:
-                result = d.run()
+
+            # to not have double time the basic network test launched
+            # we do it for the first diagnostic
+            diagnostic_result_basic_network_tests = diagnostics[0].run(skip_basic_network_tests=False)
+            results.append(diagnostic_result_basic_network_tests)
+
+            # then we skip the basic network test for the others
+            for d in diagnostics[1:]:
+                result = d.run(skip_basic_network_tests=True)
                 logger.info(f"Résultat du diagnostic :\n{result}")
                 results.append(result)
                 if any(keyword in result.upper() for keyword in ["ÉCHEC", "ECHEC", "ERREUR"]):
