@@ -84,7 +84,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         elif scenario.slug == "je-souhaite-verifier-la-securite-de-mon-reseau":
             logger.info("[DIAGNOSTIC DE SÉCURITÉ]")
-            dgc = SecurityDiagnostic(router)
+            dgc = SecurityDiagnostic(diagnostic)
             diagnostic_result = dgc.run()
 
         elif scenario.slug == "diagnostiquer-tous-les-scenarios-ci-dessus":

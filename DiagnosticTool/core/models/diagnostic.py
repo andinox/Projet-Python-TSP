@@ -10,10 +10,12 @@ class Diagnostic(models.Model):
     diagnosis_type = models.CharField(max_length=100)
     result = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='diagnostics')
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='diagnostics', blank=True, null=True)
 
     def __str__(self):
-        return f"{self.router.name} - {self.diagnosis_type} - {self.created_by.username}"
+        user_display = self.created_by.username if self.created_by else "Utilisateur inconnu"
+        return f"{self.router.name} - {self.diagnosis_type} - {user_display}"
+
 
     class Meta:
         """
