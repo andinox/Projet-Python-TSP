@@ -44,7 +44,7 @@ Build et start les containers Docker:
    ```
 arbre de décision : 
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/245e08ad-3dd3-4e5c-b14a-cb652d3266ed" alt="Arbre de décision" width="800" />
+   <img src="https://github.com/user-attachments/assets/313d2df7-6379-4d80-9e43-02e3d6d101b0" alt="Arbre de décision" width="800" />
 </p>
 
 <p align="center">
