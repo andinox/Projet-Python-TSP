@@ -32,6 +32,7 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
 5. Migration des données si besoin (lors de la création des modèles dans models.py ou des modèles se trouvant dans le folder models)
    Commandes :```python manage.py makemigrations nomApp``` & ```python manage.py migrate nomApp```
                  
+
 6. Accéder à l'application:
    Lancer dans terminal :
    ```python manage.py runserver``` et se rendre sur : `http://localhost:8000`.
@@ -41,9 +42,9 @@ Build et start les containers Docker:
    ```sh
     docker-compose up --build
    ```
-arbre de décision pour le moment.
+arbre de décision : 
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/aeb75e46-8671-48e5-a6f2-828035817649" alt="DiagnosticTool_logo" width="500" />
+   <img src="https://github.com/user-attachments/assets/245e08ad-3dd3-4e5c-b14a-cb652d3266ed" alt="Arbre de décision" width="800" />
 </p>
 
 <p align="center">
