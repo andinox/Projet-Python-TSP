@@ -21,16 +21,15 @@ from django.conf.urls.static import static
 import debug_toolbar
 
 urlpatterns = [
-    path('test500/', lambda request: (_ for _ in ()).throw(Exception("Erreur de test 500")), name='test500'),  # Pour tester la gestion des erreurs
+    path('test500/', lambda request: (_ for _ in ()).throw(Exception("Erreur de test 500")),name='test500'),
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('', include('gestionnaire_users.urls')),
-    path("__debug__/", include(debug_toolbar.urls)),
+    path("__debug__/", include(debug_toolbar.urls)),  # TODO: to delete before final version
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-#adding debug toolbar of django if our DEBUG is at True
+# adding debug toolbar of django if our DEBUG is at True
 if settings.DEBUG:
     urlpatterns += [
         path('__debug__/', include(debug_toolbar.urls)),
-]
+    ]
