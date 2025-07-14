@@ -60,6 +60,9 @@
                                         <th scope="col">Type de diagnostic</th>
                                         <th scope="col">Routeur</th>
                                         <th scope="col">Date</th>
+                                        {% if request.user.is_superuser %}
+                                            <th>Utilisateur</th>
+                                        {% endif %}
                                         <th scope="col" class="text-center">Téléchargement</th>
                                     </tr>
                                     </thead>
@@ -70,6 +73,10 @@
                                                 <td><strong>{{ diag.diagnosis_type }}</strong></td>
                                                 <td>{{ router.name }}</td>
                                                 <td class="text-muted-custom">{{ diag.date|date:"d/m/Y H:i" }}</td>
+                                                {% if request.user.is_staff %}
+                                                    <td>{{ diag.created_by }}</td>
+                                                {% endif %}
+
                                                 <td class="text-center">
                                                     <a href="{% url 'export_diagnostic_pdf' diag.id %}"
                                                        class="btn btn-outline-primary btn-sm" title="Téléchargement">
