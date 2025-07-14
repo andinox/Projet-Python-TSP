@@ -13,7 +13,7 @@ def superuser_required(view_func):
 
 @method_decorator(superuser_required, name='dispatch')
 class AdminDashboardView(TemplateView):
-    template_name = 'core/all_interfaces.html'
+    template_name = 'core/admin_dashboard.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -23,7 +23,6 @@ class AdminDashboardView(TemplateView):
         interfaces_test = Interface_TEST.objects.select_related('router').all()
         bgp_conf = BGP_CONF.objects.select_related('router').all()
         bgp_test = BGP_TEST.objects.select_related('router').all()
-        icmp_tests = ICMP.objects.all()
         arp_conf = ARP_CONF.objects.select_related('idinterface').all()
         arp_test = ARP_TEST.objects.select_related('idinterface').all()
         diagnostics = Diagnostic.objects.select_related('router').all()
@@ -35,7 +34,6 @@ class AdminDashboardView(TemplateView):
         interfaces_admin_up = sum(1 for i in interfaces_test if i.admin_status == 'up')
         interfaces_admin_down = sum(1 for i in interfaces_test if i.admin_status == 'down')
         bgp_test_down = sum(1 for b in bgp_test if b.up_down_status == 'DOWN')
-        icmp_failed = sum(1 for i in icmp_tests if i.icmp_up_down_status != 'UP')
 
         # injection of data and statistics into the context for template rendering
         context.update({
@@ -43,7 +41,6 @@ class AdminDashboardView(TemplateView):
             'interfaces_test': interfaces_test,
             'bgp_conf': bgp_conf,
             'bgp_test': bgp_test,
-            'icmp_tests': icmp_tests,
             'arp_conf': arp_conf,
             'arp_test': arp_test,
             'diagnostics': diagnostics,
@@ -55,7 +52,6 @@ class AdminDashboardView(TemplateView):
             'interfaces_admin_up': interfaces_admin_up,
             'interfaces_admin_down': interfaces_admin_down,
             'bgp_test_down': bgp_test_down,
-            'icmp_failed': icmp_failed,
         })
 
         return context

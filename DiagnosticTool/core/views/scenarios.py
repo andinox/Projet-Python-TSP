@@ -66,6 +66,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         diagnostic = Diagnostic.objects.create(
             router=router,
             diagnosis_type=scenario.slug,
+            scenario=scenario,
             result="",
             created_by=self.request.user,
         )
@@ -115,6 +116,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         diagnostic.result = diagnostic_result
         diagnostic.save()
 
+        self.diagnostic = diagnostic
         self.diagnostic_result = diagnostic_result
         self.object = scenario
         request.session['diagnostic_launched'] = True

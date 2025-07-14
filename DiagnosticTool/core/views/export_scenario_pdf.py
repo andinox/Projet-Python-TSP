@@ -19,7 +19,7 @@ class ScenarioPDFView(LoginRequiredMixin, DetailView):
         from weasyprint import HTML
 
         diagnostic = self.get_object()
-        scenario = diagnostic.get_scenario_display() if hasattr(diagnostic, 'get_scenario_display') else diagnostic.diagnosis_type
+        scenario = diagnostic.get_scenario_name()
         router = diagnostic.router
         created_at = diagnostic.date
 

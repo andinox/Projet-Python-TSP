@@ -1,18 +1,9 @@
 #!/usr/bin/env python3
 import json
-import os
-import sys
 import traceback
-import django
-
-# Setup Django environment
-sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool") # TODO: need to change the path or put it in variable maybe
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DiagnosticTool.settings")
-django.setup()
 
 from django.utils.timezone import now
 from core.models import Router, BGP_CONF, BGP_TEST
-
 
 def map_peer_status_to_updown(status):
     """

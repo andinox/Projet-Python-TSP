@@ -1,13 +1,15 @@
 from django.contrib.auth.models import User
 from django.db import models
 from core.models.router import Router
+from core.models.scenario import Scenario
 
 class Diagnostic(models.Model):
     """
     This model keeps track of performed diagnostics.
     """
     router = models.ForeignKey(Router, on_delete=models.CASCADE)
-    diagnosis_type = models.CharField(max_length=100)
+    diagnosis_type = models.CharField(max_length=100)  # Ne pas toucher
+    scenario = models.ForeignKey(Scenario, on_delete=models.SET_NULL, null=True, blank=True)
     result = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     created_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='diagnostics', null=True)
@@ -15,6 +17,9 @@ class Diagnostic(models.Model):
     def __str__(self):
         user_display = self.created_by.username if self.created_by else "Utilisateur inconnu"
         return f"{self.router.name} - {self.diagnosis_type} - {user_display}"
+
+    def get_scenario_name(self):
+        return self.scenario.name if self.scenario else self.diagnosis_type
 
 
     class Meta:

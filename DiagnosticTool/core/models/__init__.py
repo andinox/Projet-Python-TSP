@@ -4,7 +4,6 @@ from .scenario import Scenario
 from .interface import Interface_CONF, Interface_TEST
 from .bgp import BGP_CONF, BGP_TEST
 from .arp import ARP_CONF, ARP_TEST
-from .icmp import ICMP
 from .security import Security
 from .securityscan import SecurityScan
 
@@ -18,7 +17,6 @@ __all__ = [
     "BGP_TEST",
     "ARP_CONF",
     "ARP_TEST",
-    "ICMP",
     "Security",
     "SecurityScan"
 ]

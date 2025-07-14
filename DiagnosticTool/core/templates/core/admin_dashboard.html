@@ -1,0 +1,222 @@
+{% extends 'DiagnosticTool/base.html' %}
+{% load static %}
+{% block title %}
+    Vue Administrateur – Diagnostic Réseau
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid my-5 px-4">
+        <div class="row g-4 align-items-stretch">
+
+            <!-- Global summary -->
+            <div class="col-md-6">
+                <section class="card shadow-sm border-0 h-100">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3">📊 <strong>Résumé Global</strong></h4>
+                        <div class="alert alert-success">
+                            <ul class="mb-0">
+                                <li>Total interfaces testées : {{ interfaces_test|length }}</li>
+                                <li>Interfaces injoignables : {{ interfaces_test_unreachable }}</li>
+                                <li>Sessions BGP DOWN : {{ bgp_test_down }}</li>
+                                <li>Total diagnostics : {{ diagnostics|length }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Detected issues -->
+            <div class="col-md-6">
+                <section class="card shadow-sm border-0 h-100">
+                    <div class="card-body p-4">
+                        <h4 class="card-title mb-3">⚠️ <strong>Anomalies Détectées</strong></h4>
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                {% if interfaces_test_unreachable > 0 %}
+                                    <li>{{ interfaces_test_unreachable }} interfaces injoignables</li>
+                                {% endif %}
+                                {% if bgp_test_down > 0 %}
+                                    <li>{{ bgp_test_down }} sessions BGP en échec</li>
+                                {% endif %}
+
+                                {% if diagnostics|length > 0 %}
+                                    <li>{{ diagnostics|length }} diagnostics enregistrés</li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Statistics Interfaces -->
+            <div class="col-12">
+                <section class="card shadow-sm border-0 mb-4">
+                    <div class="card-header bg-info text-white">
+                        Statistiques Interfaces Test
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Admin UP : {{ interfaces_admin_up }}</li>
+                        <li class="list-group-item">Admin DOWN : {{ interfaces_admin_down }}</li>
+                        <li class="list-group-item">Reachables : {{ interfaces_test_reachable }}</li>
+                        <li class="list-group-item">Non reachables : {{ interfaces_test_unreachable }}</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Interfaces Test Table -->
+            <div class="col-12">
+                <h4 class="mb-3">Interfaces Testées</h4>
+                <div class="table-responsive mb-5">
+                    <table class="table table-striped table-bordered align-middle w-100">
+                        <thead class="table-light">
+                        <tr>
+                            <th>Nom Interface</th>
+                            <th>Routeur</th>
+                            <th>Status Admin</th>
+                            <th>Reachability</th>
+                            <th>IP</th>
+                            <th>Subnet Mask</th>
+                            <th>Timestamp</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for iface in interfaces_test %}
+                            <tr>
+                                <td>{{ iface.interface_name }}</td>
+                                <td>{{ iface.router.name }}</td>
+                                <td>{{ iface.admin_status }}</td>
+                                <td>{{ iface.reachability }}</td>
+                                <td>{{ iface.ip_address }}</td>
+                                <td>{{ iface.subnet_mask }}</td>
+                                <td>{{ iface.timestamp }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="7" class="text-center">Aucune interface test trouvée.</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- BGP Sessions  -->
+            <div class="col-12">
+                <h4 class="mb-3">Sessions BGP</h4>
+                <div class="table-responsive mb-5">
+                    <table class="table table-striped table-bordered align-middle w-100">
+                        <thead class="table-light">
+                        <tr>
+                            <th>Routeur</th>
+                            <th>Neighbor IP</th>
+                            <th>ASN</th>
+                            <th>Status</th>
+                            <th>Dernier Changement</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for bgp in bgp_test %}
+                            <tr>
+                                <td>{{ bgp.router.name }}</td>
+                                <td>{{ bgp.neighbor_ip }}</td>
+                                <td>{{ bgp.asn }}</td>
+                                <td>{{ bgp.up_down_status }}</td>
+                                <td>{{ bgp.time_last_change }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="5" class="text-center">Aucune session BGP test trouvée.</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!-- Diagnostics -->
+            <div class="col-12">
+                <h2 class="mb-3">Diagnostics</h2>
+                <div class="table-responsive">
+                    <table id="diagnostics-table" class="table table-striped table-bordered align-middle">
+                        <thead class="table-light">
+                        <tr>
+                            <th>Routeur</th>
+                            <th>Utilisateur</th>
+
+                            <th>Type</th>
+                            <th>Résultat</th>
+                            <th>Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for diag in diagnostics %}
+                            <tr class="diag-row">
+                                <td>{{ diag.router.name }}</td>
+                                <td> {{ diag.created_by }}</td>
+                                <td>{{ diag.diagnosis_type }}</td>
+                                <td>
+                                    <pre>{{ diag.result }}</pre>
+                                </td>
+                                <td>{{ diag.date }}</td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="text-center">Aucun diagnostic trouvé.</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-center gap-2 my-4">
+                    <button id="prev-btn" class="btn btn-primary" disabled>Précédent</button>
+                    <button id="next-btn" class="btn btn-primary">Suivant</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS Bundle (Popper + Bootstrap) -->
+    <!-- Author: ChatGPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Pagination JS -->
+    <script>
+        const rows = document.querySelectorAll('#diagnostics-table tbody .diag-row');
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        const totalPages = Math.ceil(rows.length / rowsPerPage);
+
+        function showPage(page) {
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            currentPage = page;
+
+            rows.forEach(row => row.style.display = 'none');
+
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            for (let i = start; i < end && i < rows.length; i++) {
+                rows[i].style.display = '';
+            }
+
+            document.getElementById('prev-btn').disabled = (currentPage === 1);
+            document.getElementById('next-btn').disabled = (currentPage === totalPages);
+        }
+
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentPage > 1) showPage(currentPage - 1);
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentPage < totalPages) showPage(currentPage + 1);
+        });
+
+        showPage(1);
+    </script>
+{% endblock %}
