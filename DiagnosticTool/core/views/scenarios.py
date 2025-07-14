@@ -115,6 +115,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         diagnostic.result = diagnostic_result
         diagnostic.save()
 
+        self.diagnostic = diagnostic
         self.diagnostic_result = diagnostic_result
         self.object = scenario
         request.session['diagnostic_launched'] = True
