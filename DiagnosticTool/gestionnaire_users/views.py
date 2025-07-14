@@ -19,17 +19,11 @@ def user_info(request):
 
     if request.method == 'POST':
         form = AvatarUploadForm(request.POST, request.FILES, instance=profile)
-        avatar = request.FILES.get('avatar')
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Photo de profil bien ajouté :)")
 
-        if avatar:
-            if avatar.content_type not in ['image/jpeg', 'image/png', 'image/gif']:
-                messages.error(request, "Ce format d'image n'est pas supporté. Veuillez utiliser JPG, PNG ou GIF.")
-            elif form.is_valid():
-                form.save()
-                messages.success(request, "Photo de profil a bien été ajouté :)")
-                return redirect('infoUser')
-        else:
-            messages.error(request, "Aucun fichier sélectionné.")
+            return redirect('infoUser')
     else:
         form = AvatarUploadForm(instance=profile)
 
@@ -38,3 +32,4 @@ def user_info(request):
         'profile': profile,
         'form': form
     })
+

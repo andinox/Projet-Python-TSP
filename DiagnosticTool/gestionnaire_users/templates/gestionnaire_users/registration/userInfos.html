@@ -1,51 +1,121 @@
 {% extends 'DiagnosticTool/base.html' %}
 
 {% block content %}
+<style>
+    body {
+        background-color: #c6d5ed;
+    }
 
-    <div class="container mt-5">
-        <div class="card mx-auto p-4" style="max-width: 600px;">
-            <div class="card-header text-center">
-                <h5 class="card-title">Mon profil</h5>
+    .card {
+        background-color: #ffffff;
+        border: 1px solid #4f5891;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(27, 32, 60, 0.1);
+    }
+
+    .card-header {
+        background-color: #1b203c;
+        color: white;
+        border-bottom: 2px solid #4f5891;
+    }
+
+    .profile-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .profile-img {
+        border: 3px solid #8b9de8;
+        padding: 3px;
+    }
+
+    .upload-icon {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: #4f5891;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 6px 8px;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .upload-icon:hover {
+        background-color: #1b203c;
+    }
+
+    .hidden-file-input {
+        display: none;
+    }
+
+    .btn-outline-primary {
+        border-color: #4f5891;
+        color: #4f5891;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: #4f5891;
+        color: white;
+    }
+
+    .info-label {
+        color: #4f5891;
+        font-weight: bold;
+    }
+
+    .text-muted {
+        font-style: italic;
+        font-size: 0.9rem;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="card mx-auto p-4" style="max-width: 600px;">
+        <div class="card-header text-center">
+            <h5 class="card-title">Mon profil</h5>
+        </div>
+        <div class="card-body text-center">
+
+            <div class="profile-wrapper">
+                <img src="{{ profile.avatar.url }}" alt="Avatar" class="rounded-circle profile-img mb-3" width="150">
+
+               <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="avatar" id="id_avatar" class="hidden-file-input">
+    <label for="id_avatar" class="upload-icon">✏️</label>
+    <input type="submit" id="submit-avatar" hidden>
+</form>
+
             </div>
-            <div class="card-body text-center">
 
-                <div class="profile-wrapper">
-                    <img src="{{ profile.avatar.url }}" alt="Avatar" class="rounded-circle profile-img mb-3"
-                         width="150">
-
-                    <form method="POST" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <input type="file" name="avatar" id="id_avatar" class="hidden-file-input">
-                        <label for="id_avatar" class="upload-icon">✏️</label>
-                        <input type="submit" id="submit-avatar" hidden>
-                    </form>
-
-                </div>
-
-                <hr>
-                <p><span class="info-label">Nom d'utilisateur :</span> {{ user.username }}</p>
-                <p><span class="info-label">Nom :</span> {{ user.last_name }}</p>
-                <p><span class="info-label">Prénom :</span> {{ user.first_name }}</p>
-                <p><span class="info-label">Email :</span> {{ user.email }}</p>
-                <p class="text-muted"><span class="info-label">Dernière connexion :</span> {{ user.last_login }}</p>
-            </div>
+            <hr>
+            <p><span class="info-label">Nom d'utilisateur :</span> {{ user.username }}</p>
+            <p><span class="info-label">Nom :</span> {{ user.last_name }}</p>
+            <p><span class="info-label">Prénom :</span> {{ user.first_name }}</p>
+            <p><span class="info-label">Email :</span> {{ user.email }}</p>
+            <p class="text-muted"><span class="info-label">Dernière connexion :</span> {{ user.last_login }}</p>
         </div>
     </div>
-    {% if messages %}
-        <script>
-            {% for message in messages %}
-                alert("{{ message|escapejs }}");
-            {% endfor %}
-        </script>
-    {% endif %}
+</div>
+{% if messages %}
+    <div class="container mt-3">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
+<script>
+    const fileInput = document.getElementById('id_avatar');
+    const submitBtn = document.getElementById('submit-avatar');
 
-    <script>
-        const fileInput = document.getElementById('id_avatar');
-        const submitBtn = document.getElementById('submit-avatar');
-
-        fileInput.addEventListener('change', () => {
-            submitBtn.click();
-        });
-    </script>
+    fileInput.addEventListener('change', () => {
+        submitBtn.click();
+    });
+</script>
 
 {% endblock %}
