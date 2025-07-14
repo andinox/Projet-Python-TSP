@@ -1,9 +1,9 @@
 from django.db import models
 
 class Security(models.Model):
-    hostname = models.CharField(max_length=255)  # sysName
-    sys_descr = models.TextField()               # sysDescr
-    uptime = models.BigIntegerField()            # sysUptime
+    hostname = models.CharField(max_length=255)
+    sys_descr = models.TextField()
+    uptime = models.BigIntegerField()
     cdp_enabled = models.BooleanField(default=False)
     last_updated = models.DateTimeField(auto_now=True)
 
