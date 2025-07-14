@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   db:
     image: postgres:16
@@ -12,13 +10,8 @@ services:
 
   web:
     build: .
-    command: >
-      sh -c "python DiagnosticTool/manage.py migrate &&
-             python DiagnosticTool/manage.py collectstatic --noinput &&
-             gunicorn DiagnosticTool.wsgi:application --bind 0.0.0.0:8000"
     volumes:
-      - .:/app
-      - static_volume:/app/static
+      - ./DiagnosticTool:/app/DiagnosticTool
     environment:
       - DJANGO_ENV=production
       - POSTGRES_DB=diagnostic
@@ -26,6 +19,14 @@ services:
       - POSTGRES_PASSWORD=diagnostic
       - POSTGRES_HOST=db
       - POSTGRES_PORT=5432
+      - DEBUG=False
+      - EMAIL_HOST_USER=expertsdiagnostictool@gmail.com
+      - EMAIL_HOST_PASSWORD=izyqlzfnwgbbolul
+      - ENABLE=Admin123INT
+      - ROUTER_USERNAME=admin
+      - ROUTER_PWD=dkSDwa80f13faXcwxzj
+      - ROUTER_PORT=22
+      - ROUTER_IP=172.16.10.51
     depends_on:
       - db
 
@@ -42,3 +43,4 @@ services:
 volumes:
   postgres_data:
   static_volume:
+:::
