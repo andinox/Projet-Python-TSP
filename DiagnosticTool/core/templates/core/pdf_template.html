@@ -19,6 +19,8 @@
             <div style="color: green;">{{ line }}</div>
         {% elif "ÉCHEC" in line or "ECHEC" in line or "ERREUR" in line %}
             <div style="color: red;">{{ line }}</div>
+        {% elif "(!)" in line %}
+            <div style="color: orange;">{{ line }}</div>
         {% else %}
             <div>{{ line }}</div>
         {% endif %}
