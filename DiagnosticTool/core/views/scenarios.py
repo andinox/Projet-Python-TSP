@@ -66,6 +66,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         diagnostic = Diagnostic.objects.create(
             router=router,
             diagnosis_type=scenario.slug,
+            scenario=scenario,
             result="",
             created_by=self.request.user,
         )
