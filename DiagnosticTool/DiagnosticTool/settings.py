@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-t3_=3cg7=c*3ylp=ai=dd3+pgnroa0j7qtfs_%ncg1o1sd3b5x
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = os.getenv("DEBUG", "True")
-DEBUG= False
+
 ALLOWED_HOSTS = ["*"]
 
 
@@ -71,7 +71,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 ROOT_URLCONF = 'DiagnosticTool.urls'
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','http://172.16.10.50'] #in local to change in prod
 
 
 CSRF_COOKIE_SECURE = False #in local
@@ -101,6 +100,7 @@ WSGI_APPLICATION = 'DiagnosticTool.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 if os.getenv('DJANGO_ENV') == 'production':
+    DEBUG = False
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -111,7 +111,11 @@ if os.getenv('DJANGO_ENV') == 'production':
             'PORT': os.getenv('POSTGRES_PORT'),
         }
     }
+    CSRF_TRUSTED_ORIGINS = ['https://diagnostictool.h.minet.net', 'http://172.16.10.50']  # in local to change in prod
+
 else:
+    CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://172.16.10.50']
+    DEBUG = False
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
