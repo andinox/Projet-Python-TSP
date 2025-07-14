@@ -2,10 +2,8 @@ from core.models import Diagnostic
 from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
 from core.models.bgp import BGP_TEST, BGP_CONF
 from core.scripts import ping
-from datetime import timedelta
-from django.utils.timezone import now
 from django.db.models import Max
-
+from django.db.models import OuterRef, Subquery
     
 class IntranetConnectionLossDiagnostic:
     """
@@ -72,7 +70,19 @@ class IntranetConnectionLossDiagnostic:
 
         return messages
 
+    def get_latest_bgp_entries(self):
+        """
+        Returns the latest BGP_TEST entries per neighbor for the given router.
+        """
+        latest_entries = BGP_TEST.objects.filter(
+            router=self.router,
+            neighbor_ip=OuterRef('neighbor_ip')
+        ).order_by('-timestamp')
 
+        return BGP_TEST.objects.filter(
+            router=self.router,
+            timestamp=Subquery(latest_entries.values('timestamp')[:1])
+        ).only("neighbor_ip", "asn", "timestamp", "up_down_status")
 
     def run(self, skip_basic_network_tests=False):
         """
@@ -94,7 +104,9 @@ class IntranetConnectionLossDiagnostic:
 
         # BGP analysis
         report.append("\nDÉBUT DU DIAGNOSTIC : Perte de connexion Intranet\n")
-        bgp_entries = BGP_TEST.objects.filter(router=self.router)
+
+        bgp_entries=self.get_latest_bgp_entries()
+
         report.append("\n[Comparaison BGP initialement configuré et configuration actuelle du BGP]")
         report.extend(self.compare_bgp_conf_and_test())
         for entry in bgp_entries:
