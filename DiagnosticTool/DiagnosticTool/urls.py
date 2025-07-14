@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('', include('gestionnaire_users.urls')),
-    path("__debug__/", include(debug_toolbar.urls)),  # TODO: to delete before final version
+    #path("__debug__/", include(debug_toolbar.urls)),  # TODO: to delete before final version
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # adding debug toolbar of django if our DEBUG is at True

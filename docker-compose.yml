@@ -1,10 +1,16 @@
 services:
   web:
     build: .
-    command: python DiagnosticTool/manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:
-      - .:/app
+      - ./DiagnosticTool:/app/DiagnosticTool
     environment:
       - DJANGO_ENV=development
+      - EMAIL_HOST_USER=expertsdiagnostictool@gmail.com
+      - EMAIL_HOST_PASSWORD=izyqlzfnwgbbolul
+      - ENABLE=Admin123INT
+      - ROUTER_USERNAME=admin
+      - ROUTER_PWD=dkSDwa80f13faXcwxzj
+      - ROUTER_PORT=22
+      - ROUTER_IP=172.16.10.51

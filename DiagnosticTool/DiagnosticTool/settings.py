@@ -16,10 +16,10 @@ from dotenv import load_dotenv
 import logging
 from django.core.mail import send_mail
 
+# Chargement du bon fichier .env selon DJANGO_ENV
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-t3_=3cg7=c*3ylp=ai=dd3+pgnroa0j7qtfs_%ncg1o1sd3b5x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = os.getenv("DEBUG", "True")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -45,8 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gestionnaire_users',
     'core',
-    'debug_toolbar',
 ]
+if DEBUG:
+    INSTALLED_APPS.append('debug_toolbar')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,9 +57,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-
 ]
+if DEBUG:
+    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+
 INTERNAL_IPS = [
     "127.0.0.1",
     "172.16.10.50",
@@ -69,7 +71,6 @@ DEBUG_TOOLBAR_CONFIG = {
 
 ROOT_URLCONF = 'DiagnosticTool.urls'
 
-CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000','http://172.16.10.50'] #in local to change in prod
 
 
 CSRF_COOKIE_SECURE = False #in local
@@ -98,13 +99,29 @@ WSGI_APPLICATION = 'DiagnosticTool.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if os.getenv('DJANGO_ENV') == 'production':
+    DEBUG = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv('POSTGRES_DB'),
+            'USER': os.getenv('POSTGRES_USER'),
+            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+            'HOST': os.getenv('POSTGRES_HOST'),
+            'PORT': os.getenv('POSTGRES_PORT'),
+        }
     }
-}
+    CSRF_TRUSTED_ORIGINS = ['https://diagnostictool.h.minet.net', 'http://172.16.10.50']  # in local to change in prod
 
+else:
+    CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://172.16.10.50']
+    DEBUG = False
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -176,9 +193,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/' #dev
-#STATIC_ROOT = BASE_DIR / "staticfiles" #prod
 
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -221,8 +238,5 @@ EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
 DEFAULT_FROM_EMAIL = f'Diagnostic Tool <{EMAIL_HOST_USER}>'
 
 
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-
