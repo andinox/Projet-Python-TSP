@@ -12,6 +12,7 @@ services:
     build: .
     volumes:
       - ./DiagnosticTool:/app/DiagnosticTool
+      - static_volume:/app/DiagnosticTool/staticfiles
     environment:
       - DJANGO_ENV=production
       - POSTGRES_DB=diagnostic
@@ -36,11 +37,10 @@ services:
       - "80:80"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-      - static_volume:/app/static
+      - static_volume:/app/DiagnosticTool/staticfiles
     depends_on:
       - web
 
 volumes:
   postgres_data:
   static_volume:
-:::
