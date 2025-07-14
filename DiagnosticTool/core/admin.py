@@ -5,7 +5,6 @@ from core.models.scenario import Scenario
 from core.models.interface import *
 from core.models.arp import *
 from core.models.bgp import *
-from core.models.icmp import ICMP
 from core.models.security import Security
 from core.models.securityscan import SecurityScan
 
@@ -57,9 +56,6 @@ class BGPTestAdmin(admin.ModelAdmin):
     list_display = ("asn","neighbor_ip","up_down_status","time_last_change")
     search_fields = ("asn","neighbor_ip","up_down_status","time_last_change")
 
-class ICMPAdmin(admin.ModelAdmin):
-    list_display = ("icmp_up_down_status","destination","date_test")
-    search_fields = ("icmp_up_down_status","destination","date_test")
 
 class SecurityAdmin(admin.ModelAdmin):
     list_display=("hostname", "sys_descr","uptime","cdp_enabled","last_updated")
@@ -83,8 +79,6 @@ admin.site.register(ARP_TEST,ARPTestAdmin)
 
 admin.site.register(BGP_CONF,BGPAConfAdmin)
 admin.site.register(BGP_TEST,BGPTestAdmin)
-
-admin.site.register(ICMP,ICMPAdmin)
 
 admin.site.register(Security,SecurityAdmin)
 
