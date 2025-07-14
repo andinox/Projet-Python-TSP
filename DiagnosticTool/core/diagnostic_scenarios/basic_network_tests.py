@@ -6,6 +6,7 @@ from core.scripts import ping
 import ipaddress
 from datetime import timedelta
 from django.utils.timezone import now
+from django.db.models.functions import Random
 
 class BasicNetworkTests:
     def __init__(self, router=None):
@@ -266,7 +267,7 @@ class BasicNetworkTests:
             return issue_found, "\n".join(full_report)
 
         # Step 3: Ping test to one ARP IP in LAN
-        arp_entry = ARP_CONF.objects.filter(idinterface=1).exclude(ip_arp="172.16.10.51").only("ip_arp").first()
+        arp_entry = ARP_CONF.objects.filter(idinterface=1).exclude(ip_arp="172.16.10.51").only("ip_arp").order_by(Random()).first()
 
         if arp_entry:
             ip = arp_entry.ip_arp
