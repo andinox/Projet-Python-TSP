@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="test webhook 4">
+    <list default="true" id="104c6b95-a796-42de-8097-1a3a7568945e" name="Changes" comment="test webhook 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DiagnosticTool/DiagnosticTool/settings.py" afterDir="false" />
     </list>
@@ -308,7 +308,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752535193427</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test webhook 5">
+      <option name="closed" value="true" />
+      <created>1752535941968</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752535941968</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +361,8 @@
     <MESSAGE value="test webhook 2" />
     <MESSAGE value="test webhook 3" />
     <MESSAGE value="test webhook 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="test webhook 4" />
+    <MESSAGE value="test webhook 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="test webhook 5" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Projet_Python_TSP$manage.coverage" NAME="manage Coverage Results" MODIFIED="1743883129771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DiagnosticTool" />
