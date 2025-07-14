@@ -72,34 +72,6 @@ def traceroute(destination):
         print(f"[ERROR traceroute] : {e}")
         return [], None
 
-def nmap_scan(ip_address):
-    nm = nmap.PortScanner()
-    nm.scan(ip_address, arguments='-sV')
-
-    results = {}
-    if ip_address in nm.all_hosts():
-        for proto in nm[ip_address].all_protocols():
-            service_info = []
-
-            for port in sorted(nm[ip_address][proto].keys()):
-                port_data = nm[ip_address][proto][port]
-                version = port_data.get("version", "")
-                product = port_data.get("product", "")
-                name = port_data.get("name", "")
-                extrainfo=port_data.get("extrainfo","")
-
-                service_info.append({
-                    "port": port,
-                    "name": name,
-                    "product": product,
-                    "version": version,
-                    "extrainfo":extrainfo
-                })
-
-            results[proto] = service_info
-
-    return results
-
 def convert_uptime(uptime_centisecs):
     """
     Convert uptime from centiseconds to days, hours, minutes, seconds.
