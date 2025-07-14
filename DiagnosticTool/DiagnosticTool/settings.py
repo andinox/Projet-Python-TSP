@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'DiagnosticTool.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+DEBUG = False
 if os.getenv('DJANGO_ENV') == 'production':
     DEBUG = False
     DATABASES = {
@@ -115,7 +115,7 @@ if os.getenv('DJANGO_ENV') == 'production':
 
 else:
     CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://172.16.10.50']
-    DEBUG = False
+    DEBUG = True
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
