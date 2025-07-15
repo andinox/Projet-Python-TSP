@@ -17,7 +17,7 @@ import logging
 from django.core.mail import send_mail
 
 # Chargement du bon fichier .env selon DJANGO_ENV
-
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
