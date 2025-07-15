@@ -30,21 +30,28 @@ jobs:
         run: docker build -t diagnostictool:ci .
 
       - name: Scan Docker image with Trivy
-        uses: aquasecurity/trivy-action@v0.14.0
+        uses: aquasecurity/trivy-action@0.32.0
         with:
-          image-ref: diagnostictool:ci
+          image: diagnostictool:ci
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
           ignore-unfixed: true
           format: 'table'
-          exit-code: '1'
+          exit-code: 1
 
       - name: Scan project files with Trivy
-        uses: aquasecurity/trivy-action@v0.14.0
+        uses: aquasecurity/trivy-action@0.32.0
         with:
           scan-type: 'fs'
-          scan-ref: '.'
+          path: '.'
           severity: 'CRITICAL,HIGH'
           ignore-unfixed: true
           format: 'table'
-          exit-code: '1'
+          exit-code: 1
+
+      - name: Scan container images for vulnerabilities with Trivy
+        uses: aquasecurity/trivy-action@v0.11.0
+        with:
+          image-ref: "your-image-name:tag"
+          format: "table"
+          exit-code: 1
