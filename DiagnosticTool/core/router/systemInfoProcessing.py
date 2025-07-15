@@ -6,12 +6,15 @@ import nmap
 from datetime import datetime
 
 # Setup Django environment
-sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool") # TODO: need to change the path or put it in variable maybe
+sys.path.append(
+    "/home/user/Projet-Python-TSP/DiagnosticTool"
+)  # TODO: need to change the path or put it in variable maybe
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "DiagnosticTool.settings")
 django.setup()
 
-from core.models import Security,SecurityScan
+from core.models import Security, SecurityScan
 from core.router import log_debug
+
 
 def activated_protocol(status):
     """
@@ -19,17 +22,18 @@ def activated_protocol(status):
     """
     return "Up" if status == 1 else "Down"
 
+
 def parse_sys_infos_from_json(data):
     """
     Parses SNMP-related system info (sysName, sysDescr, sysUptime, CDP status) from Telegraf JSON input.
     Returns a list of dictionaries with extracted values.
     """
-    
+
     parsed_entries = []
 
     for metric in data.get("metrics", []):
 
-        if metric.get("name")!="snmp":
+        if metric.get("name") != "snmp":
             continue
 
         fields = metric.get("fields", {})
@@ -37,12 +41,13 @@ def parse_sys_infos_from_json(data):
             "sysName": fields.get("sysName"),
             "sysDescr": fields.get("sysDescr"),
             "sysUptime": fields.get("sysUptime"),
-            "cdp_status": fields.get("cdp_global_status")
+            "cdp_status": fields.get("cdp_global_status"),
         }
 
         parsed_entries.append(parsed)
 
     return parsed_entries
+
 
 def save_security_entries(parsed_entries):
     """
@@ -60,9 +65,9 @@ def save_security_entries(parsed_entries):
 
         if existing:
             if (
-                existing.sys_descr != sys_descr or
-                existing.uptime != uptime or
-                existing.cdp_enabled != cdp_enabled
+                existing.sys_descr != sys_descr
+                or existing.uptime != uptime
+                or existing.cdp_enabled != cdp_enabled
             ):
                 existing.sys_descr = sys_descr
                 existing.uptime = uptime
@@ -76,9 +81,12 @@ def save_security_entries(parsed_entries):
                 hostname=hostname,
                 sys_descr=sys_descr,
                 uptime=uptime,
-                cdp_enabled=cdp_enabled
+                cdp_enabled=cdp_enabled,
             )
-            log_debug(f"[SECU] Nouvelle entrée de sécurité crée pour l'hôte : {hostname}")
+            log_debug(
+                f"[SECU] Nouvelle entrée de sécurité crée pour l'hôte : {hostname}"
+            )
+
 
 def perform_security_scan(ip: str, hostname: str, simulate=False):
     """
@@ -98,20 +106,22 @@ def perform_security_scan(ip: str, hostname: str, simulate=False):
 
     # Scan results
     nm = nmap.PortScanner()
-    nm.scan(hosts=ip, arguments='-sV')
+    nm.scan(hosts=ip, arguments="-sV")
     scan_results = []
 
     for proto in nm[ip].all_protocols():
         for port in nm[ip][proto].keys():
             result = nm[ip][proto][port]
-            scan_results.append({
-                "port": port,
-                "protocol": proto,
-                "service_name": result.get("name", ""),
-                "product": result.get("product", ""),
-                "version": result.get("version", ""),
-                "extrainfo": result.get("extrainfo", ""),
-            })
+            scan_results.append(
+                {
+                    "port": port,
+                    "protocol": proto,
+                    "service_name": result.get("name", ""),
+                    "product": result.get("product", ""),
+                    "version": result.get("version", ""),
+                    "extrainfo": result.get("extrainfo", ""),
+                }
+            )
 
     now = datetime.now()
     to_update = []
@@ -123,7 +133,7 @@ def perform_security_scan(ip: str, hostname: str, simulate=False):
         existing = existing_scans.get(key)
 
         if existing:
-            
+
             if (
                 existing.service_name != entry["service_name"]
                 or existing.product != entry["product"]
@@ -137,19 +147,23 @@ def perform_security_scan(ip: str, hostname: str, simulate=False):
                 existing.timestamp = now
                 to_update.append(existing)
         else:
-            to_create.append(SecurityScan(
-                security=security_obj,
-                port=entry["port"],
-                protocol=entry["protocol"],
-                service_name=entry["service_name"],
-                product=entry["product"],
-                version=entry["version"],
-                extrainfo=entry["extrainfo"],
-                timestamp=now,
-            ))
+            to_create.append(
+                SecurityScan(
+                    security=security_obj,
+                    port=entry["port"],
+                    protocol=entry["protocol"],
+                    service_name=entry["service_name"],
+                    product=entry["product"],
+                    version=entry["version"],
+                    extrainfo=entry["extrainfo"],
+                    timestamp=now,
+                )
+            )
 
     # Execute bulk DB operations
     if to_update:
-        SecurityScan.objects.bulk_update(to_update, ["service_name", "product", "version", "extrainfo", "timestamp"])
+        SecurityScan.objects.bulk_update(
+            to_update, ["service_name", "product", "version", "extrainfo", "timestamp"]
+        )
     if to_create:
         SecurityScan.objects.bulk_create(to_create)

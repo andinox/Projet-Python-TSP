@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Security(models.Model):
     hostname = models.CharField(max_length=255)
     sys_descr = models.TextField()

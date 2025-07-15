@@ -5,6 +5,7 @@ import traceback
 from django.utils.timezone import now
 from core.models import Router, BGP_CONF, BGP_TEST
 
+
 def map_peer_status_to_updown(status):
     """
     Converts a numeric BGP peer status to a human-readable string.
@@ -27,7 +28,7 @@ def parse_bgp_from_json(json_data):
     Extracts peer IP, ASN, peer_status, last_change.
     Returns a list of structured BGP entries.
     """
-    
+
     log_debug(f"[TRACE] Contenu JSON reçu: {json.dumps(json_data)}")
     parsed_entries = []
 
@@ -36,8 +37,11 @@ def parse_bgp_from_json(json_data):
 
     for m in json_data["metrics"]:
         fields = m.get("fields", {})
-        
-        if all(f in fields for f in ["peer_ip", "peer_as", "peer_status", "peer_last_change"]):
+
+        if all(
+            f in fields
+            for f in ["peer_ip", "peer_as", "peer_status", "peer_last_change"]
+        ):
             parsed_entry = {
                 "neighbor_ip": fields.get("peer_ip"),
                 "asn": fields.get("peer_as"),
@@ -48,6 +52,7 @@ def parse_bgp_from_json(json_data):
             parsed_entries.append(parsed_entry)
 
     return parsed_entries
+
 
 def save_bgp_entries(entries):
     """
@@ -78,25 +83,33 @@ def save_bgp_entries(entries):
             }
 
             # check if IP is already in BGP_CONF
-            log_debug(f"[DEBUG] neighbor_ip: {neighbor_ip}, asn: {asn}, up_down_status: {up_down_status}, time_last_change: {time_last_change}")
+            log_debug(
+                f"[DEBUG] neighbor_ip: {neighbor_ip}, asn: {asn}, up_down_status: {up_down_status}, time_last_change: {time_last_change}"
+            )
             conf_exists = BGP_CONF.objects.filter(neighbor_ip=neighbor_ip).exists()
-            log_debug(f"[DEBUG] BGP_CONF existe pour {asn} - {neighbor_ip}: {conf_exists}")
+            log_debug(
+                f"[DEBUG] BGP_CONF existe pour {asn} - {neighbor_ip}: {conf_exists}"
+            )
 
             if not conf_exists:
                 try:
                     BGP_CONF.objects.create(**bgp_data)
                     log_debug(f"[CONF] Création d'une entrée BGP_CONF pour {asn}")
                 except Exception as e:
-                    log_debug(f"[ERREUR] Échec de création d'une entrée BGP_CONF pour {asn}: {e}")
+                    log_debug(
+                        f"[ERREUR] Échec de création d'une entrée BGP_CONF pour {asn}: {e}"
+                    )
                     log_debug(traceback.format_exc())
-                    continue 
+                    continue
 
                 # also insert first TEST entry
                 try:
                     BGP_TEST.objects.create(**bgp_data)
                     log_debug(f"[TEST] Entrée BGP_TEST créée pour {asn}")
                 except Exception as e:
-                    log_debug(f"[ERREUR] Échec de création de l'entrée initiale BGP_TEST {asn}: {e}")
+                    log_debug(
+                        f"[ERREUR] Échec de création de l'entrée initiale BGP_TEST {asn}: {e}"
+                    )
                     log_debug(traceback.format_exc())
 
                 continue
@@ -116,16 +129,20 @@ def save_bgp_entries(entries):
             changed = (
                 last_test.asn != asn
                 or (last_test.up_down_status or "").strip().lower()
-                   != up_down_status.lower()
+                != up_down_status.lower()
                 or (last_test.time_last_change or "").strip() != time_last_change
             )
 
             if changed:
                 BGP_TEST.objects.create(**bgp_data)
-                log_debug(f"[CHANGEMENT] Nouvelle entrée BGP_TEST créée pour {neighbor_ip}")
+                log_debug(
+                    f"[CHANGEMENT] Nouvelle entrée BGP_TEST créée pour {neighbor_ip}"
+                )
             else:
                 log_debug(f"[INFO] Pas de mise à jour requise pour {neighbor_ip}")
 
         except Exception as e:
-            log_debug(f"[ERREUR] Erreur inattendue pour {entry.get('neighbor_ip')}: {e}")
+            log_debug(
+                f"[ERREUR] Erreur inattendue pour {entry.get('neighbor_ip')}: {e}"
+            )
             log_debug(traceback.format_exc())

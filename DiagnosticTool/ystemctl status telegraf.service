@@ -1,0 +1,1628 @@
+Jun 26 18:45:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:45:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:45:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:45:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:45:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:45:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:45:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:45:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:45:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:00Z D! [outputs.file] Wrote batch of 15 metrics in 424.2µs
+Jun 26 18:46:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:01Z D! [outputs.exec] Wrote batch of 15 metrics in 465.970685ms
+Jun 26 18:46:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:46:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:46:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:00Z D! [outputs.file] Wrote batch of 15 metrics in 339.54µs
+Jun 26 18:47:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:01Z D! [outputs.exec] Wrote batch of 15 metrics in 435.337437ms
+Jun 26 18:47:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:47:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:47:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:00Z D! [outputs.file] Wrote batch of 15 metrics in 346.854µs
+Jun 26 18:48:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:01Z D! [outputs.exec] Wrote batch of 15 metrics in 723.351773ms
+Jun 26 18:48:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:48:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:48:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:00Z D! [outputs.file] Wrote batch of 15 metrics in 406.335µs
+Jun 26 18:49:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:01Z D! [outputs.exec] Wrote batch of 15 metrics in 447.559725ms
+Jun 26 18:49:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:49:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:49:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:00Z D! [outputs.file] Wrote batch of 15 metrics in 387.47µs
+Jun 26 18:50:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:01Z D! [outputs.exec] Wrote batch of 15 metrics in 548.292072ms
+Jun 26 18:50:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:50:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:50:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:00Z D! [outputs.file] Wrote batch of 15 metrics in 333.959µs
+Jun 26 18:51:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:01Z D! [outputs.exec] Wrote batch of 15 metrics in 453.5174ms
+Jun 26 18:51:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:51:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:51:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:00Z D! [outputs.file] Wrote batch of 15 metrics in 374.716µs
+Jun 26 18:52:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:01Z D! [outputs.exec] Wrote batch of 15 metrics in 474.681467ms
+Jun 26 18:52:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:52:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:52:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:00Z D! [outputs.file] Wrote batch of 15 metrics in 279.938µs
+Jun 26 18:53:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:01Z D! [outputs.exec] Wrote batch of 15 metrics in 510.368187ms
+Jun 26 18:53:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:53:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:53:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:00Z D! [outputs.file] Wrote batch of 15 metrics in 333.128µs
+Jun 26 18:54:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:01Z D! [outputs.exec] Wrote batch of 15 metrics in 437.82308ms
+Jun 26 18:54:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:54:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:54:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:00Z D! [outputs.file] Wrote batch of 15 metrics in 403.28µs
+Jun 26 18:55:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:01Z D! [outputs.exec] Wrote batch of 15 metrics in 432.453032ms
+Jun 26 18:55:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:55:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:55:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:00Z D! [outputs.file] Wrote batch of 15 metrics in 337.145µs
+Jun 26 18:56:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:01Z D! [outputs.exec] Wrote batch of 15 metrics in 467.379289ms
+Jun 26 18:56:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:50Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:56:50 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:56:50Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:00Z D! [outputs.file] Wrote batch of 15 metrics in 392.429µs
+Jun 26 18:57:00 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:00Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:01Z D! [outputs.exec] Wrote batch of 15 metrics in 441.683085ms
+Jun 26 18:57:01 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:01Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:10Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:10 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:10Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:20 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:30Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:30 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:30Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:40Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:40 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:40Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:41Z D! [agent] Stopping service inputs
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:41Z D! [agent] Input channel closed
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:41Z I! [agent] Hang on, flushing any cached metrics before shutdown
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:41Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:41Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:41Z I! [agent] Stopping running outputs
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[232438]: 2025-06-26T18:57:41Z D! [agent] Stopped Successfully
+Jun 26 18:57:41 rzo-py-pod5-vm systemd[1]: Stopping Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40091.[0m
+Jun 26 18:57:41 rzo-py-pod5-vm systemd[1]: telegraf.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has successfully entered the 'dead' state.[0m
+Jun 26 18:57:41 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40091 and the job result is done.[0m
+Jun 26 18:57:41 rzo-py-pod5-vm systemd[1]: telegraf.service: Consumed 12.951s CPU time.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service completed and consumed the indicated resources.[0m
+Jun 26 18:57:41 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40091.[0m
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Loading config: /etc/telegraf/telegraf.d/snmp.conf
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Starting Telegraf 1.35.1 brought to you by InfluxData the makers of InfluxDB
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Available plugins: 238 inputs, 9 aggregators, 34 processors, 26 parsers, 65 outputs, 6 secret-stores
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Loaded inputs: snmp
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Loaded aggregators:
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Loaded processors:
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Loaded secretstores:
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Loaded outputs: exec file
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! Tags enabled: host=rzo-py-pod5-vm
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z I! [agent] Config: Interval:1m0s, Quiet:false, Hostname:"rzo-py-pod5-vm", Flush Interval:10s
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z W! [agent] The default value of 'skip_processors_after_aggregators' will change to 'true' with Telegraf v1.40.0! If you need the current default behavior, please explicitly set the option to 'false'!
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [agent] Initializing plugins
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.2.2"
+Jun 26 18:57:41 rzo-py-pod5-vm systemd[1]: Started Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40091.[0m
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptranslate" "-Td" "IF-MIB::ifTable.1"
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "IF-MIB::ifTable"
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifIndex"
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifDescr"
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifType"
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifMtu"
+Jun 26 18:57:41 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:41Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpeed"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifPhysAddress"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifAdminStatus"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOperStatus"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifLastChange"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInOctets"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUcastPkts"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInNUcastPkts"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInDiscards"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInErrors"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUnknownProtos"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutOctets"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutUcastPkts"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutNUcastPkts"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutDiscards"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutErrors"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutQLen"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpecific"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.20"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipAddrTable.1"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipAddrTable"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntAddr"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntIfIndex"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntNetMask"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntBcastAddr"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntReasmMaxSize"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.22"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipNetToMediaTable.1"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipNetToMediaTable"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaIfIndex"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaPhysAddress"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaNetAddress"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaType"
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z W! DeprecationWarning: Value "agent_host" for option "agent_host_tag" of plugin "inputs.snmp" deprecated since version 1.29.0 and will be removed in 2.0.0: set to "source" for consistent usage across plugins or safely ignore this message and continue to use the current value
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [agent] Connecting outputs
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [agent] Attempting connection to [outputs.exec]
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [agent] Successfully connected to outputs.exec
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [agent] Attempting connection to [outputs.file]
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [agent] Successfully connected to outputs.file
+Jun 26 18:57:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:42Z D! [agent] Starting service inputs
+Jun 26 18:57:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:52Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:57:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:57:52Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:02Z D! [outputs.file] Wrote batch of 15 metrics in 439.238µs
+Jun 26 18:58:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:02Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:03Z D! [outputs.exec] Wrote batch of 15 metrics in 479.276907ms
+Jun 26 18:58:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:03Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:12Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:12Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:22Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:22Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:32Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:32Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:42Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:42Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:52Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:58:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:58:52Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:02Z D! [outputs.file] Wrote batch of 15 metrics in 291.178µs
+Jun 26 18:59:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:02Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:03Z D! [outputs.exec] Wrote batch of 15 metrics in 504.069871ms
+Jun 26 18:59:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:03Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:12Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:12Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:22Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:22Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:32Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:32Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:42Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:42Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:52Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 18:59:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T18:59:52Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:02Z D! [outputs.file] Wrote batch of 15 metrics in 368.424µs
+Jun 26 19:00:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:02Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:03Z D! [outputs.exec] Wrote batch of 15 metrics in 449.081485ms
+Jun 26 19:00:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:03Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:12Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:12Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:22Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:22Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:32Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:32Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:42Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:42Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:52Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:00:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:00:52Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:02Z D! [outputs.file] Wrote batch of 15 metrics in 433.887µs
+Jun 26 19:01:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:02Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:03Z D! [outputs.exec] Wrote batch of 15 metrics in 460.547168ms
+Jun 26 19:01:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:03Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:12Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:12Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:22Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:22Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:32Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:32Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:42Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:42Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:52Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:01:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:01:52Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:02Z D! [outputs.file] Wrote batch of 15 metrics in 345.09µs
+Jun 26 19:02:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:02Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:03Z D! [outputs.exec] Wrote batch of 15 metrics in 498.731813ms
+Jun 26 19:02:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:03Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:12Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:12Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:22Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:22Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:32Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:32Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:42Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:42Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:52Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:02:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:02:52Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:02Z D! [outputs.file] Wrote batch of 15 metrics in 296.939µs
+Jun 26 19:03:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:02Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:03Z D! [outputs.exec] Wrote batch of 15 metrics in 471.104409ms
+Jun 26 19:03:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:03Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:12Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:12Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:22Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:22 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:22Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:32Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:32 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:32Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:42Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:42 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:42Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:52Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:03:52 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:03:52Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:02Z D! [outputs.file] Wrote batch of 15 metrics in 338.999µs
+Jun 26 19:04:02 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:02Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:03Z D! [outputs.exec] Wrote batch of 15 metrics in 471.960983ms
+Jun 26 19:04:03 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:03Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:12Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:12 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:12Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:15Z D! [agent] Stopping service inputs
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:15Z D! [agent] Input channel closed
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:15Z I! [agent] Hang on, flushing any cached metrics before shutdown
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:15Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:15Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:15Z I! [agent] Stopping running outputs
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[237988]: 2025-06-26T19:04:15Z D! [agent] Stopped Successfully
+Jun 26 19:04:15 rzo-py-pod5-vm systemd[1]: Stopping Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40155.[0m
+Jun 26 19:04:15 rzo-py-pod5-vm systemd[1]: telegraf.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has successfully entered the 'dead' state.[0m
+Jun 26 19:04:15 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40155 and the job result is done.[0m
+Jun 26 19:04:15 rzo-py-pod5-vm systemd[1]: telegraf.service: Consumed 3.764s CPU time.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service completed and consumed the indicated resources.[0m
+Jun 26 19:04:15 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40155.[0m
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Loading config: /etc/telegraf/telegraf.d/snmp.conf
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Starting Telegraf 1.35.1 brought to you by InfluxData the makers of InfluxDB
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Available plugins: 238 inputs, 9 aggregators, 34 processors, 26 parsers, 65 outputs, 6 secret-stores
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Loaded inputs: snmp
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Loaded aggregators:
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Loaded processors:
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Loaded secretstores:
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Loaded outputs: exec file
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! Tags enabled: host=rzo-py-pod5-vm
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z I! [agent] Config: Interval:1m0s, Quiet:false, Hostname:"rzo-py-pod5-vm", Flush Interval:10s
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z W! [agent] The default value of 'skip_processors_after_aggregators' will change to 'true' with Telegraf v1.40.0! If you need the current default behavior, please explicitly set the option to 'false'!
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [agent] Initializing plugins
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.2.2"
+Jun 26 19:04:15 rzo-py-pod5-vm systemd[1]: Started Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40155.[0m
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "IF-MIB::ifTable.1"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "IF-MIB::ifTable"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifIndex"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifDescr"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifType"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifMtu"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpeed"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifPhysAddress"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifAdminStatus"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOperStatus"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifLastChange"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInOctets"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUcastPkts"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInNUcastPkts"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInDiscards"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInErrors"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUnknownProtos"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutOctets"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutUcastPkts"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutNUcastPkts"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutDiscards"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutErrors"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutQLen"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpecific"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.20"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipAddrTable.1"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipAddrTable"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntAddr"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntIfIndex"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntNetMask"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntBcastAddr"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntReasmMaxSize"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.22"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipNetToMediaTable.1"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipNetToMediaTable"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaIfIndex"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaPhysAddress"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaNetAddress"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaType"
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z W! DeprecationWarning: Value "agent_host" for option "agent_host_tag" of plugin "inputs.snmp" deprecated since version 1.29.0 and will be removed in 2.0.0: set to "source" for consistent usage across plugins or safely ignore this message and continue to use the current value
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [agent] Connecting outputs
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [agent] Attempting connection to [outputs.exec]
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [agent] Successfully connected to outputs.exec
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [agent] Attempting connection to [outputs.file]
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [agent] Successfully connected to outputs.file
+Jun 26 19:04:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:15Z D! [agent] Starting service inputs
+Jun 26 19:04:25 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:25Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:25 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:25Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:35 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:35Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:35 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:35Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:45 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:45Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:45 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:45Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:55 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:55Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:04:55 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:04:55Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:05 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:05Z D! [outputs.file] Wrote batch of 15 metrics in 408.93µs
+Jun 26 19:05:05 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:05Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:06 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:06Z D! [outputs.exec] Wrote batch of 15 metrics in 410.973194ms
+Jun 26 19:05:06 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:06Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:15Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:15 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:15Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:20 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:20Z D! [agent] Stopping service inputs
+Jun 26 19:05:20 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:20Z D! [agent] Input channel closed
+Jun 26 19:05:20 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:20Z I! [agent] Hang on, flushing any cached metrics before shutdown
+Jun 26 19:05:20 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:20Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:20 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:20Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:20 rzo-py-pod5-vm systemd[1]: Stopping Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40219.[0m
+Jun 26 19:05:20 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:20Z I! [agent] Stopping running outputs
+Jun 26 19:05:20 rzo-py-pod5-vm telegraf[238109]: 2025-06-26T19:05:20Z D! [agent] Stopped Successfully
+Jun 26 19:05:20 rzo-py-pod5-vm systemd[1]: telegraf.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has successfully entered the 'dead' state.[0m
+Jun 26 19:05:20 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40219 and the job result is done.[0m
+Jun 26 19:05:20 rzo-py-pod5-vm systemd[1]: telegraf.service: Consumed 1.302s CPU time.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service completed and consumed the indicated resources.[0m
+Jun 26 19:05:21 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40219.[0m
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Loading config: /etc/telegraf/telegraf.d/snmp.conf
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Starting Telegraf 1.35.1 brought to you by InfluxData the makers of InfluxDB
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Available plugins: 238 inputs, 9 aggregators, 34 processors, 26 parsers, 65 outputs, 6 secret-stores
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Loaded inputs: snmp
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Loaded aggregators:
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Loaded processors:
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Loaded secretstores:
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Loaded outputs: exec file
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! Tags enabled: host=rzo-py-pod5-vm
+Jun 26 19:05:21 rzo-py-pod5-vm systemd[1]: Started Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40219.[0m
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z I! [agent] Config: Interval:1m0s, Quiet:false, Hostname:"rzo-py-pod5-vm", Flush Interval:10s
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z W! [agent] The default value of 'skip_processors_after_aggregators' will change to 'true' with Telegraf v1.40.0! If you need the current default behavior, please explicitly set the option to 'false'!
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [agent] Initializing plugins
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.2.2"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "IF-MIB::ifTable.1"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "IF-MIB::ifTable"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifIndex"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifDescr"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifType"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifMtu"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpeed"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifPhysAddress"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifAdminStatus"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOperStatus"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifLastChange"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInOctets"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUcastPkts"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInNUcastPkts"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInDiscards"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInErrors"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUnknownProtos"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutOctets"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutUcastPkts"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutNUcastPkts"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutDiscards"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutErrors"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutQLen"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpecific"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.20"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipAddrTable.1"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipAddrTable"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntAddr"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntIfIndex"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntNetMask"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntBcastAddr"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntReasmMaxSize"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.22"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipNetToMediaTable.1"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipNetToMediaTable"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaIfIndex"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaPhysAddress"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaNetAddress"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaType"
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z W! DeprecationWarning: Value "agent_host" for option "agent_host_tag" of plugin "inputs.snmp" deprecated since version 1.29.0 and will be removed in 2.0.0: set to "source" for consistent usage across plugins or safely ignore this message and continue to use the current value
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [agent] Connecting outputs
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [agent] Attempting connection to [outputs.exec]
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [agent] Successfully connected to outputs.exec
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [agent] Attempting connection to [outputs.file]
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [agent] Successfully connected to outputs.file
+Jun 26 19:05:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:21Z D! [agent] Starting service inputs
+Jun 26 19:05:31 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:31Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:31 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:31Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:41 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:41Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:41 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:41Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:51 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:51Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:05:51 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:05:51Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:01 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:01Z D! [outputs.file] Wrote batch of 15 metrics in 513.708µs
+Jun 26 19:06:01 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:01Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:02 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:02Z D! [outputs.exec] Wrote batch of 15 metrics in 474.279962ms
+Jun 26 19:06:02 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:02Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:11 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:11Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:11 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:11Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:21Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:21 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:21Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:31 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:31Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:31 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:31Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:41 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:41Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:41 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:41Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:51 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:51Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:06:51 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:06:51Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:01 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:01Z D! [outputs.file] Wrote batch of 15 metrics in 382.331µs
+Jun 26 19:07:01 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:01Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:02 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:02Z D! [outputs.exec] Wrote batch of 15 metrics in 455.045773ms
+Jun 26 19:07:02 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:02Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:11 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:11Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:11 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:11Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:14 rzo-py-pod5-vm systemd[1]: Stopping Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40283.[0m
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:14Z D! [agent] Stopping service inputs
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:14Z D! [agent] Input channel closed
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:14Z I! [agent] Hang on, flushing any cached metrics before shutdown
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:14Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:14Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:14Z I! [agent] Stopping running outputs
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238173]: 2025-06-26T19:07:14Z D! [agent] Stopped Successfully
+Jun 26 19:07:14 rzo-py-pod5-vm systemd[1]: telegraf.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has successfully entered the 'dead' state.[0m
+Jun 26 19:07:14 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40283 and the job result is done.[0m
+Jun 26 19:07:14 rzo-py-pod5-vm systemd[1]: telegraf.service: Consumed 1.675s CPU time.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service completed and consumed the indicated resources.[0m
+Jun 26 19:07:14 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40283.[0m
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Loading config: /etc/telegraf/telegraf.d/snmp.conf
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Starting Telegraf 1.35.1 brought to you by InfluxData the makers of InfluxDB
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Available plugins: 238 inputs, 9 aggregators, 34 processors, 26 parsers, 65 outputs, 6 secret-stores
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Loaded inputs: snmp
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Loaded aggregators:
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Loaded processors:
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Loaded secretstores:
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Loaded outputs: exec file
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! Tags enabled: host=rzo-py-pod5-vm
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z I! [agent] Config: Interval:1m0s, Quiet:false, Hostname:"rzo-py-pod5-vm", Flush Interval:10s
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z W! [agent] The default value of 'skip_processors_after_aggregators' will change to 'true' with Telegraf v1.40.0! If you need the current default behavior, please explicitly set the option to 'false'!
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [agent] Initializing plugins
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.2.2"
+Jun 26 19:07:14 rzo-py-pod5-vm systemd[1]: Started Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40283.[0m
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "IF-MIB::ifTable.1"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "IF-MIB::ifTable"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifIndex"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifDescr"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifType"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifMtu"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpeed"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifPhysAddress"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifAdminStatus"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOperStatus"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifLastChange"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInOctets"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUcastPkts"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInNUcastPkts"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInDiscards"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInErrors"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUnknownProtos"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutOctets"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutUcastPkts"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutNUcastPkts"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutDiscards"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutErrors"
+Jun 26 19:07:14 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:14Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutQLen"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpecific"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.20"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipAddrTable.1"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipAddrTable"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntAddr"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntIfIndex"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntNetMask"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntBcastAddr"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntReasmMaxSize"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.22"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipNetToMediaTable.1"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipNetToMediaTable"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaIfIndex"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaPhysAddress"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaNetAddress"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaType"
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z W! DeprecationWarning: Value "agent_host" for option "agent_host_tag" of plugin "inputs.snmp" deprecated since version 1.29.0 and will be removed in 2.0.0: set to "source" for consistent usage across plugins or safely ignore this message and continue to use the current value
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [agent] Connecting outputs
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [agent] Attempting connection to [outputs.exec]
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [agent] Successfully connected to outputs.exec
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [agent] Attempting connection to [outputs.file]
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [agent] Successfully connected to outputs.file
+Jun 26 19:07:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:15Z D! [agent] Starting service inputs
+Jun 26 19:07:25 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:25Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:25 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:25Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:35 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:35Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:35 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:35Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:45 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:45Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:45 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:45Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:55 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:55Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:07:55 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:07:55Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:05Z D! [outputs.file] Wrote batch of 15 metrics in 538.885µs
+Jun 26 19:08:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:05Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:05Z D! [outputs.exec] Wrote batch of 15 metrics in 389.541082ms
+Jun 26 19:08:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:05Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:15Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:15Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:25 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:25Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:25 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:25Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:35 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:35Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:35 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:35Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:45 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:45Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:45 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:45Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:55 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:55Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:08:55 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:08:55Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:05Z D! [outputs.file] Wrote batch of 15 metrics in 376.67µs
+Jun 26 19:09:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:05Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:05Z D! [outputs.exec] Wrote batch of 15 metrics in 341.719469ms
+Jun 26 19:09:05 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:05Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:15Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:15 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:15Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:25 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:25Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:25 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:25Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:35 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:35Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:35 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:35Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:45 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:45Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:45 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:45Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:46 rzo-py-pod5-vm systemd[1]: Stopping Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40347.[0m
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:46Z D! [agent] Stopping service inputs
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:46Z D! [agent] Input channel closed
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:46Z I! [agent] Hang on, flushing any cached metrics before shutdown
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:46Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:46Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:46Z I! [agent] Stopping running outputs
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238266]: 2025-06-26T19:09:46Z D! [agent] Stopped Successfully
+Jun 26 19:09:46 rzo-py-pod5-vm systemd[1]: telegraf.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has successfully entered the 'dead' state.[0m
+Jun 26 19:09:46 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40347 and the job result is done.[0m
+Jun 26 19:09:46 rzo-py-pod5-vm systemd[1]: telegraf.service: Consumed 1.633s CPU time.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service completed and consumed the indicated resources.[0m
+Jun 26 19:09:46 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40347.[0m
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Loading config: /etc/telegraf/telegraf.d/snmp.conf
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Starting Telegraf 1.35.1 brought to you by InfluxData the makers of InfluxDB
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Available plugins: 238 inputs, 9 aggregators, 34 processors, 26 parsers, 65 outputs, 6 secret-stores
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Loaded inputs: snmp
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Loaded aggregators:
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Loaded processors:
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Loaded secretstores:
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Loaded outputs: exec file
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! Tags enabled: host=rzo-py-pod5-vm
+Jun 26 19:09:46 rzo-py-pod5-vm systemd[1]: Started Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has finished successfully[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished successfully.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40347.[0m
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z I! [agent] Config: Interval:1m0s, Quiet:false, Hostname:"rzo-py-pod5-vm", Flush Interval:10s
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z W! [agent] The default value of 'skip_processors_after_aggregators' will change to 'true' with Telegraf v1.40.0! If you need the current default behavior, please explicitly set the option to 'false'!
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [agent] Initializing plugins
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.2.2"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "IF-MIB::ifTable.1"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "IF-MIB::ifTable"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifIndex"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifDescr"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifType"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifMtu"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpeed"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifPhysAddress"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifAdminStatus"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOperStatus"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifLastChange"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInOctets"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUcastPkts"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInNUcastPkts"
+Jun 26 19:09:46 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:46Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInDiscards"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInErrors"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifInUnknownProtos"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutOctets"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutUcastPkts"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutNUcastPkts"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutDiscards"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutErrors"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifOutQLen"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "IF-MIB::ifSpecific"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.20"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipAddrTable.1"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipAddrTable"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntAddr"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntIfIndex"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntNetMask"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntBcastAddr"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipAdEntReasmMaxSize"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "-m" "all" "1.3.6.1.2.1.4.22"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "RFC1213-MIB::ipNetToMediaTable.1"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptable" "-Ch" "-Cl" "-c" "public" "127.0.0.1" "RFC1213-MIB::ipNetToMediaTable"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaIfIndex"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaPhysAddress"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z W! DeprecationWarning: Value "hwaddr" for option "field.conversion" of plugin "inputs.snmp" deprecated since version 1.33.0 and will be removed in 2.0.0: Use 'displayhint' instead
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaNetAddress"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [inputs.snmp] executing "snmptranslate" "-Td" "-Ob" "RFC1213-MIB::ipNetToMediaType"
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z W! DeprecationWarning: Value "agent_host" for option "agent_host_tag" of plugin "inputs.snmp" deprecated since version 1.29.0 and will be removed in 2.0.0: set to "source" for consistent usage across plugins or safely ignore this message and continue to use the current value
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [agent] Connecting outputs
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [agent] Attempting connection to [outputs.exec]
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [agent] Successfully connected to outputs.exec
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [agent] Attempting connection to [outputs.file]
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [agent] Successfully connected to outputs.file
+Jun 26 19:09:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:47Z D! [agent] Starting service inputs
+Jun 26 19:09:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:09:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:09:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:07Z D! [outputs.file] Wrote batch of 15 metrics in 430.993µs
+Jun 26 19:10:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:07Z D! [outputs.exec] Wrote batch of 15 metrics in 351.379219ms
+Jun 26 19:10:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:10:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:10:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:07Z D! [outputs.file] Wrote batch of 15 metrics in 304.974µs
+Jun 26 19:11:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:07Z D! [outputs.exec] Wrote batch of 15 metrics in 382.23187ms
+Jun 26 19:11:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:11:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:11:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:07Z D! [outputs.file] Wrote batch of 15 metrics in 287.612µs
+Jun 26 19:12:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:07Z D! [outputs.exec] Wrote batch of 15 metrics in 352.37175ms
+Jun 26 19:12:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:12:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:12:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:07Z D! [outputs.file] Wrote batch of 15 metrics in 253.849µs
+Jun 26 19:13:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:07Z D! [outputs.exec] Wrote batch of 15 metrics in 352.827448ms
+Jun 26 19:13:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:13:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:13:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:07Z D! [outputs.file] Wrote batch of 15 metrics in 449.317µs
+Jun 26 19:14:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:07Z D! [outputs.exec] Wrote batch of 15 metrics in 395.396041ms
+Jun 26 19:14:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:14:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:14:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:07Z D! [outputs.file] Wrote batch of 15 metrics in 255.341µs
+Jun 26 19:15:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:07Z D! [outputs.exec] Wrote batch of 15 metrics in 349.634891ms
+Jun 26 19:15:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:15:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:15:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:07Z D! [outputs.file] Wrote batch of 15 metrics in 288.022µs
+Jun 26 19:16:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:07Z D! [outputs.exec] Wrote batch of 15 metrics in 379.86075ms
+Jun 26 19:16:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:16:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:16:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:07Z D! [outputs.file] Wrote batch of 15 metrics in 242.096µs
+Jun 26 19:17:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:07Z D! [outputs.exec] Wrote batch of 15 metrics in 351.404315ms
+Jun 26 19:17:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:17:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:17:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:07Z D! [outputs.file] Wrote batch of 15 metrics in 414.601µs
+Jun 26 19:18:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:07Z D! [outputs.exec] Wrote batch of 15 metrics in 383.422772ms
+Jun 26 19:18:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:18:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:18:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:07Z D! [outputs.file] Wrote batch of 15 metrics in 291.931µs
+Jun 26 19:19:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:07Z D! [outputs.exec] Wrote batch of 15 metrics in 339.457615ms
+Jun 26 19:19:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:19:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:19:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:07Z D! [outputs.file] Wrote batch of 15 metrics in 282.543µs
+Jun 26 19:20:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:07Z D! [outputs.exec] Wrote batch of 15 metrics in 384.330833ms
+Jun 26 19:20:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:20:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:20:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:07Z D! [outputs.file] Wrote batch of 15 metrics in 270.56µs
+Jun 26 19:21:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:07Z D! [outputs.exec] Wrote batch of 15 metrics in 364.121275ms
+Jun 26 19:21:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:21:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:21:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:07Z D! [outputs.file] Wrote batch of 15 metrics in 258.247µs
+Jun 26 19:22:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:07Z D! [outputs.exec] Wrote batch of 15 metrics in 341.230726ms
+Jun 26 19:22:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:27Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:27 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:27Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:37Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:37 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:37Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:47Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:47 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:47Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:57Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:22:57 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:22:57Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:23:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:07Z D! [outputs.file] Wrote batch of 15 metrics in 355.47µs
+Jun 26 19:23:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:07Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:23:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:07Z D! [outputs.exec] Wrote batch of 15 metrics in 339.282916ms
+Jun 26 19:23:07 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:07Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:17Z D! [agent] Stopping service inputs
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:17Z D! [agent] Input channel closed
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:17Z I! [agent] Hang on, flushing any cached metrics before shutdown
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:17Z D! [outputs.file] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:17Z D! [outputs.exec] Buffer fullness: 0 / 10000 metrics
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:17Z I! [agent] Stopping running outputs
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: Stopping Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40469.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238336]: 2025-06-26T19:23:17Z D! [agent] Stopped Successfully
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: telegraf.service: Deactivated successfully.
+[0;38;5;245m░░ [0m[0;32mSubject: Unit succeeded[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has successfully entered the 'dead' state.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40469 and the job result is done.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: telegraf.service: Consumed 6.253s CPU time.
+[0;38;5;245m░░ [0m[0;32mSubject: Resources consumed by unit runtime[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service completed and consumed the indicated resources.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40469.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238698]: 2025-06-26T19:23:17Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:23:17 rzo-py-pod5-vm telegraf[238698]: 2025-06-26T19:23:17Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 32: invalid TOML syntax
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40469 and the job result is failed.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40533 and the job result is done.[0m
+Jun 26 19:23:17 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40533.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm telegraf[238707]: 2025-06-26T19:23:18Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:23:18 rzo-py-pod5-vm telegraf[238707]: 2025-06-26T19:23:18Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 32: invalid TOML syntax
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40533 and the job result is failed.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40597 and the job result is done.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40597.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm telegraf[238715]: 2025-06-26T19:23:18Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:23:18 rzo-py-pod5-vm telegraf[238715]: 2025-06-26T19:23:18Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 32: invalid TOML syntax
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40597 and the job result is failed.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40661 and the job result is done.[0m
+Jun 26 19:23:18 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40661.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm telegraf[238723]: 2025-06-26T19:23:19Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:23:19 rzo-py-pod5-vm telegraf[238723]: 2025-06-26T19:23:19Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 32: invalid TOML syntax
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40661 and the job result is failed.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40725 and the job result is done.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40725.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm telegraf[238731]: 2025-06-26T19:23:19Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:23:19 rzo-py-pod5-vm telegraf[238731]: 2025-06-26T19:23:19Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 32: invalid TOML syntax
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40725 and the job result is failed.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40789 and the job result is done.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Start request repeated too quickly.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:23:19 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40789 and the job result is failed.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40853.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm telegraf[238777]: 2025-06-26T19:26:50Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:26:50 rzo-py-pod5-vm telegraf[238777]: 2025-06-26T19:26:50Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 8730: array table `inputs' is in conflict with table in line 8728
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40853 and the job result is failed.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 1.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40917 and the job result is done.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40917.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm telegraf[238785]: 2025-06-26T19:26:50Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:26:50 rzo-py-pod5-vm telegraf[238785]: 2025-06-26T19:26:50Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 8730: array table `inputs' is in conflict with table in line 8728
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40917 and the job result is failed.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 2.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40981 and the job result is done.[0m
+Jun 26 19:26:50 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40981.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm telegraf[238792]: 2025-06-26T19:26:51Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:26:51 rzo-py-pod5-vm telegraf[238792]: 2025-06-26T19:26:51Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 8730: array table `inputs' is in conflict with table in line 8728
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 40981 and the job result is failed.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 3.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41045 and the job result is done.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41045.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm telegraf[238800]: 2025-06-26T19:26:51Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:26:51 rzo-py-pod5-vm telegraf[238800]: 2025-06-26T19:26:51Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 8730: array table `inputs' is in conflict with table in line 8728
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41045 and the job result is failed.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 4.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41109 and the job result is done.[0m
+Jun 26 19:26:51 rzo-py-pod5-vm systemd[1]: Starting Telegraf...
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has begun execution[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has begun execution.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41109.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm telegraf[238807]: 2025-06-26T19:26:52Z I! Loading config: /etc/telegraf/telegraf.conf
+Jun 26 19:26:52 rzo-py-pod5-vm telegraf[238807]: 2025-06-26T19:26:52Z E! loading config file /etc/telegraf/telegraf.conf failed: error parsing data: line 8730: array table `inputs' is in conflict with table in line 8728
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: [0;1;39m[0;1;31m[0;1;39mtelegraf.service: Main process exited, code=exited, status=1/FAILURE[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit process exited[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAn ExecStart= process belonging to unit telegraf.service has exited.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe process' exit code is 'exited' and its exit status is 1.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41109 and the job result is failed.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: telegraf.service: Scheduled restart job, restart counter is at 5.
+[0;38;5;245m░░ [0m[0;32mSubject: Automatic restarting of a unit has been scheduled[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mAutomatic restarting of the unit telegraf.service has been scheduled, as the result for[0m
+[0;38;5;245m░░[0m [0;32mthe configured Restart= setting for the unit.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: Stopped Telegraf.
+[0;38;5;245m░░ [0m[0;32mSubject: A stop job for unit telegraf.service has finished[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA stop job for unit telegraf.service has finished.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41173 and the job result is done.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Start request repeated too quickly.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mtelegraf.service: Failed with result 'exit-code'.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: Unit failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe unit telegraf.service has entered the 'failed' state with result 'exit-code'.[0m
+Jun 26 19:26:52 rzo-py-pod5-vm systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Telegraf.[0m
+[0;38;5;245m░░ [0m[0;32mSubject: A start job for unit telegraf.service has failed[0m
+[0;38;5;245m░░[0m [0;32mDefined-By: systemd[0m
+[0;38;5;245m░░[0m [0;32mSupport: https://wiki.almalinux.org/Help-and-Support[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mA start job for unit telegraf.service has finished with a failure.[0m
+[0;38;5;245m░░[0m [0;32m[0m
+[0;38;5;245m░░[0m [0;32mThe job identifier is 41173 and the job result is failed.[0m

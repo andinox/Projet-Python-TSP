@@ -14,6 +14,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -21,14 +22,18 @@ from django.conf.urls.static import static
 import debug_toolbar
 
 urlpatterns = [
-    path('test500/', lambda request: (_ for _ in ()).throw(Exception("Erreur de test 500")),name='test500'),
-    path('admin/', admin.site.urls),
-    path('', include('core.urls')),
-    path('', include('gestionnaire_users.urls')),
+    path(
+        "test500/",
+        lambda request: (_ for _ in ()).throw(Exception("Erreur de test 500")),
+        name="test500",
+    ),
+    path("admin/", admin.site.urls),
+    path("", include("core.urls")),
+    path("", include("gestionnaire_users.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # adding debug toolbar of django if our DEBUG is at True
 if settings.DEBUG:
     urlpatterns += [
-        path('__debug__/', include(debug_toolbar.urls)),
+        path("__debug__/", include(debug_toolbar.urls)),
     ]

@@ -18,5 +18,5 @@ __all__ = [
     "ARP_CONF",
     "ARP_TEST",
     "Security",
-    "SecurityScan"
+    "SecurityScan",
 ]

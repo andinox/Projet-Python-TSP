@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-import ssl,os
+import ssl, os
 from dotenv import load_dotenv
 import logging
 from django.core.mail import send_mail
@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = os.getenv("DEBUG", "True")
+# DEBUG = os.getenv("DEBUG", "True")
 
 ALLOWED_HOSTS = ["*"]
 
@@ -36,24 +36,24 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'gestionnaire_users',
-    'core',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "gestionnaire_users",
+    "core",
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 INTERNAL_IPS = [
@@ -61,119 +61,123 @@ INTERNAL_IPS = [
     "172.16.10.50",
 ]
 DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+    "SHOW_TOOLBAR_CALLBACK": lambda request: True,
 }
 
-ROOT_URLCONF = 'DiagnosticTool.urls'
+ROOT_URLCONF = "DiagnosticTool.urls"
 
 
-
-CSRF_COOKIE_SECURE = False #in local
+CSRF_COOKIE_SECURE = False  # in local
 SESSION_COOKIE_SECURE = False
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates", BASE_DIR / 'DiagnosticTool/templates',
-                 BASE_DIR / 'core/templates', ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            BASE_DIR / "templates",
+            BASE_DIR / "DiagnosticTool/templates",
+            BASE_DIR / "core/templates",
+        ],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-WSGI_APPLICATION = 'DiagnosticTool.wsgi.application'
+WSGI_APPLICATION = "DiagnosticTool.wsgi.application"
 
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 DEBUG = False
-SECRET_KEY = 'django-insecure-t3_=3cg7=c*3ylp=ai=dd3+pgnroa0j7qtfs_%ncg1o1sd3b5x'
-if os.getenv('DJANGO_ENV') == 'production':
+SECRET_KEY = "django-insecure-t3_=3cg7=c*3ylp=ai=dd3+pgnroa0j7qtfs_%ncg1o1sd3b5x"
+if os.getenv("DJANGO_ENV") == "production":
     DEBUG = False
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('POSTGRES_DB'),
-            'USER': os.getenv('POSTGRES_USER'),
-            'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-            'HOST': os.getenv('POSTGRES_HOST'),
-            'PORT': os.getenv('POSTGRES_PORT'),
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("POSTGRES_DB"),
+            "USER": os.getenv("POSTGRES_USER"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+            "HOST": os.getenv("POSTGRES_HOST"),
+            "PORT": os.getenv("POSTGRES_PORT"),
         }
     }
-    CSRF_TRUSTED_ORIGINS = ['https://diagnostictool.h.minet.net', 'http://172.16.10.50']  # in local to change in prod
+    CSRF_TRUSTED_ORIGINS = [
+        "https://diagnostictool.h.minet.net",
+        "http://172.16.10.50",
+    ]  # in local to change in prod
 
 else:
-    CSRF_TRUSTED_ORIGINS = ['http://127.0.0.1:8000', 'http://172.16.10.50']
+    CSRF_TRUSTED_ORIGINS = ["http://127.0.0.1:8000", "http://172.16.10.50"]
     DEBUG = True
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
 if DEBUG:
-    INSTALLED_APPS.append('debug_toolbar')
+    INSTALLED_APPS.append("debug_toolbar")
 if DEBUG:
-    MIDDLEWARE.insert(0, 'debug_toolbar.middleware.DebugToolbarMiddleware')
+    MIDDLEWARE.insert(0, "debug_toolbar.middleware.DebugToolbarMiddleware")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
 
-#Loggers definition
+# Loggers definition
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
         },
     },
-    'loggers': {
+    "loggers": {
         # Logger Django SMTP email backend
-        'django.request': {
-            'handlers': ['console'],
-            'level': 'ERROR',  # here we keep ERROR to not have all the info not useful
-            'propagate': True,
+        "django.request": {
+            "handlers": ["console"],
+            "level": "ERROR",  # here we keep ERROR to not have all the info not useful
+            "propagate": True,
         },
-        'django.security.SuspiciousOperation': {
-            'handlers': ['console'],
-            'level': 'ERROR',
-            'propagate': True,
+        "django.security.SuspiciousOperation": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": True,
         },
         # Logger pour le backend mail SMTP
-        'django.core.mail': {
-            'handlers': ['console'],
-            'level': 'DEBUG',  # activate detailed SMTP logs SMTP
-            'propagate': True,
+        "django.core.mail": {
+            "handlers": ["console"],
+            "level": "DEBUG",  # activate detailed SMTP logs SMTP
+            "propagate": True,
         },
-        'smtp': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
+        "smtp": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+            "propagate": True,
         },
-
     },
 }
 
@@ -181,9 +185,9 @@ LOGGING = {
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -194,31 +198,31 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-LOGIN_URL ='login_page'
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'login_page'
+LOGIN_URL = "login_page"
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "login_page"
 
-#config router account
-ROUTER_USERNAME =os.getenv('ROUTER_USERNAME')
-ROUTER_PWD =os.getenv('ROUTER_PWD')
-ROUTER_PORT = os.getenv('ROUTER_PORT')
-ROUTER_IP = os.getenv('ROUTER_IP')
-ENABLE=os.getenv('ENABLE')
+# config router account
+ROUTER_USERNAME = os.getenv("ROUTER_USERNAME")
+ROUTER_PWD = os.getenv("ROUTER_PWD")
+ROUTER_PORT = os.getenv("ROUTER_PORT")
+ROUTER_IP = os.getenv("ROUTER_IP")
+ENABLE = os.getenv("ENABLE")
 
-#password hashers
+# password hashers
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.PBKDF2PasswordHasher",
     "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
@@ -228,15 +232,15 @@ PASSWORD_HASHERS = [
 ]
 
 
-#email connection parameters
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# email connection parameters
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
-DEFAULT_FROM_EMAIL = f'Diagnostic Tool <{EMAIL_HOST_USER}>'
+DEFAULT_FROM_EMAIL = f"Diagnostic Tool <{EMAIL_HOST_USER}>"
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"

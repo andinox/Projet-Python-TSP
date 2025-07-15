@@ -1,9 +1,14 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView
 from core.models import Diagnostic, Router, Scenario
-from core.diagnostic_scenarios import InternetConnectionLossDiagnostic,IntranetConnectionLossDiagnostic,SecurityDiagnostic
+from core.diagnostic_scenarios import (
+    InternetConnectionLossDiagnostic,
+    IntranetConnectionLossDiagnostic,
+    SecurityDiagnostic,
+)
 
 import logging
+
 logger = logging.getLogger(__name__)
 
 
@@ -15,8 +20,8 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
     model = Scenario
     template_name = "core/scenario_details.html"
     context_object_name = "scenario"
-    slug_url_kwarg = 'slug'
-    login_url = 'login_page'
+    slug_url_kwarg = "slug"
+    login_url = "login_page"
 
     def get_queryset(self):
         """
@@ -31,12 +36,14 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
 
         # Pass diagnostic_result if it exists
-        context['diagnostic_result'] = getattr(self, 'diagnostic_result', None)
+        context["diagnostic_result"] = getattr(self, "diagnostic_result", None)
 
         # Retrieve and remove 'diagnostic_launched' flag from session
-        context['diagnostic_launched'] = self.request.session.pop('diagnostic_launched', False)
+        context["diagnostic_launched"] = self.request.session.pop(
+            "diagnostic_launched", False
+        )
 
-        context['diagnostic'] = getattr(self, 'diagnostic', None)
+        context["diagnostic"] = getattr(self, "diagnostic", None)
 
         return context
 
@@ -52,12 +59,14 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         # prefetch datas
         try:
-            router = Router.objects.prefetch_related(
-                "bgp_tests",
-                "bgp_confs",
-                "interface_tests",
-                "interface_confs"
-            ).select_related().filter(users=request.user).first()
+            router = (
+                Router.objects.prefetch_related(
+                    "bgp_tests", "bgp_confs", "interface_tests", "interface_confs"
+                )
+                .select_related()
+                .filter(users=request.user)
+                .first()
+            )
         except Router.DoesNotExist:
             logger.error("Aucun routeur trouvé en base de données.")
             self.object = scenario
@@ -73,7 +82,7 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
 
         # Dispatch based on scenario slug
         diagnostic_result = ""
-        if scenario.slug == 'perte-de-connexion-vers-internet':
+        if scenario.slug == "perte-de-connexion-vers-internet":
             logger.info("Starting internet connection loss diagnostic")
             dgc = InternetConnectionLossDiagnostic(diagnostic)
             diagnostic_result = dgc.run()
@@ -91,12 +100,17 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         elif scenario.slug == "diagnostiquer-tous-les-scenarios-ci-dessus":
             logger.info("[DIAGNOSTIC GÉNÉRAL]")
             results = []
-            diagnostics = [InternetConnectionLossDiagnostic(diagnostic), IntranetConnectionLossDiagnostic(diagnostic),
-                           SecurityDiagnostic(diagnostic)]
+            diagnostics = [
+                InternetConnectionLossDiagnostic(diagnostic),
+                IntranetConnectionLossDiagnostic(diagnostic),
+                SecurityDiagnostic(diagnostic),
+            ]
 
             # to not have double time the basic network test launched
             # we do it for the first diagnostic
-            diagnostic_result_basic_network_tests = diagnostics[0].run(skip_basic_network_tests=False)
+            diagnostic_result_basic_network_tests = diagnostics[0].run(
+                skip_basic_network_tests=False
+            )
             results.append(diagnostic_result_basic_network_tests)
 
             # then we skip the basic network test for the others
@@ -104,14 +118,21 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
                 result = d.run(skip_basic_network_tests=True)
                 logger.info(f"Résultat du diagnostic :\n{result}")
                 results.append(result)
-                if any(keyword in result.upper() for keyword in ["ÉCHEC", "ECHEC", "ERREUR"]):
-                    logger.error("Un échec ou une erreur a été détecté. Interruption du diagnostic global.")
+                if any(
+                    keyword in result.upper()
+                    for keyword in ["ÉCHEC", "ECHEC", "ERREUR"]
+                ):
+                    logger.error(
+                        "Un échec ou une erreur a été détecté. Interruption du diagnostic global."
+                    )
                     break
             diagnostic_result = "\n".join(results)
         else:
             logger.warning("Scénario non reconnu : aucune action lancée.")
 
-        logger.info(f"Résultat final du diagnostic ({scenario.slug}) :\n{diagnostic_result}")
+        logger.info(
+            f"Résultat final du diagnostic ({scenario.slug}) :\n{diagnostic_result}"
+        )
 
         diagnostic.result = diagnostic_result
         diagnostic.save()
@@ -119,6 +140,6 @@ class ScenarioDetailView(LoginRequiredMixin, DetailView):
         self.diagnostic = diagnostic
         self.diagnostic_result = diagnostic_result
         self.object = scenario
-        request.session['diagnostic_launched'] = True
+        request.session["diagnostic_launched"] = True
 
         return self.render_to_response(self.get_context_data(object=scenario))

@@ -6,8 +6,7 @@ from core.diagnostic_scenarios.basic_network_tests import BasicNetworkTests
 class InternetConnectionLossDiagnostic:
     def __init__(self, diagnostic: Diagnostic):
         self.diagnostic = diagnostic
-        self.tests=BasicNetworkTests(router=self.diagnostic.router)
-
+        self.tests = BasicNetworkTests(router=self.diagnostic.router)
 
     def get_next_hop(self):
         """
@@ -35,8 +34,12 @@ class InternetConnectionLossDiagnostic:
         if ping("google.com"):
             report.append("Résultat : OK - ping vers google.com réussi.")
             report.append("Analyse : la connectivité Internet fonctionne correctement.")
-            report.append("Action : le problème vient probablement d'un accès extranet ou d'une application spécifique.")
-            report.append("=> Créer un ticket pour signaler le problème au niveau extranet.")
+            report.append(
+                "Action : le problème vient probablement d'un accès extranet ou d'une application spécifique."
+            )
+            report.append(
+                "=> Créer un ticket pour signaler le problème au niveau extranet."
+            )
             return "\n".join(report)
 
         # Step 2: ping towards 8.8.8.8
@@ -45,7 +48,9 @@ class InternetConnectionLossDiagnostic:
         if ping("8.8.8.8"):
             report.append("Résultat : OK - ping vers 8.8.8.8 réussi.")
             report.append("Analyse : le problème vient de la résolution DNS.")
-            report.append("=> Créer un ticket pour vérifier la configuration DNS du routeur.")
+            report.append(
+                "=> Créer un ticket pour vérifier la configuration DNS du routeur."
+            )
             return "\n".join(report)
 
         # Step 3: traceroute to 8.8.8.8
@@ -54,21 +59,33 @@ class InternetConnectionLossDiagnostic:
 
         hops, last_hop = traceroute("8.8.8.8")
         if last_hop:
-            report.append(f"Résultat : OK - traceroute réussi. Dernier hop atteint : {last_hop}")
+            report.append(
+                f"Résultat : OK - traceroute réussi. Dernier hop atteint : {last_hop}"
+            )
             next_hop = self.get_next_hop()
             if next_hop:
-                report.append(f"Test complémentaire : ping vers le next hop {next_hop}...")
+                report.append(
+                    f"Test complémentaire : ping vers le next hop {next_hop}..."
+                )
                 if ping(next_hop):
-                    report.append(f"Résultat : OK - ping vers next hop {next_hop} réussi.")
+                    report.append(
+                        f"Résultat : OK - ping vers next hop {next_hop} réussi."
+                    )
                     report.append("Problème détecté entre le next-hop et internet.")
 
                 else:
-                    report.append(f"Résultat : ÉCHEC - ping vers next hop {next_hop} échoué.")
+                    report.append(
+                        f"Résultat : ÉCHEC - ping vers next hop {next_hop} échoué."
+                    )
                     report.append("Problème détecté avec le next-hop.")
 
-            report.append("Analyse : problème de connectivité détecté, analyse du dernier hop nécessaire.")
+            report.append(
+                "Analyse : problème de connectivité détecté, analyse du dernier hop nécessaire."
+            )
             report.append("=> Créer un ticket pour investigation.")
         else:
-            report.append("Résultat : ÉCHEC - traceroute échoué, impossible de déterminer le dernier hop.")
+            report.append(
+                "Résultat : ÉCHEC - traceroute échoué, impossible de déterminer le dernier hop."
+            )
             report.append("=> Créer un ticket pour investigation approfondie.")
         return "\n".join(report)

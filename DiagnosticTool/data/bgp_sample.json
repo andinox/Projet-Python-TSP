@@ -1,0 +1,124 @@
+{
+  "metrics": [
+    {
+      "fields": {
+        "peer_ip": "192.0.2.1",
+        "peer_as": 64512,
+        "peer_status": 2,
+        "peer_last_change": 1234,
+        "peer_in_updates": 3456,
+        "peer_out_updates": 5678,
+        "peer_in_total_messages": 67890,
+        "peer_out_total_messages": 65432,
+        "peer_last_error": "0"
+      },
+      "name": "bgp_peers",
+      "tags": {
+        "agent_host": "172.16.10.51",
+        "host": "rzo-py-pod5-vm",
+        "ifIndex": "1"
+      },
+      "timestamp": 1749393700
+    },
+    {
+      "fields": {
+        "peer_ip": "203.0.113.2",
+        "peer_as": 64513,
+        "peer_status": 1,
+        "peer_last_change": 45,
+        "peer_in_updates": 0,
+        "peer_out_updates": 0,
+        "peer_in_total_messages": 4,
+        "peer_out_total_messages": 5,
+        "peer_last_error": "33"
+      },
+      "name": "bgp_peers",
+      "tags": {
+        "agent_host": "172.16.10.51",
+        "host": "rzo-py-pod5-vm",
+        "ifIndex": "2"
+      },
+      "timestamp": 1749393700
+    },
+    {
+      "fields": {
+        "peer_ip": "198.51.100.3",
+        "peer_as": 64514,
+        "peer_status": 6,
+        "peer_last_change": 98765,
+        "peer_in_updates": 123,
+        "peer_out_updates": 150,
+        "peer_in_total_messages": 789,
+        "peer_out_total_messages": 800,
+        "peer_last_error": "0"
+      },
+      "name": "bgp_peers",
+      "tags": {
+        "agent_host": "172.16.10.51",
+        "host": "rzo-py-pod5-vm",
+        "ifIndex": "3"
+      },
+      "timestamp": 1749393700
+    },
+    {
+      "fields": {
+        "peer_ip": "192.0.2.1",
+        "peer_as": 64512,
+        "peer_status": 1,
+        "peer_last_change": 1500,
+        "peer_in_updates": 3456,
+        "peer_out_updates": 5678,
+        "peer_in_total_messages": 67890,
+        "peer_out_total_messages": 65432,
+        "peer_last_error": "1"
+      },
+      "name": "bgp_peers",
+      "tags": {
+        "agent_host": "172.16.10.51",
+        "host": "rzo-py-pod5-vm",
+        "ifIndex": "1"
+      },
+      "timestamp": 1749394600
+    },
+    {
+      "fields": {
+        "peer_ip": "203.0.113.2",
+        "peer_as": 64519,
+        "peer_status": 1,
+        "peer_last_change": 60,
+        "peer_in_updates": 2,
+        "peer_out_updates": 2,
+        "peer_in_total_messages": 6,
+        "peer_out_total_messages": 6,
+        "peer_last_error": "0"
+      },
+      "name": "bgp_peers",
+      "tags": {
+        "agent_host": "172.16.10.51",
+        "host": "rzo-py-pod5-vm",
+        "ifIndex": "2"
+      },
+      "timestamp": 1749394600
+    },
+    {
+      "fields": {
+        "peer_ip": "203.0.113.99",
+        "peer_as": 64520,
+        "peer_status": 6,
+        "peer_last_change": 100,
+        "peer_in_updates": 15,
+        "peer_out_updates": 20,
+        "peer_in_total_messages": 200,
+        "peer_out_total_messages": 210,
+        "peer_last_error": "0"
+      },
+      "name": "bgp_peers",
+      "tags": {
+        "agent_host": "172.16.10.51",
+        "host": "rzo-py-pod5-vm",
+        "ifIndex": "4"
+      },
+      "timestamp": 1749394600
+    }
+  ]
+}

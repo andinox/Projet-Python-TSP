@@ -1,4 +1,4 @@
-from core.models import  Security, SecurityScan, Diagnostic
+from core.models import Security, SecurityScan, Diagnostic
 from core.router import perform_security_scan
 from core.scripts import convert_uptime
 from dotenv import load_dotenv
@@ -8,6 +8,7 @@ from django.db.models import Prefetch
 
 load_dotenv()
 
+
 class SecurityDiagnostic:
     def __init__(self, diagnostic: Diagnostic):
         self.diagnostic = diagnostic
@@ -15,7 +16,9 @@ class SecurityDiagnostic:
 
     def run(self, skip_basic_network_tests=False):
         report = []
-        report.append("DÉBUT DU DIAGNOSTIC : Je souhaite vérifier la sécurité de mon réseau\n")
+        report.append(
+            "DÉBUT DU DIAGNOSTIC : Je souhaite vérifier la sécurité de mon réseau\n"
+        )
 
         #   Retrieve router IP
         router_ip = os.getenv("ROUTER_IP") or self.router.management_ip
@@ -28,22 +31,28 @@ class SecurityDiagnostic:
 
         # Load datas
         security_obj = (
-            Security.objects
-            .filter(hostname=self.router.name)
+            Security.objects.filter(hostname=self.router.name)
             .order_by("-id")
             .prefetch_related(
                 Prefetch(
                     "scans",
                     queryset=SecurityScan.objects.only(
-                        "port", "service_name", "product", "version", "protocol", "extrainfo"
-                    )
+                        "port",
+                        "service_name",
+                        "product",
+                        "version",
+                        "protocol",
+                        "extrainfo",
+                    ),
                 )
             )
             .first()
         )
 
         if not security_obj:
-            report.append(f"[ERREUR] Aucune entrée de sécurité trouvée pour : {self.router.name}")
+            report.append(
+                f"[ERREUR] Aucune entrée de sécurité trouvée pour : {self.router.name}"
+            )
             return "\n".join(report)
 
         readable_uptime = convert_uptime(security_obj.uptime)
@@ -56,9 +65,13 @@ class SecurityDiagnostic:
             report.append(f"    {line.strip()}")
 
         report.append(f"- Uptime       : {readable_uptime}")
-        report.append(f"- CDP Activé   : {'Oui' if security_obj.cdp_enabled else 'Non'}")
+        report.append(
+            f"- CDP Activé   : {'Oui' if security_obj.cdp_enabled else 'Non'}"
+        )
         if security_obj.cdp_enabled:
-            report.append("(!)  Recommandation : Le protocole CDP peut exposer des infos réseau. Désactivez-le si non nécessaire.")
+            report.append(
+                "(!)  Recommandation : Le protocole CDP peut exposer des infos réseau. Désactivez-le si non nécessaire."
+            )
         report.append("\n")
         report.append("-" * 60)
 
@@ -70,14 +83,18 @@ class SecurityDiagnostic:
 
         if not scans:
             report.append(f"[INFO] Aucun port ouvert détecté sur {router_ip}.")
-            report.append("Recommandation : Gardez votre pare-feu actif et surveillez les accès réseau.")
+            report.append(
+                "Recommandation : Gardez votre pare-feu actif et surveillez les accès réseau."
+            )
         else:
             for scan in scans:
                 port = scan.port
                 service = scan.service_name.lower()
                 protocol = scan.protocol.upper()
 
-                report.append(f"{protocol} port {port}: {service} ({(scan.product or '').strip()} {(scan.version or '').strip()})".strip())
+                report.append(
+                    f"{protocol} port {port}: {service} ({(scan.product or '').strip()} {(scan.version or '').strip()})".strip()
+                )
 
                 if scan.extrainfo:
                     report.append(f"  Info complémentaire : {scan.extrainfo.strip()}")
@@ -110,4 +127,3 @@ class SecurityDiagnostic:
             return "Port HTTP alternatif. Appliquez les mêmes précautions que pour le port 80."
         else:
             return None
-
