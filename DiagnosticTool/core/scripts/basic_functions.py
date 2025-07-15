@@ -1,15 +1,18 @@
-#This file contains the basic functions that will be used in other scripts.
+# This file contains the basic functions that will be used in other scripts.
 import nmap
 from netmiko import ConnectHandler
 from core.router import hosts
 import os
+
+
 def get_router_connection():
     """
     returns the router connection details
     """
     return hosts[0]
 
-def ping(ip, count=5, timeout=2, source=os.getenv('ROUTER_IP')):
+
+def ping(ip, count=5, timeout=2, source=os.getenv("ROUTER_IP")):
     """
     Sends an interactive ping from the router to the given IP address,
     using optional source IP. Returns True if ping is successful.
@@ -43,7 +46,6 @@ def ping(ip, count=5, timeout=2, source=os.getenv('ROUTER_IP')):
         return False
 
 
-
 def traceroute(destination):
     """
     executes a traceroute from the router to the given destination
@@ -57,11 +59,11 @@ def traceroute(destination):
         lines = output.splitlines()
         hops = []
 
-        #extract the first valid ip from each line (skip '*')
+        # extract the first valid ip from each line (skip '*')
         for l in lines:
             parts = l.split()
             for p in parts:
-                if p.count('.') == 3 and p != '*':
+                if p.count(".") == 3 and p != "*":
                     hops.append(p)
                     break
 
@@ -71,6 +73,7 @@ def traceroute(destination):
     except Exception as e:
         print(f"[ERROR traceroute] : {e}")
         return [], None
+
 
 def convert_uptime(uptime_centisecs):
     """
