@@ -3,6 +3,8 @@ from core.router import perform_security_scan
 from core.scripts import convert_uptime
 from dotenv import load_dotenv
 import os
+from django.db.models import Prefetch
+
 
 load_dotenv()
 
@@ -15,45 +17,58 @@ class SecurityDiagnostic:
         report = []
         report.append("DÉBUT DU DIAGNOSTIC : Je souhaite vérifier la sécurité de mon réseau\n")
 
-        # 1. System info
-        security_obj = Security.objects.filter(hostname=self.router.name).order_by("-id").first()
+        #   Retrieve router IP
+        router_ip = os.getenv("ROUTER_IP") or self.router.management_ip
+        if not router_ip:
+            report.append("[ERREUR] Aucune IP de routeur définie.")
+            return "\n".join(report)
+
+        # Start the scan
+        perform_security_scan(router_ip, self.router.name)
+
+        # Load datas
+        security_obj = (
+            Security.objects
+            .filter(hostname=self.router.name)
+            .order_by("-id")
+            .prefetch_related(
+                Prefetch(
+                    "scans",
+                    queryset=SecurityScan.objects.only(
+                        "port", "service_name", "product", "version", "protocol", "extrainfo"
+                    )
+                )
+            )
+            .first()
+        )
+
         if not security_obj:
             report.append(f"[ERREUR] Aucune entrée de sécurité trouvée pour : {self.router.name}")
             return "\n".join(report)
 
         readable_uptime = convert_uptime(security_obj.uptime)
 
+        # System infos display
         report.append("Informations Système :\n")
         report.append(f"- Hostname     : {security_obj.hostname}")
-
-        # Clean multiline sys_descr
         report.append("- Description  :")
         for line in security_obj.sys_descr.strip().splitlines():
             report.append(f"    {line.strip()}")
 
         report.append(f"- Uptime       : {readable_uptime}")
         report.append(f"- CDP Activé   : {'Oui' if security_obj.cdp_enabled else 'Non'}")
-
-        # Add CDP recommendation if enabled
         if security_obj.cdp_enabled:
             report.append("(!)  Recommandation : Le protocole CDP peut exposer des infos réseau. Désactivez-le si non nécessaire.")
         report.append("\n")
         report.append("-" * 60)
 
-        # 2. Ports scan
-        router_ip = os.getenv("ROUTER_IP") or self.router.management_ip
-        if not router_ip:
-            report.append("[ERREUR] Aucune IP de routeur définie.")
-            return "\n".join(report)
-
-        perform_security_scan(router_ip, security_obj.hostname)
-
+        # Scan display
         report.append("Résultats du scan de ports (Nmap) :")
         report.append("-" * 60)
 
-        scans = SecurityScan.objects.filter(security=security_obj)
+        scans = security_obj.scans.all()
 
-        if not scans.exists():
+        if not scans:
             report.append(f"[INFO] Aucun port ouvert détecté sur {router_ip}.")
             report.append("Recommandation : Gardez votre pare-feu actif et surveillez les accès réseau.")
         else:
@@ -67,16 +82,12 @@ class SecurityDiagnostic:
                 if scan.extrainfo:
                     report.append(f"  Info complémentaire : {scan.extrainfo.strip()}")
 
-                # Add recommendation
                 recommendation = self._get_recommendation(port, service)
                 if recommendation:
                     report.append(f"(!)  Recommandation : {recommendation}")
 
-
         report.append("Diagnostic terminé.")
-
         return "\n".join(report)
-
 
     def _get_recommendation(self, port, service):
         if service in ["telnet"] or port == 23:
