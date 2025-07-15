@@ -5,25 +5,28 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   release:
     runs-on: ubuntu-latest
+    environment: secret
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Get short commit number
-        id: commit_count
-        run: |
-          count=$(git rev-list --count HEAD)
-          echo "count=$count" >> "$GITHUB_OUTPUT"
-
-      - name: Create tag version
+      - name: Get commit count and version
         id: version
         run: |
-          VERSION="0.4.${{ steps.commit_count.outputs.count }}"
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          count=$(git rev-list --count HEAD)
+          x=$((count / 1000))
+          y=$(((count / 100) % 10))
+          z=$((count % 100))
+          version="${x}.${y}.${z}"
+          echo "count=$count" >> "$GITHUB_OUTPUT"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -32,4 +35,4 @@ jobs:
           name: Release v${{ steps.version.outputs.version }}
           generate_release_notes: true
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
