@@ -8,13 +8,13 @@ services:
       - static_volume:/app/DiagnosticTool/staticfiles
     environment:
       - DJANGO_ENV=development
-      - EMAIL_HOST_USER=expertsdiagnostictool@gmail.com
-      - EMAIL_HOST_PASSWORD=izyqlzfnwgbbolul
-      - ENABLE=Admin123INT
-      - ROUTER_USERNAME=admin
-      - ROUTER_PWD=dkSDwa80f13faXcwxzj
-      - ROUTER_PORT=22
-      - ROUTER_IP=172.16.10.51
+      - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+      - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+      - ENABLE=${ENABLE}
+      - ROUTER_USERNAME=${ROUTER_USERNAME}
+      - ROUTER_PWD=${ROUTER_PWD}
+      - ROUTER_PORT=${ROUTER_PORT}
+      - ROUTER_IP=${ROUTER_IP}
 
   telegraf:
     image: telegraf:1.30
