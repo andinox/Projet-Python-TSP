@@ -35,6 +35,23 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
   <img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
 </p>
 
+-------- 
+## Docker et workflows
+
+### Docker
+Les fichiers `Dockerfile` et `docker-compose.yml` permettent de lancer l'application et Telegraf en une seule commande `docker-compose up`.
+La version `docker-compose.prod.yml` ajoute PostgreSQL et Nginx pour la production.
+
+### Workflows GitHub
+Le dossier `.github/workflows` contient deux actions :
+- `docker-image.yml` construit l'image Docker à chaque push ou pull request sur `main`.
+- `auto.yml` crée automatiquement un tag et une release à chaque push sur `main`. (marche pas)
+ -------- 
+## Notre BDD
+<p align="center">
+   <img width="2520" height="1304" alt="DiagnosticTool_DB" src="https://github.com/user-attachments/assets/bd47aebc-277f-44a4-8623-8c01f14b329b" />
+</p>
+
 --------
 ## ROADMAP 
 ### Fonctionnalités déjà opérationnelles
