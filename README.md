@@ -46,7 +46,11 @@ La version `docker-compose.prod.yml` ajoute PostgreSQL et Nginx pour la producti
 Le dossier `.github/workflows` contient deux actions :
 - `docker-image.yml` construit l'image Docker à chaque push ou pull request sur `main`.
 - `auto.yml` crée automatiquement un tag et une release à chaque push sur `main`. (marche pas)
- 
+ -------- 
+## Notre BDD
+<p align="center">
+   <img width="2520" height="1304" alt="DiagnosticTool_DB" src="https://github.com/user-attachments/assets/bd47aebc-277f-44a4-8623-8c01f14b329b" />
+</p>
 --------
 ## ROADMAP 
 ### Fonctionnalités déjà opérationnelles
