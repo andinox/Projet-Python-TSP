@@ -5,6 +5,7 @@ services:
       - "8000:8000"
     volumes:
       - ./DiagnosticTool:/app/DiagnosticTool
+      - static_volume:/app/DiagnosticTool/staticfiles
     environment:
       - DJANGO_ENV=development
       - EMAIL_HOST_USER=expertsdiagnostictool@gmail.com
@@ -14,3 +15,20 @@ services:
       - ROUTER_PWD=dkSDwa80f13faXcwxzj
       - ROUTER_PORT=22
       - ROUTER_IP=172.16.10.51
+
+  telegraf:
+    image: telegraf:1.30
+    volumes:
+      - ./DiagnosticTool/core/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - ./DiagnosticTool/core/telegraf/telegraf.d:/etc/telegraf/telegraf.d:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - HOST_PROC=/host/proc
+      - HOST_SYS=/host/sys
+      - HOST_ETC=/host/etc
+    network_mode: "service:web"
+    depends_on:
+      - web
+
+volumes:
+  static_volume:
