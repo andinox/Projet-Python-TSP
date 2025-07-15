@@ -33,3 +33,51 @@ C’est pourquoi, nous avons décidé de créer une application pouvant se conne
 <p align="center">
   <img src="https://github.com/user-attachments/assets/9752600d-22a3-46e7-84b6-f7dbe91b9764" alt="DiagnosticTool_logo" width="200" />
 </p>
+
+--------
+## ROADMAP 
+### Fonctionnalités déjà opérationnelles
+
+- Scénarios de diagnostic prédéfinis (ex : perte d'accès Internet, problème DNS, etc.).
+- Parsing intelligent : ajout d'explications claires et pédagogiques pour rendre les résultats accessibles aux non-initiés.
+- Identification automatisée du niveau du problème (LAN, WAN, Internet, DNS...).
+- Orientation directe vers l’équipe compétente selon la nature du problème.
+- Interface web simple accessible sans connaissances techniques.
+- Export des résultats en PDF ou logs.
+- Utilisation du protocole SNMP pour la collecte de données réseau, compatible avec la majorité des équipements actuels.
+
+---
+
+### Améliorations prévues à court terme
+
+#### Pour une expérience utilisateur plus fluide
+
+- Intégration de questions intermédiaires pour affiner le diagnostic.
+- Ajout d’un chatbot pour accompagner l'utilisateur dans la résolution.
+- Adaptation dynamique des scénarios en fonction du type d’équipement détecté (routeur, firewall, switch, etc.).
+- Prise en compte des topologies spécifiques, comme la redondance ou les routeurs en simple gateway.
+- Support des diagnostics liés aux firewalls.
+- Ajout de nouveaux scénarios (latence, déconnexion intermittente, erreurs de routage…).
+
+---
+
+### Vision future – vers une supervision intelligente
+
+#### Automatisation et analyses enrichies
+
+- Stockage d’un historique par interface : état admin/oper, débit, erreurs.
+- Visualisation via graphiques interactifs (Grafana, Django-chart, ChartJS, etc.) :
+  - Monitoring du trafic en temps réel.
+  - Suivi des erreurs et interruptions.
+- Détection de pannes récurrentes et de patterns comportementaux (ex : coupures à heure fixe).
+- Système de notifications automatiques en cas de dépassement de seuils critiques.
+
+---
+
+### Scénarios de cybersécurité avancés
+
+- Vérification de la présence et pertinence des ACLs sur les interfaces critiques.
+- Détection des interfaces exposées sans protection suffisante.
+- Évaluation du niveau de sécurité via un score visuel (couleur + pourcentage).
+- Lancement de scans de configuration pour identifier des vulnérabilités.
+- Intégration potentielle d’un système d’alerte sur les CVE connues.
