@@ -4,7 +4,7 @@
   "pk": 6,
   "fields": {
     "name": "Je souhaite vérifier la sécurité de mon réseau",
-    "description": "Je souhaite vérifier la sécurité de mon réseau",
+    "description": "Ce diagnostic vise à évaluer le niveau de sécurité initial d'un routeur, en se basant sur des informations système et un scan réseau (nmap).\r\n Il permet d'identifier :\r\n→Des services sensibles ou obsolètes\r\n→Des ports ouverts\r\n→Des recommandations sur les configurations risquées",
     "slug": "je-souhaite-verifier-la-securite-de-mon-reseau"
   }
 },
@@ -31,7 +31,7 @@
   "pk": 9,
   "fields": {
     "name": "Diagnostiquer tous les scénarios ci-dessus",
-    "description": "Possibilité de lancer les trois testes de diagnostic en même temps: \r\n\r\n1- diagnostic de la perte de connexion vers internet \r\n2- diagnostic de la perte de connexion vers l'extranet \r\n3- diagnostic de la sécurité du réseau",
+    "description": "Possibilité de lancer les trois tests de diagnostic en même temps: \r\n\r\n1- diagnostic de la perte de connexion vers internet \r\n2- diagnostic de la perte de connexion vers l'intranet \r\n3- diagnostic de la sécurité du réseau",
     "slug": "diagnostiquer-tous-les-scenarios-ci-dessus"
   }
 }

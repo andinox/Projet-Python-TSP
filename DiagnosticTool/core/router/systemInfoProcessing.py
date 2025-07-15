@@ -3,6 +3,7 @@ import os
 import sys
 import django
 import nmap
+from datetime import datetime
 
 # Setup Django environment
 sys.path.append("/home/user/Projet-Python-TSP/DiagnosticTool") # TODO: need to change the path or put it in variable maybe
@@ -23,8 +24,7 @@ def parse_sys_infos_from_json(data):
     Parses SNMP-related system info (sysName, sysDescr, sysUptime, CDP status) from Telegraf JSON input.
     Returns a list of dictionaries with extracted values.
     """
-    log_debug(f"[SECU] Script lancé avec data: {data}")
-
+    
     parsed_entries = []
 
     for metric in data.get("metrics", []):
@@ -80,58 +80,76 @@ def save_security_entries(parsed_entries):
             )
             log_debug(f"[SECU] Nouvelle entrée de sécurité crée pour l'hôte : {hostname}")
 
-def perform_security_scan(ip, hostname):
+def perform_security_scan(ip: str, hostname: str, simulate=False):
     """
-    IP scan with Nmap and sync SecurityScan model
+    Performs a Nmap scan and bulk updates the SecurityScan entries.
     """
-    log_debug(f"[SECU][SCAN] Démarrage du scan Nmap sur {ip} pour {hostname}")
-
+    # Get latest Security entry for this hostname
     try:
-        nm = nmap.PortScanner()
-        nm.scan(ip, arguments='-sV')
-        log_debug(f"[SECU][SCAN] Hôtes détectés : {nm.all_hosts()}")
+        security_obj = Security.objects.filter(hostname=hostname).latest("id")
+    except Security.DoesNotExist:
+        return
 
-        if ip not in nm.all_hosts():
-            log_debug(f"[SECU][SCAN] L'IP {ip} n'a pas été détectée par Nmap.")
-            return
+    # Existing scans for this security object
+    existing_scans = {
+        (s.port, s.protocol): s
+        for s in SecurityScan.objects.filter(security=security_obj)
+    }
 
-        security_obj = Security.objects.filter(hostname=hostname).first()
-        if not security_obj:
-            log_debug(f"[SECU][DB] Aucun objet Security trouvé pour hostname={hostname}")
-            return
+    # Scan results
+    nm = nmap.PortScanner()
+    nm.scan(hosts=ip, arguments='-sV')
+    scan_results = []
 
-        # see active ports
-        current_ports = set()
+    for proto in nm[ip].all_protocols():
+        for port in nm[ip][proto].keys():
+            result = nm[ip][proto][port]
+            scan_results.append({
+                "port": port,
+                "protocol": proto,
+                "service_name": result.get("name", ""),
+                "product": result.get("product", ""),
+                "version": result.get("version", ""),
+                "extrainfo": result.get("extrainfo", ""),
+            })
 
-        for proto in nm[ip].all_protocols():
-            log_debug(f"[SECU][SCAN] Protocole détecté : {proto}")
-            for port in nm[ip][proto]:
-                data = nm[ip][proto][port]
-                log_debug(f"[SECU][SCAN] Port {port}/{proto} - data : {data}")
+    now = datetime.now()
+    to_update = []
+    to_create = []
 
-                current_ports.add((proto, port))
+    # Compare results and decide if create/update is needed
+    for entry in scan_results:
+        key = (entry["port"], entry["protocol"])
+        existing = existing_scans.get(key)
 
-                SecurityScan.objects.update_or_create(
-                    security=security_obj,
-                    protocol=proto,
-                    port=port,
-                    defaults={
-                        'service_name': data.get('name'),
-                        'product': data.get('product'),
-                        'version': data.get('version'),
-                        'extrainfo': data.get('extrainfo'),
-                    }
-                )
-                log_debug(f"[SECU][DB] Insertion/màj : {hostname} - {proto}/{port}")
+        if existing:
+            
+            if (
+                existing.service_name != entry["service_name"]
+                or existing.product != entry["product"]
+                or existing.version != entry["version"]
+                or existing.extrainfo != entry["extrainfo"]
+            ):
+                existing.service_name = entry["service_name"]
+                existing.product = entry["product"]
+                existing.version = entry["version"]
+                existing.extrainfo = entry["extrainfo"]
+                existing.timestamp = now
+                to_update.append(existing)
+        else:
+            to_create.append(SecurityScan(
+                security=security_obj,
+                port=entry["port"],
+                protocol=entry["protocol"],
+                service_name=entry["service_name"],
+                product=entry["product"],
+                version=entry["version"],
+                extrainfo=entry["extrainfo"],
+                timestamp=now,
+            ))
 
-        # removing ports that are closed
-        saved_ports = SecurityScan.objects.filter(security=security_obj)
-        for scan in saved_ports:
-            if (scan.protocol, scan.port) not in current_ports:
-                log_debug(f"[SECU][DB] Suppression de l'entrée obsolète : {scan.protocol}/{scan.port}")
-                scan.delete()
-
-    except Exception as e:
-        import traceback
-        log_debug(f"[SECU][ERROR] Exception lors du scan Nmap : {e}")
-        traceback.print_exc()
+    # Execute bulk DB operations
+    if to_update:
+        SecurityScan.objects.bulk_update(to_update, ["service_name", "product", "version", "extrainfo", "timestamp"])
+    if to_create:
+        SecurityScan.objects.bulk_create(to_create)
