@@ -8,3 +8,4 @@ db.sqlite3
 media/avatars/
 .idea/
 testteelegraf.py.*
+*.ovpn
