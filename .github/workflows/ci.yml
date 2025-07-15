@@ -49,8 +49,8 @@ jobs:
           format: 'table'
           exit-code: 1
 
-      - name: Scan container images for vulnerabilities with Trivy
-        uses: aquasecurity/trivy-action@v0.11.0
+      - name: Scan container images with Trivy
+        uses: aquasecurity/trivy-action@v0.11.1
         with:
           image-ref: "your-image-name:tag"
           format: "table"
